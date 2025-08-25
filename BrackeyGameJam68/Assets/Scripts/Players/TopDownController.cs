@@ -6,13 +6,13 @@ public class TopDownController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [Tooltip("Maximum movement speed")]
-    public float moveSpeed = 5f;
+    [SerializeField] float moveSpeed = 5f;
 
     [Tooltip("Acceleration for smooth movement")]
-    public float acceleration = 10f;
+    [SerializeField] float acceleration = 10f;
 
     [Tooltip("Deceleration when no input is given")]
-    public float deceleration = 10f;
+    [SerializeField] float deceleration = 10f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
