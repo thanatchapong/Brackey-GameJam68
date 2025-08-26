@@ -25,7 +25,7 @@ public class WeaponController : MonoBehaviour
             Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
             bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
 
-            AudioManager.instance.PlaySound(currentWeapon.fireSound);
+            GetComponent<PrositionalAudio>().Play();
         }
 
         float damage = currentWeapon.CalculateDamage();

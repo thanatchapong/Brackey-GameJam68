@@ -14,8 +14,6 @@ public class TopDownController : MonoBehaviour
 
     [SerializeField] Animator anim;
 
-    [SerializeField] AudioClip walkSound;
-
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 currentVelocity;
@@ -57,11 +55,6 @@ public class TopDownController : MonoBehaviour
             currentVelocity = Vector2.Lerp(currentVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
             rb.linearVelocity = currentVelocity;
         }
-    }
-
-    void PlayFootstepSound()
-    {
-        AudioManager.instance.PlaySound(walkSound);
     }
 }
 
