@@ -16,8 +16,7 @@ MonoBehaviour:
   weaponType: 0
   weaponIcon: {fileID: 21300000, guid: b7ea0c31c76be9d42802dfffc7352d61, type: 3}
   weaponPrefab: {fileID: 1210982010674772047, guid: 16efa996f811d404a9e9c8c160d0f00a, type: 3}
-  weaponColor: {r: 1, g: 1, b: 1, a: 1}
-  weaponMaterial: {fileID: 0}
+  ammoPrefab: {fileID: 1721734548074101474, guid: 99773884384714a40a0fd0e2e325269b, type: 3}
   baseDamage: 10
   damageType: 0
   criticalChance: 0.1
@@ -29,7 +28,7 @@ MonoBehaviour:
   currentAmmo: 0
   reloadTime: 2
   ammoType: 0
-  swingSpeed: 1
+  bulletSpeed: 20
   knockbackForce: 5
   weaponLevel: 1
   upgradeDamageFactor: 1.1

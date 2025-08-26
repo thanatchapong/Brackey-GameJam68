@@ -12,6 +12,8 @@ public class TopDownController : MonoBehaviour
     [Tooltip("Deceleration when no input is given")]
     [SerializeField] float deceleration = 10f;
 
+    [SerializeField] Animator anim;
+
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 currentVelocity;
@@ -28,6 +30,15 @@ public class TopDownController : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
+        if (anim && horizontalInput == 0 && verticalInput == 0)
+        {
+            anim.SetBool("walking", false);
+        }
+        else
+        {
+            anim.SetBool("walking", true);
+        }
+
         movement = new Vector2(horizontalInput, verticalInput).normalized;
     }
 
@@ -36,12 +47,12 @@ public class TopDownController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             currentVelocity = Vector2.Lerp(currentVelocity, movement * moveSpeed, acceleration * Time.fixedDeltaTime);
-            rb.velocity = currentVelocity;
+            rb.linearVelocity = currentVelocity;
         }
         else
         {
             currentVelocity = Vector2.Lerp(currentVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
-            rb.velocity = currentVelocity;
+            rb.linearVelocity = currentVelocity;
         }
     }
 }

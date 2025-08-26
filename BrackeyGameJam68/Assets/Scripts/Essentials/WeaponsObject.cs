@@ -8,10 +8,7 @@ public class WeaponsObject : ScriptableObject
     public WeaponType weaponType;
     public Sprite weaponIcon;
     public GameObject weaponPrefab;
-
-    // Visual Customization
-    public Color weaponColor = Color.white;
-    public Material weaponMaterial;
+    public GameObject ammoPrefab;
 
     // Combat Stats
     [Header("Damage")]
@@ -32,10 +29,7 @@ public class WeaponsObject : ScriptableObject
     public int currentAmmo;
     public float reloadTime = 2f;
     public AmmoType ammoType;
-
-    // Melee Specifics
-    [Header("Melee Attributes")]
-    public float swingSpeed = 1f;
+    public float bulletSpeed = 20f;
     public float knockbackForce = 5f;
 
     // Weapon Progression
@@ -55,11 +49,7 @@ public class WeaponsObject : ScriptableObject
         Pistol,
         Shotgun,
         Rifle,
-        Sniper,
-        Sword,
-        Axe,
-        Hammer,
-        Dagger
+        Sniper
     }
 
     public enum DamageType
@@ -76,16 +66,7 @@ public class WeaponsObject : ScriptableObject
         Pistol,
         Shotgun,
         Rifle,
-        Energy,
         None
-    }
-
-    // Method to upgrade weapon
-    public void UpgradeWeapon()
-    {
-        weaponLevel++;
-        baseDamage *= upgradeDamageFactor;
-        // Add more upgrade logic
     }
 
     // Method to calculate final damage
