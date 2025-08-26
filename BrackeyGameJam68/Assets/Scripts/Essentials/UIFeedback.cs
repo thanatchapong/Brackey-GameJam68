@@ -18,17 +18,19 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         rotate = transform.rotation;
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        Debug.Log("Delta" + Time.deltaTime.ToString());
+        Debug.Log("Unscaled" + Time.unscaledDeltaTime.ToString());
         if (OnHover)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, scale * scaleMult, Time.deltaTime * (scaleSped * 2));
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotate * Quaternion.Euler(0, 0, rotateTilt), Time.deltaTime * (rotateSped * 1.5f));
+            transform.localScale = Vector3.Lerp(transform.localScale, scale * scaleMult, Time.unscaledDeltaTime * (scaleSped * 2));
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotate * Quaternion.Euler(0, 0, rotateTilt), Time.unscaledDeltaTime * (rotateSped * 1.5f));
         }
         else
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.deltaTime * scaleSped);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotate, Time.deltaTime * rotateSped);
+            transform.localScale = Vector3.Lerp(transform.localScale, scale, Time.unscaledDeltaTime * scaleSped);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotate, Time.unscaledDeltaTime * rotateSped);
         }
     }
 

@@ -24,7 +24,7 @@ public class WeaponsObject : ScriptableObject
 
     // Ammo & Reload (for guns)
     [Header("Ammunition")]
-    public int magazineSize = 30;
+    public int magazineSize = 5;
     public int currentAmmo;
     public float reloadTime = 2f;
     public AmmoType ammoType;
