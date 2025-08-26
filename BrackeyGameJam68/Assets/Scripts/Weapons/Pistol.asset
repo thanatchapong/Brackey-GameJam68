@@ -21,17 +21,16 @@ MonoBehaviour:
   damageType: 0
   criticalChance: 0.1
   criticalMultiplier: 2
-  range: 10
   accuracy: 0.9
-  fireRate: 1
+  fireRate: 0.75
   magazineSize: 30
   currentAmmo: 0
   reloadTime: 2
   ammoType: 0
+  bounce: 0
+  pierce: 0
   bulletSpeed: 20
   knockbackForce: 5
-  weaponLevel: 1
-  upgradeDamageFactor: 1.1
   fireSound: {fileID: 8300000, guid: c63b7c8568bc4406bab5c3b3501f0fb7, type: 3}
   reloadSound: {fileID: 0}
   muzzleFlash: {fileID: 0}

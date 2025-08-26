@@ -12,14 +12,13 @@ public class WeaponsObject : ScriptableObject
 
     // Combat Stats
     [Header("Damage")]
-    public float baseDamage = 10f;
+    public int baseDamage = 10;
     public DamageType damageType = DamageType.Physical;
     public float criticalChance = 0.1f;
     public float criticalMultiplier = 2f;
 
     // Range & Accuracy
     [Header("Weapon Mechanics")]
-    public float range = 10f;
     public float accuracy = 0.9f;
     public float fireRate = 1f;
 
@@ -29,13 +28,10 @@ public class WeaponsObject : ScriptableObject
     public int currentAmmo;
     public float reloadTime = 2f;
     public AmmoType ammoType;
+    public int bounce = 0;
+    public int pierce = 0;
     public float bulletSpeed = 20f;
     public float knockbackForce = 5f;
-
-    // Weapon Progression
-    [Header("Upgrades")]
-    public int weaponLevel = 1;
-    public float upgradeDamageFactor = 1.1f;
 
     // Sound & Effects
     public AudioClip fireSound;
@@ -67,19 +63,5 @@ public class WeaponsObject : ScriptableObject
         Shotgun,
         Rifle,
         None
-    }
-
-    // Method to calculate final damage
-    public float CalculateDamage()
-    {
-        float finalDamage = baseDamage;
-        
-        // Critical hit calculation
-        if (Random.value < criticalChance)
-        {
-            finalDamage *= criticalMultiplier;
-        }
-
-        return finalDamage;
     }
 }
