@@ -7,8 +7,12 @@ public class FollowObj : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 pos = new Vector2(Mathf.Lerp(transform.position.x, target.transform.position.x, CamSpeed * Time.fixedDeltaTime), Mathf.Lerp(transform.position.y, target.transform.position.y, CamSpeed * Time.fixedDeltaTime));
+        if (target != null && target.gameObject != null)
+        {
+            Vector2 pos = new Vector2(Mathf.Lerp(transform.position.x, target.transform.position.x, CamSpeed * Time.fixedDeltaTime), Mathf.Lerp(transform.position.y, target.transform.position.y, CamSpeed * Time.fixedDeltaTime));
 
-        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+            transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+        }
+
     }
 }
