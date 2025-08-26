@@ -2804,6 +2804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   templateList:
+  - {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
   - {fileID: 6056927479388829342, guid: bfe1277546ced0944987e034a8759c14, type: 3}
   - {fileID: 4185812051355972735, guid: 9e0058b0660ae3644829c4380cfc1ab0, type: 3}
   obstacleList:

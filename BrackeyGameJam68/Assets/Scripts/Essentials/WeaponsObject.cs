@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon System/Weapon")]
 public class WeaponsObject : ScriptableObject
 {
-        // Core Weapon Identity
+    // Core Weapon Identity
     public string weaponName;
     public WeaponType weaponType;
     public Sprite weaponIcon;
