@@ -233,6 +233,7 @@ MonoBehaviour:
   acceleration: 10
   deceleration: 10
   anim: {fileID: 6622381998080704479}
+  walkSound: {fileID: 8300000, guid: de2e31414d8c642fd88d647a8a3d1ab5, type: 3}
 --- !u!50 &6012270162036989412
 Rigidbody2D:
   serializedVersion: 5
