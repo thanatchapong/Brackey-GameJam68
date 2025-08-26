@@ -40,6 +40,7 @@ public class TopDownController : MonoBehaviour
         }
 
         movement = new Vector2(horizontalInput, verticalInput).normalized;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     void FixedUpdate()
