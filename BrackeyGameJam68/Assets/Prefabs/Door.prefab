@@ -149,5 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomGenerator: {fileID: 0}
   isActive: 1
+  isHard: 0
   side: 0
   inactiveColor: {r: 0.3853848, g: 0.44321817, b: 0.37118933, a: 1}
+  activeColor: {r: 0.58431375, g: 1, b: 0.4784314, a: 1}
+  hardColor: {r: 0.9473122, g: 0.17013845, b: 0.2159617, a: 1}

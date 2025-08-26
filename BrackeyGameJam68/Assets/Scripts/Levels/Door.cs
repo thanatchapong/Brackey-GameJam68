@@ -9,10 +9,12 @@ public class Door : MonoBehaviour
 
     [Header("Door Settings")]
     public bool isActive = true;
+    public bool isHard = false;
     public enum Side : int { top = 0, left = 1, bottom = 2, right = 3 };
     public Side side;
     [SerializeField] Color inactiveColor = Color.gray;
     [SerializeField] Color activeColor = new Color(145, 255, 118);
+    [SerializeField] Color hardColor = Color.red;
     
     public void SetInactive() {
         isActive = false;
@@ -22,6 +24,13 @@ public class Door : MonoBehaviour
     public void SetActive() {
         isActive = true;
         GetComponent<SpriteRenderer>().color = activeColor;
+    }
+
+    public void SetHard() {
+        Debug.Log("SetHard Door");
+        isActive = true;
+        isHard = true;
+        GetComponent<SpriteRenderer>().color = hardColor;
     }
 
     public void SetOpposite() {
@@ -117,7 +126,7 @@ public class Door : MonoBehaviour
             SetInactive();
             SetOpposite();
             playerTransform.position = playerSpawnpoint;
-            roomGenerator.GenerateRoom();
+            roomGenerator.GenerateRoom(isHard);
         }
     }
 }

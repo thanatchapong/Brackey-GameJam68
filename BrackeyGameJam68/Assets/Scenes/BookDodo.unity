@@ -216,7 +216,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5064173300627785257, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
 --- !u!1 &218465846
 GameObject:
@@ -698,6 +701,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &421485231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 593517614543561371, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
+  m_PrefabInstance: {fileID: 150831780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &612360691
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,8 +976,9 @@ MonoBehaviour:
   - {fileID: 6646016020094103147, guid: f55e20d1373ce3b49a2644dc30868322, type: 3}
   doorPrefab: {fileID: 5570005993180269137, guid: 3b60da7a45e2a98429218d4c13b73edd, type: 3}
   player: {fileID: 670676896}
-  playerSpawnpoint: {fileID: 0}
   level: {fileID: 934770662}
+  doorClearanceRadius: 1.25
+  roomNumberText: {fileID: 421485231}
 --- !u!4 &863353153
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5860775885201895536, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 670676893}
     - target: {fileID: 6412864282907814159, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
       propertyPath: m_Enabled
       value: 1

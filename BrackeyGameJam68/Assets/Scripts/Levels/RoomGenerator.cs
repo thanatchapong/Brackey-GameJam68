@@ -4,13 +4,14 @@ using TMPro;
 
 public class RoomGenerator : MonoBehaviour
 {
-
-    public List<GameObject> templateList;
-    public List<GameObject> obstacleList;
-    public GameObject doorPrefab;
-    private GameObject entranceDoor, targetDoor;
-    private Door entranceDoorScript, targetDoorScript;
-    public Transform player;
+    [SerializeField] List<GameObject> templateList;
+    [SerializeField] List<GameObject> hardTemplateList;
+    [SerializeField] List<GameObject> obstacleList;
+    [SerializeField] GameObject doorPrefab;
+    [SerializeField] GameObject wallPrefab;
+    private GameObject entranceDoor, targetDoor1, targetDoor2;
+    private Door entranceDoorScript, targetDoorScript1, targetDoorScript2;
+    [SerializeField] Transform player;
     private GameObject currentRoom = null;
     public GameObject level;
     private int roomNumber = 0;
@@ -23,49 +24,142 @@ public class RoomGenerator : MonoBehaviour
 
     void Start()
     {
-        GenerateRoom();
+        GenerateRoom(false);
     }
 
-    public void GenerateRoom()
+    public void GenerateRoom(bool isHard)
     {
         UpdateRoomNumberUI();
+        LevelColorChanger colorChanger = level.GetComponent<LevelColorChanger>();
+        if (colorChanger) colorChanger.ApplyColors(roomNumber);
 
-        if(currentRoom) Destroy(currentRoom);
+        if (currentRoom) Destroy(currentRoom);
 
-        if(templateList == null || templateList.Count == 0) {
+        if (templateList == null || templateList.Count == 0)
+        {
             Debug.LogError("Template list is empty or not assigned in RoomGenerator!");
             return;
         }
 
-        int templateIdx = Random.Range(0, templateList.Count);
-        GameObject selectedTemplate = templateList[templateIdx];
+        GameObject selectedTemplate;
+        if(isHard) {
+            selectedTemplate = hardTemplateList[Random.Range(0, hardTemplateList.Count)];
+        } else {
+            selectedTemplate = templateList[Random.Range(0, templateList.Count)];
+        }
         currentRoom = Instantiate(selectedTemplate, Vector3.zero, Quaternion.identity);
 
-        Transform[] allChildren = currentRoom.GetComponentsInChildren<Transform>();
-        
-        foreach(Transform spawnpoint in allChildren) {
-            if(spawnpoint.gameObject.CompareTag("ObstacleSpawnpoint")) {
-                if(Random.Range(0, 2) >= 1) {
-                if(obstacleList == null || obstacleList.Count == 0) {
-                    Debug.LogError("Obstacle list is empty or not assigned in RoomGenerator!");
-                    return;
-                }
+        if (currentRoom.CompareTag("SpawnRandomWalls"))
+        {
+            GenerateWalls();
+        }
 
-                int obstacleIdx = Random.Range(0, obstacleList.Count);
-                GameObject selectedObstacle = obstacleList[obstacleIdx];
-                float randomZ = Random.Range(-180f, 180f);
-                Quaternion randomRotation = Quaternion.Euler(0f, 0f, randomZ);
-                Instantiate(selectedObstacle, spawnpoint.position, randomRotation, currentRoom.transform);
-            }
+        ColorRoomWalls();
+
+        Transform[] allChildren = currentRoom.GetComponentsInChildren<Transform>();
+
+        foreach (Transform spawnpoint in allChildren)
+        {
+            if (spawnpoint.gameObject.CompareTag("ObstacleSpawnpoint"))
+            {
+                if (Random.Range(0, 2) >= 1)
+                {
+                    if (obstacleList == null || obstacleList.Count == 0)
+                    {
+                        Debug.LogError("Obstacle list is empty or not assigned in RoomGenerator!");
+                        return;
+                    }
+
+                    int obstacleIdx = Random.Range(0, obstacleList.Count);
+                    GameObject selectedObstacle = obstacleList[obstacleIdx];
+                    float randomZ = Random.Range(-180f, 180f);
+                    Quaternion randomRotation = Quaternion.Euler(0f, 0f, randomZ);
+                    Instantiate(selectedObstacle, spawnpoint.position, randomRotation, currentRoom.transform);
+                }
             }
         }
-        GenerateDoor();
+        GenerateDoor(isHard);
 
         if (entranceDoor != null) ClearObstacles(entranceDoor.transform.position);
-        if (targetDoor != null) ClearObstacles(targetDoor.transform.position);
+        if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
+        if (targetDoor2 != null) ClearObstacles(targetDoor2.transform.position);
     }
 
-    private void ClearObstacles(Vector3 doorPos) {
+    private void ColorRoomWalls() {
+        var wallT = level.transform.Find("WallL");
+        var wallSR = wallT.GetComponent<SpriteRenderer>();
+        Color wallColor = wallSR.color;
+
+        Transform[] children = currentRoom.GetComponentsInChildren<Transform>(true);
+        foreach (var childT in children)
+        {
+            if (childT == null) continue;
+            if (childT.name.Contains("ObstacleWall"))
+            {
+                var childSR = childT.GetComponent<SpriteRenderer>();
+                childSR.color = wallColor;
+            }
+        }
+    }
+
+    private void GenerateWalls()
+    {
+        Debug.Log("Generating walls...");
+        Transform groundT = level.transform.Find("Ground");
+        float minX = groundT.position.x - groundT.localScale.x / 2 + 3;
+        float maxX = groundT.position.x + groundT.localScale.x / 2 - 3;
+        float minY = groundT.position.y - groundT.localScale.y / 2 + 3;
+        float maxY = groundT.position.y + groundT.localScale.y / 2 - 3;
+
+        int desiredWalls = Random.Range(3, 6);
+        int placed = 0;
+        int attempts = 0;
+        int maxAttempts = 50;
+
+        List<Collider2D> placedWallColliders = new List<Collider2D>();
+
+        while (placed < desiredWalls && attempts < maxAttempts)
+        {
+            attempts++;
+
+            float randomX = Random.Range(minX, maxX);
+            float randomY = Random.Range(minY, maxY);
+            float randomRotation = Random.Range(0, 360);
+            float randomLength = Random.Range(4, 7);
+
+            GameObject wall = Instantiate(
+                wallPrefab,
+                new Vector3(randomX, randomY, 0),
+                Quaternion.Euler(0, 0, randomRotation),
+                currentRoom.transform
+            );
+            wall.transform.localScale = new Vector3(0.75f, randomLength, 1);
+
+            Collider2D newCol = wall.GetComponent<Collider2D>();
+
+            bool overlaps = false;
+            for (int i = 0; i < placedWallColliders.Count; i++)
+            {
+                var otherCol = placedWallColliders[i];
+                if (newCol.bounds.Intersects(otherCol.bounds))
+                {
+                    overlaps = true;
+                }
+            }
+
+            if (overlaps)
+            {
+                Destroy(wall);
+                continue;
+            }
+
+            placedWallColliders.Add(newCol);
+            placed++;
+        }
+    }
+
+    private void ClearObstacles(Vector3 doorPos)
+    {
         Collider2D[] hits = Physics2D.OverlapBoxAll(doorPos, new Vector2(doorClearanceRadius, doorClearanceRadius), 0f);
         foreach (Collider2D hit in hits)
         {
@@ -77,40 +171,52 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
-    private void GenerateDoor() {
-
-        if (level == null) {
+    private void GenerateDoor(bool isHard)
+    {
+        if (level == null)
+        {
             Debug.LogError("Level GameObject is not assigned in RoomGenerator!");
             return;
         }
 
         Transform groundT = level.transform.Find("Ground");
-        if (groundT == null) {
+
+        if (groundT == null)
+        {
             Debug.LogError("No 'Ground' child found in level GameObject: " + level.name);
             return;
         }
 
-        if(doorPrefab == null) {
+        if (doorPrefab == null)
+        {
             Debug.LogError("Door prefab is not assigned in RoomGenerator!");
             return;
         }
 
-        if(entranceDoor) Destroy(entranceDoor);
-        if(targetDoor) {
-            entranceDoor = targetDoor;
-            entranceDoorScript = targetDoorScript;
+        if (entranceDoor) Destroy(entranceDoor);
+        if(isHard) {
+            Destroy(targetDoor1);
+            targetDoor1 = targetDoor2;
+            targetDoorScript1 = targetDoorScript2;
         }
-        targetDoor = Instantiate(doorPrefab);
-        targetDoorScript = targetDoor.GetComponent<Door>();
+        else {
+            Destroy(targetDoor2);
+        }
+        entranceDoor = targetDoor1;
+        entranceDoorScript = targetDoorScript1;
+        
+        targetDoor1 = Instantiate(doorPrefab);
+        targetDoorScript1 = targetDoor1.GetComponent<Door>();
 
-        if(targetDoorScript == null) {
+        if (targetDoorScript1 == null)
+        {
             Debug.LogError("Door prefab does not have a Door component!");
             return;
         }
 
-        targetDoorScript.roomGenerator = this;
+        targetDoorScript1.roomGenerator = this;
 
-        float doorWidth = targetDoor.transform.localScale.y;
+        float doorWidth = targetDoor1.transform.localScale.y;
         float minDoorX = groundT.position.x - groundT.localScale.x / 2;
         float maxDoorX = groundT.position.x + groundT.localScale.x / 2;
         float minDoorY = groundT.position.y - groundT.localScale.y / 2;
@@ -119,24 +225,38 @@ public class RoomGenerator : MonoBehaviour
         float randomY = Random.Range(minDoorY + doorWidth / 2, maxDoorY - doorWidth / 2);
 
         Door.Side side;
-        do{
+        do
+        {
             side = (Door.Side)Random.Range(0, 4);
-        } while(entranceDoorScript && side == entranceDoorScript.side);
+        } while (entranceDoorScript != null && side == entranceDoorScript.side);
 
-        switch(side) {
-            case Door.Side.top: // up
-                targetDoorScript.SetPosAndRotate(Door.Side.top, new Vector3(randomX, maxDoorY, 0));
-                break;
-            case Door.Side.left: // left
-                targetDoorScript.SetPosAndRotate(Door.Side.left, new Vector3(minDoorX, randomY, 0));
-                break;
-            case Door.Side.bottom: // down
-                targetDoorScript.SetPosAndRotate(Door.Side.bottom, new Vector3(randomX, minDoorY, 0));
-                break;
-            case Door.Side.right: // right
-                targetDoorScript.SetPosAndRotate(Door.Side.right, new Vector3(maxDoorX, randomY, 0));
-                break;
+        targetDoorScript1.SetPosAndRotate(side, ComputeDoorPosition(side, minDoorX, maxDoorX, minDoorY, maxDoorY, randomX, randomY));
+
+        if (roomNumber % 5 == 0)
+        {
+            targetDoor2 = Instantiate(doorPrefab);
+            targetDoorScript2 = targetDoor2.GetComponent<Door>();
+            targetDoorScript2.roomGenerator = this;
+            targetDoorScript2.SetHard();
+            randomX = Random.Range(minDoorX + doorWidth / 2, maxDoorX - doorWidth / 2);
+            randomY = Random.Range(minDoorY + doorWidth / 2, maxDoorY - doorWidth / 2);
+
+            do
+            {
+                side = (Door.Side)Random.Range(0, 4);
+            } while ((entranceDoorScript != null && side == entranceDoorScript.side) || side == targetDoorScript1.side);
+
+            targetDoorScript2.SetPosAndRotate(side, ComputeDoorPosition(side, minDoorX, maxDoorX, minDoorY, maxDoorY, randomX, randomY));
         }
+    }
+
+    private static Vector3 ComputeDoorPosition(Door.Side side, float minDoorX, float maxDoorX, float minDoorY, float maxDoorY, float randomX, float randomY)
+    {
+        float x = side == Door.Side.left ? minDoorX :
+                side == Door.Side.right ? maxDoorX : randomX;
+        float y = side == Door.Side.top ? maxDoorY :
+                side == Door.Side.bottom ? minDoorY : randomY;
+        return new Vector3(x, y, 0f);
     }
 
     public void UpdateRoomNumberUI()
