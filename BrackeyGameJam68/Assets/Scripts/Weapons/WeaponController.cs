@@ -1,12 +1,15 @@
 using SmoothShakeFree;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] WeaponsObject currentWeapon;
     [SerializeField] UpgradeSystem upgSystem;
     [SerializeField] SmoothShake camShake;
+    [SerializeField] Transform hands;
+    [SerializeField] PlayableDirector shotAnim;
     [SerializeField] Slider reloadBar;
     float spread;
     int magazine;
@@ -21,7 +24,7 @@ public class WeaponController : MonoBehaviour
 
     void Start()
     {
-        GameObject weaponInstance = Instantiate(currentWeapon.weaponPrefab, transform);
+        GameObject weaponInstance = Instantiate(currentWeapon.weaponPrefab, hands);
 
         if (anim == null)
         {
@@ -80,6 +83,7 @@ public class WeaponController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
             {
+            shotAnim.Play();
                 cd = 0;
                 Shoot();
                 ammo -= 1;

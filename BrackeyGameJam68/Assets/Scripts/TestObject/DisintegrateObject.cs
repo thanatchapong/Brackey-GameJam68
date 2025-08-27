@@ -50,6 +50,7 @@ public class DisintegrateObject : MonoBehaviour
                 // Add Collider and Rigidbody2D
                 frag.AddComponent<BoxCollider2D>();
                 Rigidbody2D rb = frag.AddComponent<Rigidbody2D>();
+                rb.gravityScale = 0;
                 Vector2 randomDir = Random.insideUnitCircle.normalized;
                 rb.AddForce(randomDir * scatterForce);
 
