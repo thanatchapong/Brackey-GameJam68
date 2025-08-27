@@ -70,5 +70,29 @@ public class WeaponController : MonoBehaviour
 
             GetComponent<PrositionalAudio>().Play();
         }
+
+        if (currentWeapon.weaponType == WeaponsObject.WeaponType.Shotgun)
+        {
+            Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
+            bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
+
+            BulletStat(bullet.GetComponent<Bullet>());
+
+            anim.SetTrigger("Shoot");
+
+            GetComponent<PrositionalAudio>().Play();
+        }
+
+        if (currentWeapon.weaponType == WeaponsObject.WeaponType.Rifle)
+        {
+            Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
+            bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
+
+            BulletStat(bullet.GetComponent<Bullet>());
+
+            anim.SetTrigger("Shoot");
+
+            GetComponent<PrositionalAudio>().Play();
+        }
     }
 }

@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d85d6aff8851f4e8e1341060bae6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: e19d5bde5d33ea146bf3694bbe024970, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 4900e34e3e43b437ebac438089502354, type: 2}
   upgSystem: {fileID: 0}
 --- !u!114 &3096891245083107895
 MonoBehaviour:

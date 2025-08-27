@@ -19,7 +19,7 @@ MonoBehaviour:
   ammoPrefab: {fileID: 1721734548074101474, guid: 99773884384714a40a0fd0e2e325269b, type: 3}
   baseDamage: 10
   damageType: 0
-  criticalChance: 0.1
+  criticalChance: 0.25
   criticalMultiplier: 2
   accuracy: 0.9
   fireRate: 0.75
@@ -29,7 +29,7 @@ MonoBehaviour:
   ammoType: 0
   bounce: 0
   pierce: 0
-  bulletSpeed: 20
+  bulletSpeed: 35
   knockbackForce: 5
   fireSound: {fileID: 8300000, guid: c63b7c8568bc4406bab5c3b3501f0fb7, type: 3}
   reloadSound: {fileID: 0}
