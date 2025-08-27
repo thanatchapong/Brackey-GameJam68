@@ -21,6 +21,7 @@ public class RoomGenerator : MonoBehaviour
 
     [Header("UI")]
     public TextMeshPro roomNumberText;
+    public DialogueTrigger dialogueTrigger;
 
     void Start()
     {
@@ -83,6 +84,8 @@ public class RoomGenerator : MonoBehaviour
         if (entranceDoor != null) ClearObstacles(entranceDoor.transform.position);
         if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
         if (targetDoor2 != null) ClearObstacles(targetDoor2.transform.position);
+
+        dialogueTrigger.TriggerDialogue(roomNumber - 1);
     }
 
     private void ColorRoomWalls() {

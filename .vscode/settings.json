@@ -5,6 +5,7 @@
         "Mathf",
         "Perlin",
         "Rigidbody",
+        "Scriptable",
         "spawnpoint",
         "Spawnpoint",
         "spawnpoints",

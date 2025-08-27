@@ -27,6 +27,13 @@ public class TopDownController : MonoBehaviour
 
     void Update()
     {
+        if (DialogueUI.instance && DialogueUI.instance.isActive)
+        {
+            movement = Vector2.zero;
+            anim.SetBool("walking", false);
+            return;
+        }
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -45,6 +52,14 @@ public class TopDownController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (DialogueUI.instance && DialogueUI.instance.isActive)
+        {
+            currentVelocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            return;
+        }
+
         if (movement != Vector2.zero)
         {
             currentVelocity = Vector2.Lerp(currentVelocity, movement * moveSpeed, acceleration * Time.fixedDeltaTime);
@@ -57,4 +72,3 @@ public class TopDownController : MonoBehaviour
         }
     }
 }
-
