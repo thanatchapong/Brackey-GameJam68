@@ -35,7 +35,6 @@ public class SettingUI : MonoBehaviour
         if (SFX_input != null)
             SFX_input.text = SFX_Slider.value.ToString("0") + "%";
 
-        BGM_input.text = BGM_Slider.value.ToString("0") + "%";
         // อัปเดต Mixer ตามค่าเริ่มต้น
         if (MasterVolume_input != null && MasterVolume_Slider != null && Mixer != null)
             UpdateInputAndMixer(MasterVolume_input, MasterVolume_Slider.value, "Master");
