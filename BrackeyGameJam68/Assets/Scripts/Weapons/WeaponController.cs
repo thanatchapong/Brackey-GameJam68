@@ -8,6 +8,8 @@ public class WeaponController : MonoBehaviour
 
     private Animator anim;
 
+    private AudioSource audio;
+
     void Start()
     {
         GameObject weaponInstance = Instantiate(currentWeapon.weaponPrefab, transform);
@@ -16,6 +18,11 @@ public class WeaponController : MonoBehaviour
         {
             anim = GetComponentInChildren<Animator>();
         }
+
+        
+        audio = GetComponent<AudioSource>();
+        audio.clip = currentWeapon.fireSound;
+        
     }
 
     void Update()

@@ -31,7 +31,7 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 45
   knockbackForce: 5
-  fireSound: {fileID: 8300000, guid: c63b7c8568bc4406bab5c3b3501f0fb7, type: 3}
+  fireSound: {fileID: 8300000, guid: 3f3907e1008a1404d911e265eb38e4f9, type: 3}
   reloadSound: {fileID: 0}
   muzzleFlash: {fileID: 0}
   impactEffect: {fileID: 0}
