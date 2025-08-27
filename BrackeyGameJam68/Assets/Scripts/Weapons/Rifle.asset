@@ -17,20 +17,20 @@ MonoBehaviour:
   weaponIcon: {fileID: 3457497635880601909, guid: af76eee11c7ce41eeaf916b3f7fb9acb, type: 3}
   weaponPrefab: {fileID: 1210982010674772047, guid: 38a1517e2a0a942bd8374d393d06d5cb, type: 3}
   ammoPrefab: {fileID: 1721734548074101474, guid: 99773884384714a40a0fd0e2e325269b, type: 3}
-  baseDamage: 15
+  baseDamage: 4
   damageType: 0
   criticalChance: 0.1
   criticalMultiplier: 2
-  accuracy: 0.7
-  fireRate: 1
-  magazineSize: 5
+  accuracy: 0.8
+  fireRate: 5
+  magazineSize: 8
   currentAmmo: 0
   reloadTime: 3
-  ammoType: 0
+  ammoType: 2
   bounce: 0
   pierce: 0
-  bulletSpeed: 45
-  knockbackForce: 5
+  bulletSpeed: 20
+  knockbackForce: 10
   fireSound: {fileID: 8300000, guid: 3f3907e1008a1404d911e265eb38e4f9, type: 3}
   reloadSound: {fileID: 0}
   muzzleFlash: {fileID: 0}

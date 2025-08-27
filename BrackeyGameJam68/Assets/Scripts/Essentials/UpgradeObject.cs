@@ -23,7 +23,7 @@ public class UpgradeObject : ScriptableObject
 
     [Header("Ammunition")]
     public int magazineSize;
-    public int currentAmmo;
+    public float ammoSizeMult;
     public float reloadTime;
     public int bounce;
     public int pierce;

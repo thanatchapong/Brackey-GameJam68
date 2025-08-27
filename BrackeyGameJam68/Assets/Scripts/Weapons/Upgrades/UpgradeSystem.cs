@@ -13,6 +13,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] List<UpgradeObject> upgSelecting = new List<UpgradeObject>();
     public List<UpgradeObject> upgInUse = new List<UpgradeObject>();
     [SerializeField] List<Transform> card = new List<Transform>();
+    [SerializeField] WeaponController weaponSys;
 
     [SerializeField] Slider ultSlider;
 
@@ -91,6 +92,8 @@ public class UpgradeSystem : MonoBehaviour
         stopTime = false;
 
         upgInUse.Add(upgSelecting[index]);
+
+        weaponSys.getUpgraded();
 
         isUpgrading = false;
     }

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7618742199523077141}
   - component: {fileID: 508614716061274699}
   - component: {fileID: 7365007196829753906}
+  - component: {fileID: 279003930590551734}
   m_Layer: 6
   m_Name: Ammo
   m_TagString: Bullet
@@ -141,6 +142,7 @@ MonoBehaviour:
   critMult: 2
   knockbackForce: 2.5
   pierce: 1
+  hitEff: {fileID: 2794674248249685264, guid: 72e6cb05d8fb5a048a77d2676edff5bf, type: 3}
 --- !u!50 &7618742199523077141
 Rigidbody2D:
   serializedVersion: 5
@@ -184,7 +186,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -220,7 +222,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -240,3 +242,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.55
+--- !u!114 &279003930590551734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721734548074101474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa7f66ba85e4ab4c91ccb545405ee37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDes: 60

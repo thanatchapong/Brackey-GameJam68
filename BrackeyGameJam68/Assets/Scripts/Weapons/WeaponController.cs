@@ -1,13 +1,22 @@
+using SmoothShakeFree;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] WeaponsObject currentWeapon;
     [SerializeField] UpgradeSystem upgSystem;
+    [SerializeField] SmoothShake camShake;
+    [SerializeField] Slider reloadBar;
+    float spread;
+    int magazine;
+    int ammo;
+    float reloadTime;
+
     float cd;
-
+    float reloadCount;
+    bool reloading;
     private Animator anim;
-
     private AudioSource audio;
 
     void Start()
@@ -19,21 +28,68 @@ public class WeaponController : MonoBehaviour
             anim = GetComponentInChildren<Animator>();
         }
 
+        spread = currentWeapon.accuracy;
+        magazine = currentWeapon.magazineSize;
+        ammo = currentWeapon.magazineSize;
+        reloadTime = currentWeapon.reloadTime;
+
+        reloadBar.maxValue = reloadTime;
         
         audio = GetComponent<AudioSource>();
         audio.clip = currentWeapon.fireSound;
-        
+    }
+
+    public void getUpgraded()
+    {
+        Debug.Log("Upgraded");
+        spread = currentWeapon.accuracy;
+        magazine = currentWeapon.magazineSize;
+        reloadTime = currentWeapon.reloadTime;
+
+        //Upgrade
+        if (upgSystem.upgInUse.Count > 0)
+        {
+            foreach (UpgradeObject upg in upgSystem.upgInUse)
+            {
+                spread += upg.accuracy;
+                magazine += upg.magazineSize;
+                reloadTime += upg.reloadTime;
+            }
+        }
     }
 
     void Update()
     {
         cd += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= currentWeapon.fireRate)
+        if (reloading)
         {
-            cd = 0;
-            Shoot();
+            reloadCount += Time.deltaTime;
+
+            reloadBar.value = reloadCount;
+
+            if (reloadCount >= reloadTime)
+            {
+                reloadCount = 0;
+                reloading = false;
+                
+                reloadBar.value = 0;
+                ammo = magazine;
+            }
         }
+
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
+            {
+                cd = 0;
+                Shoot();
+                ammo -= 1;
+
+                camShake.StartShake();
+            }
+            else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
+            {
+                reloading = true;
+            }
     }
 
     void BulletStat(Bullet bullet)
@@ -46,7 +102,9 @@ public class WeaponController : MonoBehaviour
 
         bullet.knockbackForce = currentWeapon.knockbackForce;
         bullet.pierce = currentWeapon.pierce;
-        
+
+        float sizeMult = currentWeapon.ammoSizeMult;
+        float bulletSpeed = currentWeapon.bulletSpeed;
         //Upgrade
         if (upgSystem.upgInUse.Count > 0)
         {
@@ -60,44 +118,48 @@ public class WeaponController : MonoBehaviour
 
                 bullet.knockbackForce += upg.knockbackForce;
                 bullet.pierce += upg.pierce;
+
+                bulletSpeed += upg.bulletSpeed;
+                sizeMult += upg.ammoSizeMult;
             }
         }
+        
+        bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.forward * bulletSpeed, ForceMode2D.Impulse);
+        bullet.transform.localScale = bullet.transform.localScale * sizeMult;
+    }
+
+    void SpawnBullet()
+    {
+        float randomAngle = Random.Range(-(1 - spread) * 100, (1 - spread) * 100);
+        Quaternion spreadRotation = transform.rotation * Quaternion.Euler(randomAngle, 0, 0);
+
+        BulletStat(Instantiate(currentWeapon.ammoPrefab, transform.position, spreadRotation).GetComponent<Bullet>());
+
+        anim.SetTrigger("Shoot");
     }
 
     void Shoot()
     {
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Pistol)
         {
-            Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
-            bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
-
-            BulletStat(bullet.GetComponent<Bullet>());
-
-            anim.SetTrigger("Shoot");
+            SpawnBullet();
 
             GetComponent<PrositionalAudio>().Play();
         }
 
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Shotgun)
         {
-            Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
-            bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
-
-            BulletStat(bullet.GetComponent<Bullet>());
-
-            anim.SetTrigger("Shoot");
+            SpawnBullet();
+            SpawnBullet();
+            SpawnBullet();
+            SpawnBullet();
 
             GetComponent<PrositionalAudio>().Play();
         }
 
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Rifle)
         {
-            Rigidbody2D bullet = Instantiate(currentWeapon.ammoPrefab, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
-            bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
-
-            BulletStat(bullet.GetComponent<Bullet>());
-
-            anim.SetTrigger("Shoot");
+            SpawnBullet();
 
             GetComponent<PrositionalAudio>().Play();
         }
