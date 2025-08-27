@@ -697,6 +697,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_Name
       value: ObstacleWall (4)
@@ -761,6 +765,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802473292234621867, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
@@ -829,6 +837,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_Name
       value: ObstacleWall
@@ -893,6 +905,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802473292234621867, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
@@ -961,6 +977,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_Name
       value: ObstacleWall (2)
@@ -1025,6 +1045,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802473292234621867, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008468699474045885, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}
+      propertyPath: m_ApplyToChildren
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7638427901967730301, guid: 9bfd852fd7923894d911ef30273ba240, type: 3}

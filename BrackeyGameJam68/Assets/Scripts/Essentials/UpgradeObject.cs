@@ -4,7 +4,8 @@ using UnityEngine;
 public class UpgradeObject : ScriptableObject
 {
     public string upgradeName;
-    public Sprite upgradeIcon;
+    public string upgradeDetails;
+    public Texture upgradeIcon;
     public bool isRisk = false;
 
     //------------Upgrade Stats----------------
@@ -22,7 +23,7 @@ public class UpgradeObject : ScriptableObject
 
     [Header("Ammunition")]
     public int magazineSize;
-    public int currentAmmo;
+    public float ammoSizeMult;
     public float reloadTime;
     public int bounce;
     public int pierce;

@@ -20,8 +20,6 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Update()
     {
-        Debug.Log("Delta" + Time.deltaTime.ToString());
-        Debug.Log("Unscaled" + Time.unscaledDeltaTime.ToString());
         if (OnHover)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, scale * scaleMult, Time.unscaledDeltaTime * (scaleSped * 2));

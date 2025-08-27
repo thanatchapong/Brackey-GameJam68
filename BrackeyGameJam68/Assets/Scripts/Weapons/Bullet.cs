@@ -10,30 +10,37 @@ public class Bullet : MonoBehaviour
 
     public float knockbackForce = 2.5f;
     public int pierce = 0;
+    [SerializeField] ParticleSystem hitEff;
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Enemy")
-        {
-            // float finalDamage = baseDamage;
-        
-            // if (Random.value < criticalChance)
-            // {
-            //     finalDamage *= criticalMultiplier;
-            // }
+        Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
 
-            if(pierce == 0)
+        if (rb)
+        {
+            rb.AddForce(transform.forward * knockbackForce, ForceMode2D.Impulse);
+        }
+
+        if (col.gameObject.tag == "Enemy")
             {
+                pierce -= 1;
+
+                //Do Dmg
+
+                if (pierce < 0)
+                {
+                    if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                }
+            }
+            else if (bounce <= 0)
+            {
+                if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
-        }
-        else if(bounce <= 0)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            bounce -= 1;
-        }
+            else
+            {
+                bounce -= 1;
+            }
     }
 }
