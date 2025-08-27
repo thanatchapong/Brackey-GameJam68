@@ -1418,6 +1418,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7343390559000820820, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 742320320}
     - targetCorrespondingSourceObject: {fileID: 5064173300627785257, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -1438,6 +1441,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &742320320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742320318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0087f5ae5da08f4290ddda03eb95f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundColorsByLevel:
+  - {r: 0.2392157, g: 0.31764707, b: 0.30980393, a: 1}
+  - {r: 0.28825313, g: 0.31764707, b: 0.23921569, a: 1}
+  - {r: 0.27551147, g: 0.3020623, b: 0.37486643, a: 1}
+  - {r: 0.3764706, g: 0.27450982, b: 0.35972705, a: 1}
+  - {r: 0.49448192, g: 0.25716245, b: 0.24935341, a: 1}
+  wallColorsByLevel:
+  - {r: 0.54509807, g: 0.6392157, b: 0.627451, a: 1}
+  - {r: 0.58661884, g: 0.6392157, b: 0.54509807, a: 1}
+  - {r: 0.50164527, g: 0.52194655, b: 0.6311854, a: 1}
+  - {r: 0.6313726, g: 0.5019608, b: 0.5755891, a: 1}
+  - {r: 0.59700966, g: 0.46198887, b: 0.3724669, a: 1}
+  textColorsByLevel:
+  - {r: 0.34509805, g: 0.40000004, b: 0.3921569, a: 1}
+  - {r: 0.42643085, g: 0.4603061, b: 0.3894331, a: 1}
+  - {r: 0.35904562, g: 0.37159654, b: 0.4517622, a: 1}
+  - {r: 0.4509804, g: 0.36078432, b: 0.41703275, a: 1}
+  - {r: 0.44321817, g: 0.33408618, b: 0.3219604, a: 1}
 --- !u!1 &891043051
 GameObject:
   m_ObjectHideFlags: 0

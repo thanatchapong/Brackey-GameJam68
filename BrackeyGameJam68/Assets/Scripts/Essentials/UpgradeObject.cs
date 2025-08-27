@@ -4,7 +4,8 @@ using UnityEngine;
 public class UpgradeObject : ScriptableObject
 {
     public string upgradeName;
-    public Sprite upgradeIcon;
+    public string upgradeDetails;
+    public Texture upgradeIcon;
     public bool isRisk = false;
 
     //------------Upgrade Stats----------------

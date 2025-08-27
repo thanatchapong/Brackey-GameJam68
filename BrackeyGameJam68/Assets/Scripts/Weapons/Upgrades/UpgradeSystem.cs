@@ -70,6 +70,8 @@ public class UpgradeSystem : MonoBehaviour
             UpgradeObject upgObj = upgAvailable[randCard];
 
             card[i].GetChild(0).GetComponent<TMP_Text>().text = upgObj.upgradeName; //CardName
+            card[i].GetChild(1).GetComponent<TMP_Text>().text = upgObj.upgradeDetails; //CardDetails
+            card[i].GetChild(2).GetComponent<RawImage>().texture = upgObj.upgradeIcon; //CardImage
         }
     }
 
