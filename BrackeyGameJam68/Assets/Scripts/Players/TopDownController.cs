@@ -16,6 +16,7 @@ public class TopDownController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Quaternion rotation;
     private Vector2 currentVelocity;
 
     void Start()
@@ -30,6 +31,7 @@ public class TopDownController : MonoBehaviour
         if (DialogueUI.instance && DialogueUI.instance.isActive)
         {
             movement = Vector2.zero;
+            rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("walking", false);
             return;
         }
