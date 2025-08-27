@@ -10,6 +10,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] float requireExp = 100;
     [SerializeField] int currentExp = 0;
     [SerializeField] List<UpgradeObject> upgAvailable = new List<UpgradeObject>();
+    [SerializeField] List<UpgradeObject> upgSelecting = new List<UpgradeObject>();
     public List<UpgradeObject> upgInUse = new List<UpgradeObject>();
     [SerializeField] List<Transform> card = new List<Transform>();
 
@@ -67,16 +68,20 @@ public class UpgradeSystem : MonoBehaviour
         {
             int randCard = Random.Range(0, upgAvailable.Count);
 
-            UpgradeObject upgObj = upgAvailable[randCard];
+            upgSelecting[i] = upgAvailable[randCard];
 
-            card[i].GetChild(0).GetComponent<TMP_Text>().text = upgObj.upgradeName; //CardName
-            card[i].GetChild(1).GetComponent<TMP_Text>().text = upgObj.upgradeDetails; //CardDetails
-            card[i].GetChild(2).GetComponent<RawImage>().texture = upgObj.upgradeIcon; //CardImage
+            card[i].GetChild(0).GetComponent<TMP_Text>().text = upgSelecting[i].upgradeName; //CardName
+            card[i].GetChild(1).GetComponent<TMP_Text>().text = upgSelecting[i].upgradeDetails; //CardDetails
+            card[i].GetChild(3).GetComponent<RawImage>().texture = upgSelecting[i].upgradeIcon; //CardImage
+
+            card[i].GetComponent<Button>().enabled = true;
         }
     }
 
     public void Upg(int index)
     {
         stopTime = false;
+
+        upgInUse.Add(upgSelecting[index]);
     }
 }
