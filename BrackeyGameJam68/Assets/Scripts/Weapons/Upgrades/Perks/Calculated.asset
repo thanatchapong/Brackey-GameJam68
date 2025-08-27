@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Calculated
   upgradeDetails: +1 Bounce
-  upgradeIcon: {fileID: 2800000, guid: b7ea0c31c76be9d42802dfffc7352d61, type: 3}
+  upgradeIcon: {fileID: 2800000, guid: d6b5945d51b3dea43a6ee334ba06ba36, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0

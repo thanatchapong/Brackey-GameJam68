@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: More Damage
   upgradeDetails: +2 Damage
-  upgradeIcon: {fileID: 2800000, guid: b7ea0c31c76be9d42802dfffc7352d61, type: 3}
+  upgradeIcon: {fileID: 2800000, guid: 1210ea0456f4fe645ac68b998d74cd85, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0

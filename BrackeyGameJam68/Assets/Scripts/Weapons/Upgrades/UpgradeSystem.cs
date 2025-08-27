@@ -14,13 +14,18 @@ public class UpgradeSystem : MonoBehaviour
     public List<UpgradeObject> upgInUse = new List<UpgradeObject>();
     [SerializeField] List<Transform> card = new List<Transform>();
 
+    [SerializeField] Slider ultSlider;
+
     public PlayableDirector openTl;
     public PlayableDirector closeTl;
     float timeUseUlt;
     public bool stopTime = false;
+    public bool isUpgrading = false;
 
     void Update()
     {
+        ultSlider.value = timeUseUlt;
+
         if (stopTime == true)
         {
             if (Time.timeScale > 0)
@@ -40,12 +45,15 @@ public class UpgradeSystem : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Space) && (currentExp >= requireExp))
+        if (Input.GetKey(KeyCode.Space) && (currentExp >= requireExp) && isUpgrading == false)
         {
             timeUseUlt += Time.deltaTime;
 
             if (timeUseUlt >= 3)
             {
+                timeUseUlt = 0;
+                isUpgrading = true;
+
                 stopTime = true;
 
                 SetUpCard();
@@ -83,5 +91,7 @@ public class UpgradeSystem : MonoBehaviour
         stopTime = false;
 
         upgInUse.Add(upgSelecting[index]);
+
+        isUpgrading = false;
     }
 }
