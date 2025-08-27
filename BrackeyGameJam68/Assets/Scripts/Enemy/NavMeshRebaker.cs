@@ -3,8 +3,8 @@ using Unity.AI.Navigation;
 
 public class NavMeshRebaker : MonoBehaviour
 {
-    [SerializeField] private NavMeshSurface surface; // ใส่ NavMeshSurface ของ NavhMesh
-    [SerializeField] private Transform level;        // ลาก GameObject "Level" มาวาง
+    [SerializeField] private NavMeshSurface surface;
+    [SerializeField] private Transform level;
 
     private bool pendingRebake = false;
 
@@ -17,13 +17,12 @@ public class NavMeshRebaker : MonoBehaviour
     {
         if (level == null || surface == null) return;
 
-        // เช็คว่า event มาจาก Level เท่านั้น
         if (transform == level || transform.IsChildOf(level))
         {
             if (!pendingRebake)
             {
                 pendingRebake = true;
-                Invoke(nameof(RebuildNavMesh), 0.2f); // รอ 0.2 วิ ก่อน bake
+                Invoke(nameof(RebuildNavMesh), 0.2f);
             }
         }
     }
