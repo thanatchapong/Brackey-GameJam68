@@ -5,9 +5,16 @@ public class WeaponController : MonoBehaviour
     [SerializeField] WeaponsObject currentWeapon;
     float cd;
 
+    private Animator anim;
+
     void Start()
     {
         GameObject weaponInstance = Instantiate(currentWeapon.weaponPrefab, transform);
+
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
     }
 
     void Update()
@@ -41,6 +48,8 @@ public class WeaponController : MonoBehaviour
             BulletStat(bullet.GetComponent<Bullet>());
 
             bullet.AddForce(transform.forward * currentWeapon.bulletSpeed, ForceMode2D.Impulse);
+
+            anim.SetTrigger("Shoot");
 
             GetComponent<PrositionalAudio>().Play();
         }
