@@ -46,6 +46,8 @@ public class EnemyGenerator : MonoBehaviour
   // This also adds the created enemy to the tracker. Bad practice?
   void Create()
   {
+    float red = 0f, blue = 0f;
+
     GameObject enemy;
     enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
     next++;
@@ -59,6 +61,10 @@ public class EnemyGenerator : MonoBehaviour
     {
       // TODO: It's similar to speed type but speed type is more easier to implement...   
       // TODO: Also might need to create a new Enemy script to manage enemy behavior all together...
+
+      // For now give it a blue color.
+      blue = 1f;
+
     }
 
     float speedyRoll = Random.value;
@@ -66,8 +72,10 @@ public class EnemyGenerator : MonoBehaviour
     {
       enemySpeedCoefficient = 2f;
       enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().velocity *= enemySpeedCoefficient;
-      enemy.GetComponent<SpriteRenderer>().color = new Color(1f, 0f, 0f);
+      red = 1f;
     }
+
+    enemy.GetComponent<SpriteRenderer>().color = new Color(red, 1f, blue);
 
     GameObject player = GameObject.FindGameObjectWithTag("Player");
     enemy.GetComponent<EnemyAI>().target = player.transform;
