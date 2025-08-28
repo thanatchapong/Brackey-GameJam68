@@ -3,7 +3,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+
+    public AudioSource BGM;
+
     private AudioSource audioSource;
+
+    private AudioSource audioSourceLoop;
 
     void Awake()
     {
@@ -17,19 +22,35 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
+        BGM = gameObject.GetComponent<AudioSource>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSourceLoop = gameObject.AddComponent<AudioSource>();
+
+        audioSourceLoop.loop = true;
+
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, float vol = 1f)
     {
         if (clip != null)
         {
+            audioSource.volume = vol;
             audioSource.PlayOneShot(clip);
         }
+    }
+
+    public void PlayLoop(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            audioSourceLoop.clip = clip;
+            audioSourceLoop.Play();
+        }
+    }
+
+    public void StopLoop()
+    {
+        audioSourceLoop.Stop();
     }
 
 }

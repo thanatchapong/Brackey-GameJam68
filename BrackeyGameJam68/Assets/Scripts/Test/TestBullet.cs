@@ -22,7 +22,7 @@ public class TestBullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = Vector2.right * speed; // ให้พุ่งไปทางขวา
+            rb.linearVelocity = Vector2.right * speed; // ให้พุ่งไปทางขวา
         }
     }
 
