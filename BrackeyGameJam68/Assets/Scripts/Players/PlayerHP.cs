@@ -12,6 +12,11 @@ public class PlayerHP : MonoBehaviour
 
     public HealthBarUpdate healthBar;
 
+    [Header("Audio")]
+
+    [SerializeField]
+    private AudioClip hurtaudio;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -26,6 +31,8 @@ public class PlayerHP : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         if (damageAmount < 0 || cd < 1) return;
+
+        AudioManager.instance.PlaySound(hurtaudio);
 
         cd = 0;
 
