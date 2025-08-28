@@ -52,9 +52,13 @@ MonoBehaviour:
   bounce: 0
   critChance: 0.5
   critMult: 2
-  knockbackForce: 4
-  pierce: 10000000
+  knockbackForce: 10
+  pierce: 100
   hitEff: {fileID: 2794674248249685264, guid: 72e6cb05d8fb5a048a77d2676edff5bf, type: 3}
+  enemyHitAudio:
+  - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
+  - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
+  wallHitAudio: {fileID: 8300000, guid: fd564a6afe8ec45d9859e195b76e99cc, type: 3}
 --- !u!50 &7618742199523077141
 Rigidbody2D:
   serializedVersion: 5

@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
-            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0,4)],transform.position);
+            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count-1)],transform.position);
             pierce -= 1;
 
             //Do Dmg
