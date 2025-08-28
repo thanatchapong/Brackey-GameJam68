@@ -28,7 +28,7 @@ public class WeaponController : MonoBehaviour
 
         if (anim == null)
         {
-            anim = GetComponentInChildren<Animator>();
+            anim = hands.GetChild(0).GetComponentInChildren<Animator>();
         }
 
         spread = currentWeapon.accuracy;
