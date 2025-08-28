@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
   m_Name: RiskItForABiscuit
   m_EditorClassIdentifier: 
-  upgradeName: Sniper
-  upgradeDetails: +100% Knockback\n+50% Bullet Speed\nIf you break an obstacle, your
-    walk speed is 0 for +2 seconds.
+  upgradeName: Risk It For A Biscuit
+  upgradeDetails: Add 3 copies of any random risk card.
   upgradeIcon: {fileID: 0}
   isRisk: 1
   hp: 0
@@ -30,5 +29,5 @@ MonoBehaviour:
   reloadTime: 0
   bounce: 0
   pierce: 0
-  bulletSpeed: 0.5
-  knockbackForce: 1
+  bulletSpeed: 0
+  knockbackForce: 0
