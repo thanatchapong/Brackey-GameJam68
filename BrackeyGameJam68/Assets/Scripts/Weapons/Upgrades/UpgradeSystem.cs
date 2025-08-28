@@ -100,6 +100,8 @@ public class UpgradeSystem : MonoBehaviour
 
         upgInUse.Add(upgSelecting[index]);
 
+        AudioManager.instance.PlaySound(upgSelecting[index].audio);
+
         weaponSys.getUpgraded();
 
         isUpgrading = false;
