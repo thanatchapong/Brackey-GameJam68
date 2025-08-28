@@ -71,7 +71,7 @@ public class EnemyGenerator : MonoBehaviour
     if (speedyRoll < chanceForSpeedyType)
     {
       enemySpeedCoefficient = 2f;
-      enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().velocity *= enemySpeedCoefficient;
+      enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= enemySpeedCoefficient;
       red = 1f;
     }
 
