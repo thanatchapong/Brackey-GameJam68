@@ -12,6 +12,8 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Vector3 scale;
     private Quaternion rotate;
 
+    [SerializeField] AudioClip Hoverclip;
+
     void Start()
     {
         scale = transform.localScale;
@@ -41,6 +43,7 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         OnHover = true;
+        AudioManager.instance.PlaySound(Hoverclip,0.25f);
     }
 
     public void OnPointerExit(PointerEventData eventData)

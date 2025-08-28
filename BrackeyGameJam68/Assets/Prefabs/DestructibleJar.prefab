@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3157829949441724064}
   - component: {fileID: 3907549331225789307}
   - component: {fileID: 6558477071542047915}
+  - component: {fileID: 8899274084730380923}
   m_Layer: 0
   m_Name: DestructibleJar
   m_TagString: Untagged
@@ -178,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0664a674f1504a80ce94029727313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fragmentsPerAxis: 5
+  fragmentsPerAxis: 3
   scatterForce: 2
-  fadeDuration: 2
+  fadeDuration: 10
   fragmentColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &3157829949441724064
 MonoBehaviour:
@@ -222,7 +223,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -240,14 +241,14 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 542407175
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
-  m_MinParticleSize: 0.05
-  m_MaxParticleSize: 0.2
+  m_MinParticleSize: 0
+  m_MaxParticleSize: 8.72
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -529,8 +530,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.05
+      scalar: 0.01
+      minScalar: 0.54
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -906,7 +907,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -993,7 +994,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -1222,7 +1223,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 75
+        scalar: 15
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1441,7 +1442,7 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1494,7 +1495,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1547,9 +1548,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 6.283185
-      minScalar: 0.7853982
+      minScalar: -6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1625,7 +1626,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 12105
+        atime1: 33114
         atime2: 0
         atime3: 0
         atime4: 0
@@ -3525,7 +3526,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 1
+    enabled: 0
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -5056,3 +5057,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &8899274084730380923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878171683449597561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d180026a351bc8418a6aa9082de1f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftSpeed: 1.6
+  noiseTimeScale: 1

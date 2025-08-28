@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FadeAndDestroy : MonoBehaviour
 {
-    [SerializeField] float fadeDuration = 0.2f;
+    [SerializeField] float fadeDuration = 1f;
 
     private SpriteRenderer spriteRenderer;
     private float timer;

@@ -17,11 +17,6 @@ public class Destructibles : MonoBehaviour
     bool isShaking = false;
     Vector2 startPos;
     
-    void Start()
-    {
-        startPos = transform.position;
-    }
-
     void Update()
     {
         if(isShaking)
@@ -39,6 +34,8 @@ public class Destructibles : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
+            startPos = transform.position;
+            
             health--;
 
             if (health <= 0)
@@ -57,7 +54,7 @@ public class Destructibles : MonoBehaviour
     private void ResetShake() 
     {
         isShaking = false;
-        transform.position = startPos;
+        startPos = transform.position;
     }
 
     private void Disintegrate()
