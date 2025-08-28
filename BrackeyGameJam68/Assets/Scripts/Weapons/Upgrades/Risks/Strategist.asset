@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
-  m_Name: Calculated
+  m_Name: Strategist
   m_EditorClassIdentifier: 
-  upgradeName: Calculated
-  upgradeDetails: +1 Bounce
-  upgradeIcon: {fileID: 2800000, guid: d6b5945d51b3dea43a6ee334ba06ba36, type: 3}
-  isRisk: 0
+  upgradeName: Strategist
+  upgradeDetails: +2 Piercing\n +1 Bounce\n -1 Max Ammo
+  upgradeIcon: {fileID: 2800000, guid: 6503b29e88b3f4eefbab194322ad5e6c, type: 3}
+  isRisk: 1
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
@@ -24,11 +24,11 @@ MonoBehaviour:
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: 0
+  magazineSize: -1
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 1
-  pierce: 0
+  pierce: 2
   bulletSpeed: 0
   knockbackForce: 0
   audio: {fileID: 8300000, guid: 3af1c2faf2aa4449eb6df2f541a919ee, type: 3}
