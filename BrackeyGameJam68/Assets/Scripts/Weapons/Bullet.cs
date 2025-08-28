@@ -15,32 +15,29 @@ public class Bullet : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D col)
     {
         Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
-
-        if (rb)
-        {
-            rb.AddForce(transform.forward * knockbackForce, ForceMode2D.Impulse);
-        }
+        if (rb) rb.AddForce(transform.forward * knockbackForce, ForceMode2D.Impulse);
 
         if (col.gameObject.tag == "Enemy")
-            {
-                pierce -= 1;
+        {
+            pierce -= 1;
 
-                //Do Dmg
+            //Do Dmg
+            col.gameObject.GetComponent<EnemySim_ItemDrop>().TakeDamage(dmg);
 
-                if (pierce < 0)
-                {
-                    if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
-                    Destroy(gameObject);
-                }
-            }
-            else if (bounce <= 0)
+            if (pierce < 0)
             {
                 if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
-            else
-            {
-                bounce -= 1;
-            }
+        }
+        else if (bounce <= 0)
+        {
+            if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        else
+        {
+            bounce -= 1;
+        }
     }
 }

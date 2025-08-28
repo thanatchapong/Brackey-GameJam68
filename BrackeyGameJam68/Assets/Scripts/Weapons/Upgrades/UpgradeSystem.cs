@@ -15,6 +15,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] List<Transform> card = new List<Transform>();
     [SerializeField] WeaponController weaponSys;
 
+    [SerializeField] Slider ultBar;
     [SerializeField] Slider ultSlider;
 
     public PlayableDirector openTl;
@@ -28,20 +29,24 @@ public class UpgradeSystem : MonoBehaviour
     void Start()
     {
         upgradeSystemAudio = gameObject.GetComponent<UpgradeSystemAudio>();
+
+        ultBar.maxValue = requireExp;
     }
 
     void Update()
     {
         ultSlider.value = timeUseUlt;
 
-        if (stopTime == true)
+        ultBar.value = currentExp;
+
+        if (stopTime == true && isUpgrading == true)
         {
             if (Time.timeScale > 0)
             {
                 Time.timeScale -= Time.unscaledDeltaTime;
             }
         }
-        else
+        else if (stopTime == false && isUpgrading == true)
         {
             if (Time.timeScale < 1)
             {
@@ -49,6 +54,7 @@ public class UpgradeSystem : MonoBehaviour
             }
             else if (Time.timeScale >= 1)
             {
+                isUpgrading = false;
                 Time.timeScale = 1;
             }
         }
@@ -106,9 +112,11 @@ public class UpgradeSystem : MonoBehaviour
 
         weaponSys.getUpgraded();
 
-        isUpgrading = false;
-
         upgradeSystemAudio.StopPerkAudio();
     }
 
+    public void GetExp(int amount)
+    {
+        currentExp += Random.Range(amount, amount + 6);
+    }
 }

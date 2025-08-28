@@ -28,7 +28,7 @@ public class WeaponController : MonoBehaviour
 
         if (anim == null)
         {
-            anim = GetComponentInChildren<Animator>();
+            anim = hands.GetChild(0).GetComponentInChildren<Animator>();
         }
 
         spread = currentWeapon.accuracy;
@@ -67,12 +67,14 @@ public class WeaponController : MonoBehaviour
 
         if (reloading)
         {
+            hands.GetComponent<PlayableDirector>().Play();
             reloadCount += Time.deltaTime;
 
             reloadBar.value = reloadCount;
 
             if (reloadCount >= reloadTime)
             {
+                hands.GetComponent<PlayableDirector>().Stop();
                 reloadCount = 0;
                 reloading = false;
                 
@@ -83,7 +85,6 @@ public class WeaponController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
             {
-                shotAnim.Play();
                 cd = 0;
                 Shoot();
                 ammo -= 1;
@@ -146,6 +147,7 @@ public class WeaponController : MonoBehaviour
     {
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Pistol)
         {
+            shotAnim.Play();
             SpawnBullet();
 
             GetComponent<PrositionalAudio>().Play();
@@ -153,6 +155,7 @@ public class WeaponController : MonoBehaviour
 
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Shotgun)
         {
+            shotAnim.Play();
             SpawnBullet();
             SpawnBullet();
             SpawnBullet();

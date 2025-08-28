@@ -25,9 +25,10 @@ MonoBehaviour:
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  currentAmmo: 0
+  ammoSizeMult: 0
   reloadTime: 0
   bounce: 0
   pierce: 1
   bulletSpeed: 0
   knockbackForce: 0
+  audio: {fileID: 8300000, guid: b564431d962c5472380bf9e8f46c9087, type: 3}

@@ -48,7 +48,13 @@ ShaderVariantCollection:
         passType: 0
       - keywords: COLOR_FILTER EDGE_SHINY TRANSITION_FADE
         passType: 0
+      - keywords: DETAIL_MASKING
+        passType: 0
+      - keywords: DETAIL_MULTIPLY
+        passType: 0
       - keywords: DETAIL_MULTIPLY EDGE_SHINY
+        passType: 0
+      - keywords: DETAIL_REPLACE
         passType: 0
       - keywords: EDGE_PLAIN
         passType: 0
@@ -57,6 +63,12 @@ ShaderVariantCollection:
       - keywords: EDGE_SHINY GRADATION_COLOR2
         passType: 0
       - keywords: EDGE_SHINY GRADATION_GRADIENT
+        passType: 0
+      - keywords: GRADATION_COLOR2
+        passType: 0
+      - keywords: GRADATION_GRADIENT
+        passType: 0
+      - keywords: SAMPLING_PIXELATION
         passType: 0
       - keywords: TONE_GRAYSCALE
         passType: 0
@@ -67,4 +79,10 @@ ShaderVariantCollection:
       - keywords: TONE_RETRO
         passType: 0
       - keywords: TONE_SEPIA
+        passType: 0
+      - keywords: TRANSITION_BURN
+        passType: 0
+      - keywords: TRANSITION_PATTERN
+        passType: 0
+      - keywords: TRANSITION_SHINY
         passType: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7438842524308264939}
   - component: {fileID: 9058038555431582840}
   - component: {fileID: 2157204560532843463}
+  - component: {fileID: 4777964301959035896}
   - component: {fileID: 307471213449656993}
   - component: {fileID: 8357484299239320320}
   - component: {fileID: 1967773221247753857}
@@ -128,6 +129,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   id: 0
+--- !u!114 &4777964301959035896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535900663457147996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26254ea66118c5144b0cf8506e96baf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  lootTable:
+  - itemPrefab: {fileID: 8759759056760994804, guid: c73fd7f243d4ca84ea5f312ceb5b60f3, type: 3}
+    quality: 1
+  - itemPrefab: {fileID: 8759759056760994804, guid: bbe9c2f9759a1b842aef7a5c46c51a1e, type: 3}
+    quality: 2
+  - itemPrefab: {fileID: 8759759056760994804, guid: b37f6dc12480fcb47bc062f80a7fec5a, type: 3}
+    quality: 3
 --- !u!61 &307471213449656993
 BoxCollider2D:
   m_ObjectHideFlags: 0

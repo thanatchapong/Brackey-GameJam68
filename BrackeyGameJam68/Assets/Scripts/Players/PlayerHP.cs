@@ -74,5 +74,12 @@ public class PlayerHP : MonoBehaviour
         {
             TakeDamage(25);
         }
+        else if (col.gameObject.tag == "Heal")
+        {
+            currentHealth += Random.Range(15, 26);
+            currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }

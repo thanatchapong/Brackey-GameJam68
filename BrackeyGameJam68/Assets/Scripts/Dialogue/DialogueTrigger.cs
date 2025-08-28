@@ -19,6 +19,8 @@ public class DialogueTrigger : ScriptableObject
         currentSentence = 0;
         activeTrigger = this;
         
+        Time.timeScale = 0;
+        
         ShowCurrentLine();
     }
 

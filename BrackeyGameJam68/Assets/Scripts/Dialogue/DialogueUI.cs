@@ -41,6 +41,7 @@ public class DialogueUI : MonoBehaviour
     }
 
     public void EndDialogue() {
+        Time.timeScale = 1;
         isActive = false;
         dialoguePanel.SetActive(false);
     }
@@ -49,7 +50,7 @@ public class DialogueUI : MonoBehaviour
     {
         if (!isActive || !sentenceText) return;
 
-        charTimer += Time.deltaTime;
+        charTimer += Time.unscaledDeltaTime;
         while (charTimer >= secondPerChar && sentenceText.maxVisibleCharacters < sentenceText.text.Length)
         {
             sentenceText.maxVisibleCharacters++;

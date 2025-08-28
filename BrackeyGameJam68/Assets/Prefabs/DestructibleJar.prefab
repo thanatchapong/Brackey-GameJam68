@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3907549331225789307}
   - component: {fileID: 6558477071542047915}
   - component: {fileID: 8899274084730380923}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DestructibleJar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5429877071365223595, guid: e5c04f6991448c94dba05672dc199932, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
