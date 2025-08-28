@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Bullet : MonoBehaviour
 {
@@ -12,6 +15,16 @@ public class Bullet : MonoBehaviour
     public int pierce = 0;
     [SerializeField] ParticleSystem hitEff;
 
+    [SerializeField] List<AudioClip> enemyHitAudio = new List<AudioClip>();
+    [SerializeField] AudioClip wallHitAudio;
+
+    private PrositionalAudio pros;
+
+    void Start()
+    {
+        pros = gameObject.GetComponent<PrositionalAudio>();
+    }
+
     public void OnTriggerEnter2D(Collider2D col)
     {
         Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
@@ -19,6 +32,7 @@ public class Bullet : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
+            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0,4)],transform.position);
             pierce -= 1;
 
             //Do Dmg
@@ -32,6 +46,8 @@ public class Bullet : MonoBehaviour
         }
         else if (bounce <= 0)
         {
+            AudioSource.PlayClipAtPoint(wallHitAudio,transform.position);
+
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
             Destroy(gameObject);
         }
