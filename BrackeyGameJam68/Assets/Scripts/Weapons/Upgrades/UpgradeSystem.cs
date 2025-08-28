@@ -10,10 +10,11 @@ public class UpgradeSystem : MonoBehaviour
     public List<UpgradeObject> upgInUse = new List<UpgradeObject>();
     [SerializeField] List<Transform> card = new List<Transform>();
     [SerializeField] WeaponController weaponSys;
+    [SerializeField] PlayerHP plrHp;
 
     [SerializeField] Slider ultBar;
     [SerializeField] Slider ultSlider;
-
+    [SerializeField] TMP_Text expText;
 
     [SerializeField] Texture forcedImage;
     [SerializeField] Color perkCol;
@@ -35,12 +36,16 @@ public class UpgradeSystem : MonoBehaviour
     {
         upgradeSystemAudio = gameObject.GetComponent<UpgradeSystemAudio>();
         ultBar.maxValue = requireExp;
+
+        ultSlider.maxValue = 1.5f;
     }
 
     void Update()
     {
         ultSlider.value = timeUseUlt;
         ultBar.value = currentExp;
+
+        expText.text = currentExp + "/" + requireExp;
 
         if (stopTime && isUpgrading)
         {
@@ -62,7 +67,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             timeUseUlt += Time.deltaTime;
 
-            if (timeUseUlt >= 3)
+            if (timeUseUlt >= 1.5f)
             {
                 timeUseUlt = 0;
                 isUpgrading = true;
@@ -79,7 +84,7 @@ public class UpgradeSystem : MonoBehaviour
         }
         else
         {
-            timeUseUlt -= Time.deltaTime * 1.5f;
+            timeUseUlt -= Time.deltaTime * 1.25f;
             timeUseUlt = Mathf.Max(0, timeUseUlt);
         }
     }
@@ -160,6 +165,7 @@ public class UpgradeSystem : MonoBehaviour
 
         AudioManager.instance.PlaySound(chosen.audio);
         weaponSys.getUpgraded();
+        plrHp.GetUpgrade();
         upgradeSystemAudio.StopPerkAudio();
 
         // check if chosen is risk or normal

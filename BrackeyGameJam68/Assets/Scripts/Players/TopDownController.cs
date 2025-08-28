@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TopDownController : MonoBehaviour
 {
+    [SerializeField] UpgradeSystem upgSystem;
+
     [Header("Movement Settings")]
     [Tooltip("Maximum movement speed")]
     [SerializeField] float moveSpeed = 5f;
@@ -14,16 +16,20 @@ public class TopDownController : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    float currentSpeed;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Quaternion rotation;
     private Vector2 currentVelocity;
+    bool holdingSpace;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        currentSpeed = moveSpeed;
     }
 
     void Update()
@@ -48,6 +54,15 @@ public class TopDownController : MonoBehaviour
             anim.SetBool("walking", true);
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            holdingSpace = true;
+        }
+        else
+        {
+            holdingSpace = false;
+        }
+
         movement = new Vector2(horizontalInput, verticalInput).normalized;
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
@@ -64,13 +79,27 @@ public class TopDownController : MonoBehaviour
 
         if (movement != Vector2.zero)
         {
-            currentVelocity = Vector2.Lerp(currentVelocity, movement * moveSpeed, acceleration * Time.fixedDeltaTime);
+            if (holdingSpace) currentVelocity = Vector2.Lerp(currentVelocity, movement * (currentSpeed * 0.25f), acceleration * Time.fixedDeltaTime);
+            else currentVelocity = Vector2.Lerp(currentVelocity, movement * currentSpeed, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = currentVelocity;
         }
         else
         {
             currentVelocity = Vector2.Lerp(currentVelocity, Vector2.zero, deceleration * Time.fixedDeltaTime);
             rb.linearVelocity = currentVelocity;
+        }
+    }
+
+    public void GetUpgrade()
+    {
+        currentSpeed = moveSpeed;
+        //Upgrade
+        if (upgSystem.upgInUse.Count > 0)
+        {
+            foreach (UpgradeObject upg in upgSystem.upgInUse)
+            {
+                currentSpeed += upg.walkSpeed;
+            }
         }
     }
 }

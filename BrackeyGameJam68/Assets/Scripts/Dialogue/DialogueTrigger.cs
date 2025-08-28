@@ -18,7 +18,7 @@ public class DialogueTrigger : ScriptableObject
         currentDialogueIndex = dialogueIndex;
         currentSentence = 0;
         activeTrigger = this;
-        
+
         Time.timeScale = 0;
         
         ShowCurrentLine();
@@ -33,6 +33,8 @@ public class DialogueTrigger : ScriptableObject
             activeTrigger = null;
             return;
         }
+        
+        Time.timeScale = 0;
 
         ShowCurrentLine();
     }
@@ -41,8 +43,13 @@ public class DialogueTrigger : ScriptableObject
         Dialogue dialogue = dialogues[currentDialogueIndex];
         string speaker = "";
         Sprite sprite = null;
-        foreach(var nameMap in dialogue.nameMaps) {
-            if(nameMap.sentencesMap.Contains(currentSentence)) {
+        
+        Time.timeScale = 0;
+        
+        foreach (var nameMap in dialogue.nameMaps)
+        {
+            if (nameMap.sentencesMap.Contains(currentSentence))
+            {
                 speaker = nameMap.name;
                 sprite = nameMap.image;
                 break;

@@ -48,6 +48,32 @@ ShaderVariantCollection:
         passType: 0
       - keywords: COLOR_FILTER EDGE_SHINY TRANSITION_FADE
         passType: 0
+      - keywords: COLOR_FILTER GRADATION_COLOR2
+        passType: 0
+      - keywords: COLOR_FILTER GRADATION_GRADIENT
+        passType: 0
+      - keywords: COLOR_FILTER SAMPLING_BLUR_FAST
+        passType: 0
+      - keywords: COLOR_FILTER SAMPLING_EDGE_ALPHA
+        passType: 0
+      - keywords: COLOR_FILTER SAMPLING_PIXELATION
+        passType: 0
+      - keywords: COLOR_FILTER TONE_POSTERIZE
+        passType: 0
+      - keywords: COLOR_FILTER TONE_RETRO
+        passType: 0
+      - keywords: COLOR_FILTER TONE_SEPIA
+        passType: 0
+      - keywords: COLOR_FILTER TRANSITION_BLAZE
+        passType: 0
+      - keywords: COLOR_FILTER TRANSITION_BURN
+        passType: 0
+      - keywords: COLOR_FILTER TRANSITION_FADE
+        passType: 0
+      - keywords: COLOR_FILTER TRANSITION_PATTERN
+        passType: 0
+      - keywords: COLOR_FILTER TRANSITION_SHINY
+        passType: 0
       - keywords: DETAIL_MASKING
         passType: 0
       - keywords: DETAIL_MULTIPLY
@@ -66,6 +92,8 @@ ShaderVariantCollection:
         passType: 0
       - keywords: GRADATION_COLOR2
         passType: 0
+      - keywords: GRADATION_COLOR4
+        passType: 0
       - keywords: GRADATION_GRADIENT
         passType: 0
       - keywords: SAMPLING_PIXELATION
@@ -81,6 +109,8 @@ ShaderVariantCollection:
       - keywords: TONE_SEPIA
         passType: 0
       - keywords: TRANSITION_BURN
+        passType: 0
+      - keywords: TRANSITION_FADE
         passType: 0
       - keywords: TRANSITION_PATTERN
         passType: 0

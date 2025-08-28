@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e8c384a2c74cb844088ba6f762ef839a
+guid: 521d03d0efb742945a738e71c02b478a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5460287552977860537
-    second: pipe2_0
+      213: -3146470339593340028
+    second: Copy of Scammers (72)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pipe2_0
+      name: Copy of Scammers (72)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 211
         y: 0
-        width: 64
-        height: 64
+        width: 1498
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 748844186692934b0800000000000000
-      internalID: -5460287552977860537
+      spriteID: 48b7c3895ed7554d0800000000000000
+      internalID: -3146470339593340028
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c658825e42433a944b1062e24c862303
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pipe2_0: -5460287552977860537
+      Copy of Scammers (72)_0: -3146470339593340028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

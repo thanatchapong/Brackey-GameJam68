@@ -36,6 +36,10 @@ public class Bullet : MonoBehaviour
             pierce -= 1;
 
             //Do Dmg
+            if ((critChance * 100) >= Random.Range(0, 101))
+            {
+                dmg = (int)Mathf.Round((float)dmg * critMult);
+            }
             col.gameObject.GetComponent<EnemySim_ItemDrop>().TakeDamage(dmg);
 
             if (pierce < 0)
