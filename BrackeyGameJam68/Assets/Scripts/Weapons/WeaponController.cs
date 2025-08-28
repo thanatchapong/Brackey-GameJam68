@@ -83,7 +83,7 @@ public class WeaponController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
             {
-            shotAnim.Play();
+                shotAnim.Play();
                 cd = 0;
                 Shoot();
                 ammo -= 1;

@@ -8,6 +8,8 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
 
+    float cd = 0;
+
     public HealthBarUpdate healthBar;
 
     void Start()
@@ -16,9 +18,16 @@ public class PlayerHP : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    void Update()
+    {
+        cd += Time.deltaTime;
+    }
+
     public void TakeDamage(int damageAmount)
     {
-        if (damageAmount < 0) return;
+        if (damageAmount < 0 || cd < 1) return;
+
+        cd = 0;
 
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
@@ -34,10 +43,10 @@ public class PlayerHP : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        if (healAmount < 0) return; 
+        if (healAmount < 0) return;
 
         currentHealth += healAmount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth); 
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
 
         Debug.Log(gameObject.name + " healed for " + healAmount + ". Current Health: " + currentHealth);
     }
@@ -52,18 +61,18 @@ public class PlayerHP : MonoBehaviour
         return maxHealth;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            TakeDamage(20);
-        }
-    }
-
     private void Die()
     {
         Debug.Log(gameObject.name + " has died!");
         // Add game over logic, disable GameObject, play death animation, etc.
-        Destroy(gameObject); 
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            TakeDamage(25);
+        }
     }
 }

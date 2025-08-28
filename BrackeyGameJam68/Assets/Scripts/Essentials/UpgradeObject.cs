@@ -29,4 +29,7 @@ public class UpgradeObject : ScriptableObject
     public int pierce;
     public float bulletSpeed;
     public float knockbackForce;
+
+    [Header("Audio")]
+    public AudioClip audio;
 }
