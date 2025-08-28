@@ -45,7 +45,26 @@ public class EnemySim_ItemDrop : MonoBehaviour
 
         LootItem chosen = GetWeightedLoot();
         if (chosen != null && chosen.itemPrefab != null)
-            InstantiateLoot(chosen.itemPrefab);
+        {
+            if (chosen.quality == LootQuality.Normal)
+            {
+                for (int i = 0; i < Random.Range(1, 6); i++)
+                {
+                    InstantiateLoot(chosen.itemPrefab);
+                }
+            }
+            else if (chosen.quality == LootQuality.Good)
+            {
+                for (int i = 0; i < Random.Range(1, 4); i++)
+                {
+                    InstantiateLoot(chosen.itemPrefab);
+                }
+            }
+            else
+            {
+                InstantiateLoot(chosen.itemPrefab);
+            }
+        }
 
         Destroy(gameObject);
     }

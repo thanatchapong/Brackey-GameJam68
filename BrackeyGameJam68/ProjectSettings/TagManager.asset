@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - SpawnRandomWalls
   - Enemy
+  - UpgradeManager
+  - Heal
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - enemy
   - Player
   - Obstacle
-  - 
+  - Exp
   - 
   - 
   - 
