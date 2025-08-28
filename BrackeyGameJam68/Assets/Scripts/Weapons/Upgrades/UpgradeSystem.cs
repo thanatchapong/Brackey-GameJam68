@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,8 +15,6 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] List<Transform> card = new List<Transform>();
     [SerializeField] WeaponController weaponSys;
 
-    [SerializeField] AudioClip PerkAudio;
-
     [SerializeField] Slider ultSlider;
 
     public PlayableDirector openTl;
@@ -26,7 +23,12 @@ public class UpgradeSystem : MonoBehaviour
     public bool stopTime = false;
     public bool isUpgrading = false;
 
-    private Coroutine fadeCoroutine;
+    private UpgradeSystemAudio upgradeSystemAudio;
+
+    void Start()
+    {
+        upgradeSystemAudio = gameObject.GetComponent<UpgradeSystemAudio>();
+    }
 
     void Update()
     {
@@ -62,7 +64,7 @@ public class UpgradeSystem : MonoBehaviour
 
                 stopTime = true;
 
-                PlayPerkAudio();
+                upgradeSystemAudio.PlayPerkAudio();
 
                 SetUpCard();
 
@@ -106,47 +108,7 @@ public class UpgradeSystem : MonoBehaviour
 
         isUpgrading = false;
 
-        StopPerkAudio();
-    }
-
-    //Play ticking sound effect and adjust BGM when selecting perks
-    void PlayPerkAudio()
-    {
-        AudioManager.instance.PlayLoop(PerkAudio);
-
-        if (fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(MusicFade(1f, 0.0250f, 0.01f, 1f, 0.8f));
-    }
-
-    void StopPerkAudio()
-    {
-        AudioManager.instance.StopLoop();
-        if (fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(MusicFade(1f, 0.01f, 0.0250f, 0.8f, 1f));
-    }
-
-    private IEnumerator MusicFade(float duration, float volstart, float voltarget, float pitchstart, float pitchtarget)
-    {
-        float timeElapsed = 0f;
-
-        while (timeElapsed < duration)
-        {
-            timeElapsed += 0.0025f;
-            float newVolume = Mathf.Lerp(volstart, voltarget, timeElapsed / duration);
-            float newPitch = Mathf.Lerp(pitchstart, pitchtarget, timeElapsed / duration);
-            AudioManager.instance.BGM.volume = newVolume;
-            AudioManager.instance.BGM.pitch = newPitch;
-            yield return null;
-        }
-
-        AudioManager.instance.BGM.volume = voltarget;
-        AudioManager.instance.BGM.pitch = pitchtarget;
+        upgradeSystemAudio.StopPerkAudio();
     }
 
 }
