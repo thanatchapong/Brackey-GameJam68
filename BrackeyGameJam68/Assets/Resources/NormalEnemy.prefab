@@ -377,9 +377,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathAudio:
-  - {fileID: 8300000, guid: d5637b1f136f84f2abe181133a6c74b9, type: 3}
-  - {fileID: 8300000, guid: 3a6eb5ecbb755495cb1a9998fff8498f, type: 3}
-  - {fileID: 8300000, guid: d5af8cb5374f6431596e5bfbfbe55cec, type: 3}
+  - {fileID: 8300000, guid: 7446b6e182d104838ad67e39a38fa217, type: 3}
+  - {fileID: 8300000, guid: 0e0fd1fc0ebca4968a8a9d4504eb16f9, type: 3}
+  - {fileID: 8300000, guid: 79ffc755af6ae42ee94ec57d83737b35, type: 3}
 --- !u!82 &9182387400177763419
 AudioSource:
   m_ObjectHideFlags: 0
