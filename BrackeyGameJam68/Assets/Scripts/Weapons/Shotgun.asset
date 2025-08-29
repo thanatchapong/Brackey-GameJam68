@@ -24,12 +24,12 @@ MonoBehaviour:
   accuracy: 0.75
   fireRate: 1
   magazineSize: 3
-  currentAmmo: 0
+  ammoSizeMult: 1
   reloadTime: 2
   ammoType: 0
   bounce: 0
   pierce: 0
-  bulletSpeed: 15
+  bulletSpeed: 10
   knockbackForce: 5
   fireSound: {fileID: 8300000, guid: 7b6aca1b63a8149fa88c25013e110671, type: 3}
   reloadSound: {fileID: 0}

@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Playables;
+using TMPro;
 
 public class PlayerHP : MonoBehaviour
 {
+    [SerializeField] UpgradeSystem upgSystem;
+
     [SerializeField]
     private int currentHealth;
 
@@ -12,25 +16,63 @@ public class PlayerHP : MonoBehaviour
 
     public HealthBarUpdate healthBar;
 
+    [Header("Audio")]
+
+    [SerializeField]
+    private AudioClip hurtaudio;
+
+    [SerializeField] TMP_Text hpText;
+    [SerializeField] PlayableDirector hurtAnim;
+    [SerializeField] PlayableDirector gameOverAnim;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
     }
 
     void Update()
     {
         cd += Time.deltaTime;
+
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();    
+    }
+
+    public void GetUpgrade()
+    {
+        maxHealth = 100;
+        //Upgrade
+        if (upgSystem.upgInUse.Count > 0)
+        {
+            foreach (UpgradeObject upg in upgSystem.upgInUse)
+            {
+                maxHealth += upg.hp;
+            }
+        }
+        
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     public void TakeDamage(int damageAmount)
     {
         if (damageAmount < 0 || cd < 1) return;
 
+        AudioManager.instance.PlaySound(hurtaudio);
+
         cd = 0;
+
+        if (hurtAnim) hurtAnim.Play();
 
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
+        
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
         healthBar.SetHealth(currentHealth);
         Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth);
@@ -47,6 +89,8 @@ public class PlayerHP : MonoBehaviour
 
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();    
 
         Debug.Log(gameObject.name + " healed for " + healAmount + ". Current Health: " + currentHealth);
     }
@@ -65,6 +109,8 @@ public class PlayerHP : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died!");
         // Add game over logic, disable GameObject, play death animation, etc.
+        gameOverAnim.Play();
+        Time.timeScale = 0;
         Destroy(gameObject);
     }
 

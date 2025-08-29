@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FocusedAmmo
   m_EditorClassIdentifier: 
   upgradeName: Focused Ammo
-  upgradeDetails: -10% Ammo Size/n+3 Damage
+  upgradeDetails: -10% Ammo Size\n+3 Damage
   upgradeIcon: {fileID: 0}
   isRisk: 0
   hp: 0
@@ -25,9 +25,10 @@ MonoBehaviour:
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0.9
+  ammoSizeMult: -0.1
   reloadTime: 0
   bounce: 0
   pierce: 0
   bulletSpeed: 0
   knockbackForce: 0
+  audio: {fileID: 0}

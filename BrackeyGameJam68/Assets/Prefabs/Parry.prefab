@@ -48,13 +48,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af76917275270aa4dbfad10abd9ccb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 15
+  dmg: 10
   bounce: 0
   critChance: 0.5
   critMult: 2
-  knockbackForce: 4
-  pierce: 10000000
+  knockbackForce: 20
+  pierce: 100
   hitEff: {fileID: 2794674248249685264, guid: 72e6cb05d8fb5a048a77d2676edff5bf, type: 3}
+  enemyHitAudio:
+  - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
+  - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
+  wallHitAudio: {fileID: 8300000, guid: fd564a6afe8ec45d9859e195b76e99cc, type: 3}
+  pauseImpact: 1
+  dmgIndicator: {fileID: 5412047982885251771, guid: fec52b08a73b72645a8ce56430e8bbe0, type: 3}
+  critColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &7618742199523077141
 Rigidbody2D:
   serializedVersion: 5
@@ -98,7 +105,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -231,7 +238,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1b5f2edcc5098b9488f09c92d29b41ef, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

@@ -652,6 +652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 5
+  expAudio:
+  - {fileID: 8300000, guid: 20358e9b0388245daba76c2f7f5e7dd7, type: 3}
 --- !u!212 &2193740138974937961
 SpriteRenderer:
   m_ObjectHideFlags: 0

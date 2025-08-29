@@ -300,6 +300,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 10
+  expAudio:
+  - {fileID: 8300000, guid: 5e9999b0eb80a4d8e8b8f2151b52ca68, type: 3}
+  - {fileID: 8300000, guid: ae566bce041d04432aeef24feb721a7a, type: 3}
+  - {fileID: 8300000, guid: 27065398a09df48dca48e1de0368c580, type: 3}
+  - {fileID: 8300000, guid: 5bbc03e8fd16a41dabf629341205a185, type: 3}
+  - {fileID: 8300000, guid: fd299e590182a441b89585f1657462df, type: 3}
 --- !u!212 &2193740138974937961
 SpriteRenderer:
   m_ObjectHideFlags: 0

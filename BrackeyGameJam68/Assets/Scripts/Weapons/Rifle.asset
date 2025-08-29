@@ -21,15 +21,15 @@ MonoBehaviour:
   damageType: 0
   criticalChance: 0.1
   criticalMultiplier: 2
-  accuracy: 0.8
+  accuracy: 0.9
   fireRate: 5
   magazineSize: 8
-  currentAmmo: 0
+  ammoSizeMult: 1
   reloadTime: 3
   ammoType: 2
   bounce: 0
   pierce: 0
-  bulletSpeed: 20
+  bulletSpeed: 5
   knockbackForce: 10
   fireSound: {fileID: 8300000, guid: 3f3907e1008a1404d911e265eb38e4f9, type: 3}
   reloadSound: {fileID: 0}
