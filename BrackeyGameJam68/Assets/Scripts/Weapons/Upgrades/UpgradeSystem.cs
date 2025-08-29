@@ -19,6 +19,11 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] Texture forcedImage;
     [SerializeField] Color perkCol;
     [SerializeField] Color riskCol;
+    
+    [SerializeField] PlayableDirector perkAnim;
+    [SerializeField] PlayableDirector riskAnim;
+
+    [SerializeField] AudioClip anyUpg;
 
     public PlayableDirector openTl;
     public PlayableDirector closeTl;
@@ -80,6 +85,8 @@ public class UpgradeSystem : MonoBehaviour
                 timeUseUlt = 0;
                 isUpgrading = true;
                 stopTime = true;
+
+                weaponSys.ShootUltimate();
 
                 upgradeSystemAudio.PlayPerkAudio(); //slow down BGM and play ticking sound
                 SetUpCard();
@@ -166,6 +173,8 @@ public class UpgradeSystem : MonoBehaviour
     // ===========================
     public void Upg(int index)
     {
+        AudioManager.instance.PlaySound(anyUpg);
+
         stopTime = false;
 
         MaxExpSoundPlayed = false;
@@ -181,6 +190,7 @@ public class UpgradeSystem : MonoBehaviour
         // check if chosen is risk or normal
         if (riskAvailable.Contains(chosen))
         {
+            riskAnim.Play();
             // picked a risk → reset to 1
             riskCount = 1;
             forceRisk = false;
@@ -189,6 +199,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             // picked normal → increase riskCount
             riskCount++;
+            
+            perkAnim.Play();
 
             if (riskCount >= 3)
             {
