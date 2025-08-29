@@ -19,9 +19,13 @@ public class EnemySim_ItemDrop : MonoBehaviour
     [Header("Loot Table")]
     public List<LootItem> lootTable = new List<LootItem>();
 
+    private EnemySoundScript soundScript;
+
     void Start()
     {
         currentHealth = maxHealth;
+
+        soundScript = gameObject.GetComponent<EnemySoundScript>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -42,6 +46,8 @@ public class EnemySim_ItemDrop : MonoBehaviour
     void Die()
     {
         Debug.Log($"{gameObject.name} died!");
+
+        soundScript.PlayDeathSound();
 
         LootItem chosen = GetWeightedLoot();
         if (chosen != null && chosen.itemPrefab != null)

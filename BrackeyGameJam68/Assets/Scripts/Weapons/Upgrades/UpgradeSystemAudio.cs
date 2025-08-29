@@ -13,9 +13,19 @@ public class UpgradeSystemAudio : MonoBehaviour
     [Header("Pitch")]
     [SerializeField] float HighPitch;
     [SerializeField] float LowPitch;
+
+    [Header("Max Exp Sound")]
+    [SerializeField] AudioClip mes;
     float currentPitch;
 
     private Coroutine fadeCoroutine;
+
+
+    //Play SFX when max exp is reached
+    public void PlayMaxExpSound()
+    {
+        AudioManager.instance.PlaySound(mes,0.5f);
+    }
 
     //Play ticking sound effect and adjust BGM when selecting perks
     public void PlayPerkAudio(float duration = 1f)

@@ -27,6 +27,7 @@ public class UpgradeSystem : MonoBehaviour
     public bool isUpgrading = false;
 
     private UpgradeSystemAudio upgradeSystemAudio;
+    private bool MaxExpSoundPlayed = false;
 
     // 🔥 new risk tracking
     private int riskCount = 1; // always start with 1 risk card
@@ -44,6 +45,13 @@ public class UpgradeSystem : MonoBehaviour
     {
         ultSlider.value = timeUseUlt;
         ultBar.value = currentExp;
+
+        //Play SFX when max exp is reached
+        if (currentExp >= requireExp && !MaxExpSoundPlayed)
+        {
+            MaxExpSoundPlayed = true;
+            upgradeSystemAudio.PlayMaxExpSound();
+        }
 
         expText.text = currentExp + "/" + requireExp;
 
@@ -73,7 +81,7 @@ public class UpgradeSystem : MonoBehaviour
                 isUpgrading = true;
                 stopTime = true;
 
-                upgradeSystemAudio.PlayPerkAudio();
+                upgradeSystemAudio.PlayPerkAudio(); //slow down BGM and play ticking sound
                 SetUpCard();
 
                 openTl.Play();
@@ -159,6 +167,8 @@ public class UpgradeSystem : MonoBehaviour
     public void Upg(int index)
     {
         stopTime = false;
+
+        MaxExpSoundPlayed = false;
 
         UpgradeObject chosen = upgSelecting[index];
         upgInUse.Add(chosen);

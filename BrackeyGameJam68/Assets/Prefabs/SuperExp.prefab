@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 10
-  expaudio:
+  expAudio:
   - {fileID: 8300000, guid: 5e9999b0eb80a4d8e8b8f2151b52ca68, type: 3}
   - {fileID: 8300000, guid: ae566bce041d04432aeef24feb721a7a, type: 3}
   - {fileID: 8300000, guid: 27065398a09df48dca48e1de0368c580, type: 3}

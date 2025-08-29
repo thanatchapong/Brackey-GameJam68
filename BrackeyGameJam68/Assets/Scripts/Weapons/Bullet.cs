@@ -18,13 +18,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] List<AudioClip> enemyHitAudio = new List<AudioClip>();
     [SerializeField] AudioClip wallHitAudio;
 
-    private PrositionalAudio pros;
-
-    void Start()
-    {
-        pros = gameObject.GetComponent<PrositionalAudio>();
-    }
-
     public void OnTriggerEnter2D(Collider2D col)
     {
         Rigidbody2D rb = col.gameObject.GetComponent<Rigidbody2D>();
@@ -32,7 +25,7 @@ public class Bullet : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
-            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count-1)],transform.position);
+            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count)],transform.position);
             pierce -= 1;
 
             //Do Dmg
