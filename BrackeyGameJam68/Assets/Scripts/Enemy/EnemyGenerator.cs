@@ -112,24 +112,28 @@ public class EnemyGenerator : MonoBehaviour
     {
       typeString += "R";
       enemyTypeColorizer.colors.Add(new Color(0.5f, 0f, 1f));
+      // TODO: this.
     }
 
     if (enemyTypes.Contains(EnemyType.Fast))
     {
       typeString += "F";
       enemyTypeColorizer.colors.Add(new Color(0.75f, 1f, 0.75f));
+      enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 2f;
     }
 
     if (enemyTypes.Contains(EnemyType.Tanked))
     {
       typeString += "T";
       enemyTypeColorizer.colors.Add(new Color(0f, 0.5f, 0f));
+      enemy.GetComponent<EnemySim_ItemDrop>().maxHealth *= 2;
     }
 
     if (enemyTypes.Contains(EnemyType.Strong))
     {
       typeString += "S";
       enemyTypeColorizer.colors.Add(new Color(1f, 0f, 0f));
+      // TODO: Add damage tag to enemy.
     }
 
     // enemy.GetComponent<TMP_Text>().text = typeString;
