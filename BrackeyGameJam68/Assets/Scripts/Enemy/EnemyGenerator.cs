@@ -37,14 +37,14 @@ public class EnemyGenerator : MonoBehaviour
       float roll = Random.value;
       if (roll < chance)
       {
-        Create();
+        CreateRandomEnemy();
       }
       totalDeltaTime -= interval;
     }
   }
 
   // This also adds the created enemy to the tracker. Bad practice?
-  void Create()
+  void CreateRandomEnemy()
   {
     float red = 0f, blue = 0f;
 
@@ -88,7 +88,7 @@ public class EnemyGenerator : MonoBehaviour
   {
     for (int number = 0; number < amount; number++)
     {
-      Create();
+      CreateRandom();
     }
   }
 }
