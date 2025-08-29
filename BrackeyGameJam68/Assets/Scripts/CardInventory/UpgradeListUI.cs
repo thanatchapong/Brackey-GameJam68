@@ -29,9 +29,15 @@ public class UpgradeListUI : MonoBehaviour
         for(int i = 0; i < upgradeSystem.upgInUse.Count; i++) {
             GameObject card = Instantiate(cardPrefab, gridBox);
             UpgradeCardUI cardUI = card.GetComponent<UpgradeCardUI>();
-            cardUI.SetUpgrade(upgradeSystem.upgInUse[i]);
+            cardUI.SetUpgrade(upgradeSystem.upgInUse[i], upgradeSystem.upgInUse[i].isRisk);
             upgradeCards.Add(card);
         }
+    }
+
+    public void ToggleMenu()
+    {
+        if(isActive) CloseMenu();
+        else OpenMenu();
     }
 
     void OpenMenu() {

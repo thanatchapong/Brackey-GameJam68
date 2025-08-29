@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: -6145346510912498099
     second: biscuit-machine8_0
+  - first:
+      213: 913094210662916470
+    second: biscuit-machine8_1
+  - first:
+      213: -8832005694604117704
+    second: biscuit-machine8_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,8 +111,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,11 +127,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: biscuit-machine8_1
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 335
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6716709c856fbac00800000000000000
+      internalID: 913094210662916470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: biscuit-machine8_2
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 31
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839f4ee5d996e6580800000000000000
+      internalID: -8832005694604117704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3c52c4b374690e34a996797e29033a26
+    spriteID: 09098e99470ab8f40b9a2fce11957f30
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +186,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       biscuit-machine8_0: -6145346510912498099
+      biscuit-machine8_1: 913094210662916470
+      biscuit-machine8_2: -8832005694604117704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
