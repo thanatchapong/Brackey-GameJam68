@@ -4,7 +4,7 @@ using TMPro;
 
 public class EnemyGenerator : MonoBehaviour
 {
-  GameObject normalEnemyPrefab, rangedEnemyPrefab;
+  GameObject normalEnemyPrefab, rangedEnemyPrefab, fastEnemyPrefab;
 
   enum EnemyType
   {
@@ -27,6 +27,7 @@ public class EnemyGenerator : MonoBehaviour
   {
     normalEnemyPrefab = Resources.Load<GameObject>("NormalEnemy");
     rangedEnemyPrefab = Resources.Load<GameObject>("RangedEnemy");
+    fastEnemyPrefab = Resources.Load<GameObject>("FastEnemy");
 
     possibleEnemyTypes.Add(EnemyType.Ranged);
     possibleEnemyTypes.Add(EnemyType.Fast);
@@ -59,7 +60,7 @@ public class EnemyGenerator : MonoBehaviour
     SortedSet<EnemyType> enemyTypes = new SortedSet<EnemyType>();
 
     float roll = Random.value;
-    if (roll < 1f)
+    if (roll < chanceForTypedEnemy)
     {
       // TODO: This is an oversimplified version of the enemy type chance table.
       int index = Random.Range(0, possibleEnemyTypes.Count);
@@ -114,6 +115,10 @@ public class EnemyGenerator : MonoBehaviour
       enemyPrefab = rangedEnemyPrefab;
     }
 
+    if (enemyTypes.Contains(EnemyType.Fast))
+    {
+      enemyPrefab = fastEnemyPrefab;
+    }
 
     GameObject enemy = CreateEnemy(enemyPrefab);
 
@@ -122,7 +127,6 @@ public class EnemyGenerator : MonoBehaviour
 
     if (enemyTypes.Contains(EnemyType.Fast))
     {
-      enemyTypeColorizer.colors.Add(new Color(0.75f, 1f, 0.75f));
       enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= 2f;
     }
 
