@@ -2,6 +2,7 @@ using SmoothShakeFree;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using System.Linq;
 
 public class WeaponController : MonoBehaviour
 {
@@ -13,14 +14,24 @@ public class WeaponController : MonoBehaviour
     [SerializeField] PlayableDirector shotAnim;
     [SerializeField] Slider reloadBar;
     [SerializeField] GameObject ultimate;
+    [SerializeField] UpgradeObject OVERHEAT;
+    [SerializeField] RoomGenerator roomGenerator;
+    [SerializeField] AudioClip jammedSound;
     float spread;
     int magazine;
     int ammo;
     float reloadTime;
-
+    float fireRate;
     float cd;
     float reloadCount;
     bool reloading;
+    
+    bool jammed;
+    float jamTimer;
+    float jamClock;
+    float jamClockDuration = 10;
+    float jamDuration;
+    
     private Animator anim;
     private AudioSource audio;
 
@@ -37,11 +48,14 @@ public class WeaponController : MonoBehaviour
         magazine = currentWeapon.magazineSize;
         ammo = currentWeapon.magazineSize;
         reloadTime = currentWeapon.reloadTime;
+        fireRate = currentWeapon.fireRate;
 
         reloadBar.maxValue = reloadTime;
         
         audio = GetComponent<AudioSource>();
         audio.clip = currentWeapon.fireSound;
+
+        getUpgraded();
     }
 
     public void getUpgraded()
@@ -50,6 +64,7 @@ public class WeaponController : MonoBehaviour
         spread = currentWeapon.accuracy;
         magazine = currentWeapon.magazineSize;
         reloadTime = currentWeapon.reloadTime;
+        fireRate = currentWeapon.fireRate;
 
         //Upgrade
         if (upgSystem.upgInUse.Count > 0)
@@ -59,13 +74,29 @@ public class WeaponController : MonoBehaviour
                 spread += upg.accuracy;
                 magazine += upg.magazineSize;
                 reloadTime += upg.reloadTime;
+                fireRate += upg.fireRate;
             }
         }
     }
 
     void Update()
     {
+        int overheatCount = upgSystem.upgInUse.Count(u => u == OVERHEAT);
+        jamDuration = overheatCount * 3f;
+        jamClock += Time.deltaTime;
         cd += Time.deltaTime;
+
+        if (jammed)
+        {
+            camShake.StartShake();
+            jamTimer += Time.deltaTime;
+
+            if (jamTimer >= jamDuration)
+            {
+                jammed = false;
+                jamTimer = 0f;
+            }
+        }
 
         if (reloading)
         {
@@ -86,15 +117,24 @@ public class WeaponController : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo > 0 && reloading == false)
             {
                 cd = 0;
+                if (jammed && audio != null && jammedSound != null) {
+                    audio.PlayOneShot(jammedSound);
+                    return;
+                }
+                if (jamClock >= jamClockDuration && Random.Range(0, 4) >= 3)
+                {
+                    jammed = true;
+                    jamClock = 0f;
+                }
                 Shoot();
                 ammo -= 1;
 
                 camShake.StartShake();
             }
-            else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
+            else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
             {
                 reloading = true;
             }
@@ -151,6 +191,12 @@ public class WeaponController : MonoBehaviour
                 sizeMult += upg.ammoSizeMult;
             }
         }
+
+        if(roomGenerator.rngRoomTrigger) {
+            bullet.critChance = 0;
+            Debug.LogError("Crit Chance Set To 0");
+        }
+        Debug.LogError("Bullet Crit Chance: " + bullet.critChance);
         
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.forward * bulletSpeed, ForceMode2D.Impulse);
         bullet.transform.localScale = bullet.transform.localScale * sizeMult;

@@ -4,6 +4,7 @@ public class Door : MonoBehaviour
 {
     public RoomGenerator roomGenerator;
     private Transform playerTransform;
+    public Transform cameraTransform;
     private BoxCollider2D boxCollider2D;
     private Vector3 playerSpawnpoint = Vector3.zero;
 
@@ -126,6 +127,7 @@ public class Door : MonoBehaviour
             SetInactive();
             SetOpposite();
             playerTransform.position = playerSpawnpoint;
+            cameraTransform.position = new Vector3(playerSpawnpoint.x, playerSpawnpoint.y, cameraTransform.position.z);
             roomGenerator.GenerateRoom(isHard);
         }
     }

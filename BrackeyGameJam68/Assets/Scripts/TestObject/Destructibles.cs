@@ -12,6 +12,8 @@ public class Destructibles : MonoBehaviour
     [SerializeField]
     ParticleSystem particleExplosionRef;
 
+    public TopDownController playerController;
+
     public GameObject targetObject;
 
     bool isShaking = false;
@@ -59,6 +61,7 @@ public class Destructibles : MonoBehaviour
 
     private void Disintegrate()
     {
+        playerController.onDestroyObstacle();
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         BoxCollider2D bc2 = GetComponent<BoxCollider2D>();
         sr.enabled = false;

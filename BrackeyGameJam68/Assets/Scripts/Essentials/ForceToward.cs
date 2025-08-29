@@ -30,10 +30,6 @@ public class ForceToward : MonoBehaviour
                 Vector2 direction = (player.position - transform.position).normalized;
                 rb.linearVelocity = direction * forceStrength;
             }
-            else
-            {
-                Debug.LogWarning("No GameObject with tag 'Player' found!");
-            }
         }
     }
 }

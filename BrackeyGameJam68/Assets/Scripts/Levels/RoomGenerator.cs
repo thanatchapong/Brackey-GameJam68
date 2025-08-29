@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class RoomGenerator : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] GameObject wallPrefab;
     private GameObject entranceDoor, targetDoor1, targetDoor2;
     private Door entranceDoorScript, targetDoorScript1, targetDoorScript2;
-    [SerializeField] Transform player;
+    [SerializeField] TopDownController playerController;
     private GameObject currentRoom = null;
     public GameObject level;
     private int roomNumber = 0;
@@ -22,6 +23,14 @@ public class RoomGenerator : MonoBehaviour
     [Header("UI")]
     public TextMeshPro roomNumberText;
     public DialogueTrigger dialogueTrigger;
+    [SerializeField] private UpgradeSystem upgradeSystem;
+
+    [SerializeField] private Transform cameraTransform;
+
+    [Header("Upgrades")]
+    [SerializeField] private UpgradeObject RICOCHET;
+    [SerializeField] private UpgradeObject RNG_ROOM;
+    public bool rngRoomTrigger = false;
 
     void Start()
     {
@@ -30,6 +39,31 @@ public class RoomGenerator : MonoBehaviour
 
     public void GenerateRoom(bool isHard)
     {
+        Debug.Log($"[GenerateRoom] start | isHard={isHard} | currentRoomNumber(before++)={roomNumber}");
+        int rngRoomCount = 0;
+        if (upgradeSystem == null)
+        {
+            Debug.LogWarning("[GenerateRoom] UpgradeSystem is null. RNG room will not trigger.");
+        }
+        else if (upgradeSystem.upgInUse == null)
+        {
+            Debug.LogWarning("[GenerateRoom] upgradeSystem.upgInUse is null. RNG room will not trigger.");
+        }
+        else
+        {
+            rngRoomCount = upgradeSystem.upgInUse.Count(u => u == RNG_ROOM);
+        }
+
+        int roll = Random.Range(0, 5);
+        Debug.Log($"[GenerateRoom] RNG roll={roll}, rngRoomCount={rngRoomCount}");
+        if(roll < rngRoomCount) {
+            Debug.LogError("RNG Room Triggered");
+            rngRoomTrigger = true;
+        }
+        else {
+            Debug.LogError("RNG Room Not Triggered");
+            rngRoomTrigger = false;
+        }
         UpdateRoomNumberUI();
         LevelColorChanger colorChanger = level.GetComponent<LevelColorChanger>();
         if (colorChanger) colorChanger.ApplyColors(roomNumber);
@@ -43,9 +77,12 @@ public class RoomGenerator : MonoBehaviour
         }
 
         GameObject selectedTemplate;
-        if(isHard) {
+        if (isHard)
+        {
             selectedTemplate = hardTemplateList[Random.Range(0, hardTemplateList.Count)];
-        } else {
+        }
+        else
+        {
             selectedTemplate = templateList[Random.Range(0, templateList.Count)];
         }
         currentRoom = Instantiate(selectedTemplate, Vector3.zero, Quaternion.identity);
@@ -61,22 +98,18 @@ public class RoomGenerator : MonoBehaviour
 
         foreach (Transform spawnpoint in allChildren)
         {
-            if (spawnpoint.gameObject.CompareTag("ObstacleSpawnpoint"))
+            if (!spawnpoint.gameObject.CompareTag("ObstacleSpawnpoint")) continue;
+            int ricochetCount = upgradeSystem.upgInUse.Count(u => u == RICOCHET);
+            for (int i = 0; i < (ricochetCount+1)*3; i++)
             {
-                if (Random.Range(0, 2) >= 1)
-                {
-                    if (obstacleList == null || obstacleList.Count == 0)
-                    {
-                        Debug.LogError("Obstacle list is empty or not assigned in RoomGenerator!");
-                        return;
-                    }
-
-                    int obstacleIdx = Random.Range(0, obstacleList.Count);
-                    GameObject selectedObstacle = obstacleList[obstacleIdx];
-                    float randomZ = Random.Range(-180f, 180f);
-                    Quaternion randomRotation = Quaternion.Euler(0f, 0f, randomZ);
-                    Instantiate(selectedObstacle, spawnpoint.position, randomRotation, currentRoom.transform);
-                }
+                if (Random.Range(0, 2) >= 1) continue;
+                int obstacleIdx = Random.Range(0, obstacleList.Count);
+                GameObject selectedObstacle = obstacleList[obstacleIdx];
+                float randomZ = Random.Range(-180f, 180f);
+                Quaternion randomRotation = Quaternion.Euler(0f, 0f, randomZ);
+                GameObject obstacle = Instantiate(selectedObstacle, spawnpoint.position, randomRotation, currentRoom.transform);
+                obstacle.TryGetComponent(out Destructibles destructibles);
+                if(destructibles) destructibles.playerController = playerController;
             }
         }
         GenerateDoor(isHard);
@@ -88,7 +121,8 @@ public class RoomGenerator : MonoBehaviour
         dialogueTrigger.TriggerDialogue(roomNumber - 1);
     }
 
-    private void ColorRoomWalls() {
+    private void ColorRoomWalls()
+    {
         var wallT = level.transform.Find("WallL");
         var wallSR = wallT.GetComponent<SpriteRenderer>();
         Color wallColor = wallSR.color;
@@ -197,17 +231,19 @@ public class RoomGenerator : MonoBehaviour
         }
 
         if (entranceDoor) Destroy(entranceDoor);
-        if(isHard) {
+        if (isHard)
+        {
             Destroy(targetDoor1);
             targetDoor1 = targetDoor2;
             targetDoorScript1 = targetDoorScript2;
         }
-        else {
+        else
+        {
             Destroy(targetDoor2);
         }
         entranceDoor = targetDoor1;
         entranceDoorScript = targetDoorScript1;
-        
+
         targetDoor1 = Instantiate(doorPrefab);
         targetDoorScript1 = targetDoor1.GetComponent<Door>();
 
@@ -218,6 +254,7 @@ public class RoomGenerator : MonoBehaviour
         }
 
         targetDoorScript1.roomGenerator = this;
+        targetDoorScript1.cameraTransform = cameraTransform;
 
         float doorWidth = targetDoor1.transform.localScale.y;
         float minDoorX = groundT.position.x - groundT.localScale.x / 2;

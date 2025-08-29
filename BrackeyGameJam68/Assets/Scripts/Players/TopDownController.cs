@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 
 public class TopDownController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TopDownController : MonoBehaviour
     [SerializeField] float deceleration = 10f;
 
     [SerializeField] Animator anim;
+    [SerializeField] UpgradeObject SNIPER;
 
     float currentSpeed;
     private Rigidbody2D rb;
@@ -22,6 +24,21 @@ public class TopDownController : MonoBehaviour
     private Quaternion rotation;
     private Vector2 currentVelocity;
     bool holdingSpace;
+    bool sniperStunt = false;
+    float sniperDuration;
+    float sniperTimer = 0;
+    float tempSpeed;
+
+    public void onDestroyObstacle() {
+        int sniperCount = upgSystem.upgInUse.Count(u => u == SNIPER);
+        if(sniperCount > 0) {
+            Debug.Log("Sniper Stunt Triggered");
+            if(!sniperStunt) tempSpeed = currentSpeed;
+            sniperStunt = true;
+            sniperTimer = 0;
+            sniperDuration = sniperCount * 2;
+        }
+    }
 
     void Start()
     {
@@ -34,6 +51,17 @@ public class TopDownController : MonoBehaviour
 
     void Update()
     {
+        if(sniperStunt) {
+            sniperTimer += Time.deltaTime;
+            currentSpeed = 0;
+            if(sniperTimer >= sniperDuration) {
+                Debug.Log("Sniper Stunt Ended");
+                sniperStunt = false;
+                currentSpeed = tempSpeed;
+                sniperTimer = 0;
+            }
+        }
+
         if (DialogueUI.instance && DialogueUI.instance.isActive)
         {
             movement = Vector2.zero;

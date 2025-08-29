@@ -1,4 +1,8 @@
-using System.Collections.Generic; using UnityEngine; using UnityEngine.UI; using TMPro; using UnityEngine.Playables;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Playables;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -19,11 +23,12 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] Texture forcedImage;
     [SerializeField] Color perkCol;
     [SerializeField] Color riskCol;
-    
+
     [SerializeField] PlayableDirector perkAnim;
     [SerializeField] PlayableDirector riskAnim;
 
     [SerializeField] AudioClip anyUpg;
+    [SerializeField] UpgradeObject RISK_IT_FOR_A_BISCUIT;
 
     public PlayableDirector openTl;
     public PlayableDirector closeTl;
@@ -161,8 +166,8 @@ public class UpgradeSystem : MonoBehaviour
     {
         cardTransform.GetChild(0).GetComponent<TMP_Text>().text = obj.upgradeName;
         cardTransform.GetChild(1).GetComponent<TMP_Text>().text = obj.upgradeDetails;
-        
-        if(obj.isRisk)cardTransform.GetChild(1).GetComponent<TMP_Text>().color = riskCol;
+
+        if (obj.isRisk) cardTransform.GetChild(1).GetComponent<TMP_Text>().color = riskCol;
         else cardTransform.GetChild(1).GetComponent<TMP_Text>().color = perkCol;
 
         cardTransform.GetChild(3).GetComponent<RawImage>().texture = obj.upgradeIcon;
@@ -181,6 +186,13 @@ public class UpgradeSystem : MonoBehaviour
 
         UpgradeObject chosen = upgSelecting[index];
         upgInUse.Add(chosen);
+        if (chosen == RISK_IT_FOR_A_BISCUIT)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                upgInUse.Add(riskAvailable[Random.Range(0, riskAvailable.Count)]);
+            }
+        }
 
         AudioManager.instance.PlaySound(chosen.audio);
         weaponSys.getUpgraded();
@@ -199,7 +211,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             // picked normal → increase riskCount
             riskCount++;
-            
+
             perkAnim.Play();
 
             if (riskCount >= 3)
