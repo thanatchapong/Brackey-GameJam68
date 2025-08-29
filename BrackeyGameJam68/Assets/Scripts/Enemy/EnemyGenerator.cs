@@ -1,27 +1,31 @@
 using UnityEngine;
+using System.Collections.Generic;
+using TMPro;
 
 public class EnemyGenerator : MonoBehaviour
 {
+
+  enum EnemyType
+  {
+    Ranged, Fast, Tanked, Strong
+  }
+
   private int debug = 0;
 
   public GameObject enemyPrefab;
 
-  private float interval, chance, chanceForRangedType, chanceForSpeedyType, totalDeltaTime = 0;
+  private float interval = 1f, chance = 1f;
+  private float chanceForRangedType = 0.1f;
+  private float chanceForFastType = 0.1f;
+  private float chanceForTankedType = 0.1f;
+  private float chanceForStrongType = 0.1f;
+  private float totalDeltaTime = 0;
 
   private static int next = 0;
 
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-
-    // 5% chance of an enemy spawning every 1s
-    interval = 1f;
-    chance = 1f;
-
-    // 10% for it being ranged, 10% for it being speedy
-    // ...therefore 1% for it being both ranged and speedy!
-    chanceForRangedType = 0.1f;
-    chanceForSpeedyType = 0.1f;
 
   }
 
@@ -46,42 +50,88 @@ public class EnemyGenerator : MonoBehaviour
   // This also adds the created enemy to the tracker. Bad practice?
   void CreateRandomEnemy()
   {
-    float red = 0f, blue = 0f;
 
-    GameObject enemy;
-    enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-    next++;
-    enemy.GetComponent<EnemyAI>().id = next;
+    SortedSet<EnemyType> enemyTypes = new SortedSet<EnemyType>();
 
-
-    float enemySpeedCoefficient = 1f;
-
-    float rangedRoll = Random.value;
-    if (rangedRoll < chanceForRangedType)
+    if (Random.value < chanceForRangedType)
     {
-      // TODO: It's similar to speed type but speed type is more easier to implement...   
-      // TODO: Also might need to create a new Enemy script to manage enemy behavior all together...
-
-      // For now give it a blue color.
-      blue = 1f;
-
+      enemyTypes.Add(EnemyType.Ranged);
     }
 
-    float speedyRoll = Random.value;
-    if (speedyRoll < chanceForSpeedyType)
+    if (Random.value < chanceForFastType)
     {
-      enemySpeedCoefficient = 2f;
-      enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().speed *= enemySpeedCoefficient;
-      red = 1f;
+      enemyTypes.Add(EnemyType.Fast);
     }
 
-    enemy.GetComponent<SpriteRenderer>().color = new Color(red, 1f, blue);
+    if (Random.value < chanceForTankedType)
+    {
+      enemyTypes.Add(EnemyType.Tanked);
+    }
+
+    if (Random.value < chanceForStrongType)
+    {
+      enemyTypes.Add(EnemyType.Strong);
+    }
+
+    GameObject enemy = CreateEnemy(enemyTypes);
+
+    enemy.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
 
     GameObject player = GameObject.FindGameObjectWithTag("Player");
     enemy.GetComponent<EnemyAI>().target = player.transform;
 
     // TODO: Store as reference???
     EnemyTracker.Add(enemy);
+  }
+
+  GameObject CreateEnemy()
+  {
+    GameObject enemy;
+    enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
+    next++;
+    enemy.GetComponent<EnemyAI>().id = next;
+    return enemy;
+  }
+
+  GameObject CreateEnemy(Vector3 position)
+  {
+    GameObject enemy = CreateEnemy();
+    enemy.GetComponent<Transform>().position = position;
+    return enemy;
+  }
+
+  GameObject CreateEnemy(SortedSet<EnemyType> enemyTypes)
+  {
+    GameObject enemy = CreateEnemy();
+
+    if (enemyTypes.Contains(EnemyType.Ranged))
+    {
+      enemy.GetComponent<TMP_Text>().text += "R";
+    }
+
+    if (enemyTypes.Contains(EnemyType.Fast))
+    {
+      enemy.GetComponent<TMP_Text>().text += "F";
+    }
+
+    if (enemyTypes.Contains(EnemyType.Tanked))
+    {
+      enemy.GetComponent<TMP_Text>().text += "T";
+    }
+
+    if (enemyTypes.Contains(EnemyType.Strong))
+    {
+      enemy.GetComponent<TMP_Text>().text += "S";
+    }
+
+    return enemy;
+  }
+
+  GameObject CreateEnemy(SortedSet<EnemyType> enemyTypes, Vector3 position)
+  {
+    GameObject enemy = CreateEnemy(enemyTypes);
+    enemy.GetComponent<Transform>().position = position;
+    return enemy;
   }
 
   public void ForceCreate(int amount)
