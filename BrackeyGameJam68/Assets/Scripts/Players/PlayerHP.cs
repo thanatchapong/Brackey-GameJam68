@@ -109,9 +109,9 @@ public class PlayerHP : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died!");
         // Add game over logic, disable GameObject, play death animation, etc.
+        AudioManager.instance.MusicFade(1f, 0.03f, 0.5f);
         gameOverAnim.Play();
         Time.timeScale = 0;
-        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)

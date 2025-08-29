@@ -18,8 +18,6 @@ public class UpgradeSystemAudio : MonoBehaviour
     [SerializeField] AudioClip mes;
     float currentPitch;
 
-    private Coroutine fadeCoroutine;
-
 
     //Play SFX when max exp is reached
     public void PlayMaxExpSound()
@@ -32,49 +30,13 @@ public class UpgradeSystemAudio : MonoBehaviour
     {
         AudioManager.instance.PlayLoop(PerkAudio);
 
-        currentVolume = AudioManager.instance.BGM.volume;
-        currentPitch = AudioManager.instance.BGM.pitch;
-
-        if (fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(MusicFade(duration, currentVolume, LowVolume, currentPitch, LowPitch));
+        AudioManager.instance.MusicFade(duration, LowVolume, LowPitch);
     }
 
     public void StopPerkAudio(float duration = 1f)
     {
         AudioManager.instance.StopLoop();
 
-        currentVolume = AudioManager.instance.BGM.volume;
-        currentPitch = AudioManager.instance.BGM.pitch;
-
-        if (fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-        }
-        fadeCoroutine = StartCoroutine(MusicFade(duration, currentVolume, HighVolume, currentPitch, HighPitch));
+        AudioManager.instance.MusicFade(duration, HighVolume, HighPitch);
     }
-
-    //Decrease Volume and Pitch of background music
-
-    private IEnumerator MusicFade(float duration, float volstart, float voltarget, float pitchstart, float pitchtarget)
-    {
-        float timeElapsed = 0f;
-
-        while (timeElapsed < duration)
-        {
-            timeElapsed += Time.unscaledDeltaTime;
-            Debug.Log(timeElapsed);
-            float newVolume = Mathf.Lerp(volstart, voltarget, timeElapsed / duration);
-            float newPitch = Mathf.Lerp(pitchstart, pitchtarget, timeElapsed / duration);
-            AudioManager.instance.BGM.volume = newVolume;
-            AudioManager.instance.BGM.pitch = newPitch;
-            yield return null;
-        }
-
-        AudioManager.instance.BGM.volume = voltarget;
-        AudioManager.instance.BGM.pitch = pitchtarget;
-    }
-
 }

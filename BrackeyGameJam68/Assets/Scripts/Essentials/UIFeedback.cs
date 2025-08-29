@@ -13,6 +13,7 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Quaternion rotate;
 
     [SerializeField] AudioClip Hoverclip;
+    [SerializeField] AudioClip Clickclip;
 
     void Start()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using System.Linq;
+using System.Collections.Generic;
 
 public class WeaponController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] UpgradeObject OVERHEAT;
     [SerializeField] RoomGenerator roomGenerator;
     [SerializeField] AudioClip jammedSound;
+    [SerializeField] Transform ammoHolder;
+    List<GameObject> ammoIndicator = new List<GameObject>();
+    [SerializeField] GameObject ammoArt;
     float spread;
     int magazine;
     int ammo;
@@ -51,11 +55,12 @@ public class WeaponController : MonoBehaviour
         fireRate = currentWeapon.fireRate;
 
         reloadBar.maxValue = reloadTime;
-        
+
         audio = GetComponent<AudioSource>();
         audio.clip = currentWeapon.fireSound;
 
         getUpgraded();
+        InitAmmoUI();
     }
 
     public void getUpgraded()
@@ -109,11 +114,13 @@ public class WeaponController : MonoBehaviour
             {
                 hands.GetComponent<PlayableDirector>().time = 0;
                 hands.GetComponent<PlayableDirector>().Stop();
+                hands.GetComponent<PlayableDirector>().Evaluate();;
                 reloadCount = 0;
                 reloading = false;
-                
+
                 reloadBar.value = 0;
                 ammo = magazine;
+                UpdateAmmoUI();
             }
         }
 
@@ -138,12 +145,46 @@ public class WeaponController : MonoBehaviour
             {
                 reloading = true;
             }
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
+        {
+            cd = 0;
+            Shoot();
+            ammo -= 1;
+            UpdateAmmoUI();
+
+            camShake.StartShake();
+        }
+        else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
+        {
+            reloading = true;
+        }
+    }
+
+    void InitAmmoUI()
+    {
+        foreach (var obj in ammoIndicator)
+            Destroy(obj);
+        ammoIndicator.Clear();
+
+        for (int i = 0; i < magazine; i++)
+        {
+            GameObject indicator = Instantiate(ammoArt, ammoHolder);
+            ammoIndicator.Add(indicator);
+        }
+    }
+
+    void UpdateAmmoUI()
+    {
+        for (int i = 0; i < ammoIndicator.Count; i++)
+        {
+            ammoIndicator[i].SetActive(i < ammo);
+        }
     }
 
     public void ShootUltimate()
     {
         highShake.StartShake();
-        
+
         shotAnim.Play();
 
         BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);

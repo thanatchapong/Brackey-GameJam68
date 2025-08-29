@@ -21,7 +21,7 @@ MonoBehaviour:
   damageType: 0
   criticalChance: 0.1
   criticalMultiplier: 2
-  accuracy: 0.9
+  accuracy: 0.95
   fireRate: 5
   magazineSize: 8
   ammoSizeMult: 1

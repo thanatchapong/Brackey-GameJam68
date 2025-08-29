@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -5307225440213767399
     second: pipe6_1
+  - first:
+      213: -7066792174587097303
+    second: pipe6_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,19 +102,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,8 +111,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +131,10 @@ TextureImporter:
       name: pipe6_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 52
-        width: 28
-        height: 12
+        x: 831
+        y: 895
+        width: 34
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,11 +149,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pipe6_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 143
+        width: 482
+        height: 706
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92fc93c65f5bded90800000000000000
+      internalID: -7066792174587097303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 27814c1480e181b4b806a1458214fbcc
+    spriteID: 52af9059bd938ce4585100d74075fc6b
     internalID: 0
     vertices: []
     indices: 
@@ -175,6 +187,7 @@ TextureImporter:
     nameFileIdTable:
       pipe6_0: -7120300669168890860
       pipe6_1: -5307225440213767399
+      pipe6_2: -7066792174587097303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,8 +16,11 @@ public class Door : MonoBehaviour
     [SerializeField] Color inactiveColor = Color.gray;
     [SerializeField] Color activeColor = new Color(145, 255, 118);
     [SerializeField] Color hardColor = Color.red;
+
+    DoorAudio doorAudio;
     
-    public void SetInactive() {
+    public void SetInactive()
+    {
         isActive = false;
         GetComponent<SpriteRenderer>().color = inactiveColor;
     }
@@ -95,6 +98,7 @@ public class Door : MonoBehaviour
 
     void Start()
     {
+        doorAudio = gameObject.GetComponent<DoorAudio>();
         // Initialize components
         boxCollider2D = GetComponent<BoxCollider2D>();
         if (boxCollider2D == null)
@@ -124,6 +128,7 @@ public class Door : MonoBehaviour
     {
         if(collision.CompareTag("Player") && isActive)
         {
+            doorAudio.PlayDoorSound(isHard);
             SetInactive();
             SetOpposite();
             playerTransform.position = playerSpawnpoint;
