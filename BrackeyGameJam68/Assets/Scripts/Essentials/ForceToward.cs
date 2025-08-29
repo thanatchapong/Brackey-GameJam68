@@ -16,7 +16,7 @@ public class ForceToward : MonoBehaviour
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.transform;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.3f);
 
         startFollow = true;
     }
@@ -25,7 +25,7 @@ public class ForceToward : MonoBehaviour
     {
         if (startFollow)
         {
-            if (player != null)
+            if (player != null && Vector3.Distance(player.position, transform.position) <= 3)
             {
                 Vector2 direction = (player.position - transform.position).normalized;
                 rb.linearVelocity = direction * forceStrength;

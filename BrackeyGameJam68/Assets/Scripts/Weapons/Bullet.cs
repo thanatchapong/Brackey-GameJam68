@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,6 +18,12 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] List<AudioClip> enemyHitAudio = new List<AudioClip>();
     [SerializeField] AudioClip wallHitAudio;
+    [SerializeField] bool pauseImpact;
+    [SerializeField] GameObject dmgIndicator;
+    [SerializeField] Color critColor;
+
+    bool crit;
+    GameObject lastHitEnemy;
 
     public void OnTriggerEnter2D(Collider2D col)
     {
@@ -25,25 +32,46 @@ public class Bullet : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
-            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count)],transform.position);
+            AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count)], transform.position);
             pierce -= 1;
 
-            //Do Dmg
-            if ((critChance * 100) >= Random.Range(0, 101))
+            if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
+
+            if (pauseImpact)
             {
-                dmg = (int)Mathf.Round((float)dmg * critMult);
+                if (lastHitEnemy != col.gameObject)
+                {
+                    StartCoroutine(PauseImpact(col.gameObject.GetComponent<EnemySim_ItemDrop>()));
+                }
             }
-            col.gameObject.GetComponent<EnemySim_ItemDrop>().TakeDamage(dmg);
+            else
+            {
+                if (lastHitEnemy != col.gameObject)
+                {
+                    //Do Dmg
+                    if ((critChance * 100) >= Random.Range(0, 101))
+                    {
+                        crit = true;
+                        dmg = (int)Mathf.Round((float)dmg * critMult);
+                    }
+                    col.gameObject.GetComponent<EnemySim_ItemDrop>().TakeDamage(dmg);
+
+                    TMP_Text dmgText = Instantiate(dmgIndicator, transform.position, Quaternion.identity).transform.GetChild(0).GetComponent<TMP_Text>();
+                    dmgText.text = "-" + dmg.ToString();
+                    if(crit) dmgText.color = critColor;
+                }
+            }
 
             if (pierce < 0)
             {
-                if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
+            
+            lastHitEnemy = col.gameObject;
         }
         else if (bounce <= 0)
         {
-            AudioSource.PlayClipAtPoint(wallHitAudio,transform.position);
+            AudioSource.PlayClipAtPoint(wallHitAudio, transform.position);
 
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
             Destroy(gameObject);
@@ -52,5 +80,30 @@ public class Bullet : MonoBehaviour
         {
             bounce -= 1;
         }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        lastHitEnemy = null;
+    }
+
+    IEnumerator PauseImpact(EnemySim_ItemDrop enemyHp)
+    {
+        Time.timeScale = 0;
+
+        yield return new WaitForSecondsRealtime(0.25f);
+        
+        //Do Dmg
+        if ((critChance * 100) >= Random.Range(0, 101))
+        {
+            crit = true;
+            dmg = (int)Mathf.Round((float)dmg * critMult);
+        }
+        enemyHp.TakeDamage(dmg);
+        TMP_Text dmgText = Instantiate(dmgIndicator, transform.position, Quaternion.identity).transform.GetChild(0).GetComponent<TMP_Text>();
+        dmgText.text = "-" + dmg.ToString();
+        if(crit) dmgText.color = critColor;
+
+        Time.timeScale = 1;
     }
 }
