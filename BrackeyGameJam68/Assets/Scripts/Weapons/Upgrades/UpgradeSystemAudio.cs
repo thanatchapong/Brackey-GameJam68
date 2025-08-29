@@ -30,19 +30,13 @@ public class UpgradeSystemAudio : MonoBehaviour
     {
         AudioManager.instance.PlayLoop(PerkAudio);
 
-        currentVolume = AudioManager.instance.BGM.volume;
-        currentPitch = AudioManager.instance.BGM.pitch;
-
-        AudioManager.instance.MusicFade(duration, currentVolume, LowVolume, currentPitch, LowPitch);
+        AudioManager.instance.MusicFade(duration, LowVolume, LowPitch);
     }
 
     public void StopPerkAudio(float duration = 1f)
     {
         AudioManager.instance.StopLoop();
 
-        currentVolume = AudioManager.instance.BGM.volume;
-        currentPitch = AudioManager.instance.BGM.pitch;
-
-        AudioManager.instance.MusicFade(duration, currentVolume, HighVolume, currentPitch, HighPitch);
+        AudioManager.instance.MusicFade(duration, HighVolume, HighPitch);
     }
 }

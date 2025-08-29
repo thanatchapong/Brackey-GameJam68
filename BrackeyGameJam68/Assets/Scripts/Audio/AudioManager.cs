@@ -57,20 +57,22 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void MusicFade(float duration, float volstart, float voltarget, float pitchstart, float pitchtarget)
+    public void MusicFade(float duration, float voltarget, float pitchtarget)
     {
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
         }
-        fadeCoroutine = StartCoroutine(MusicFadeCoroutine(duration, volstart, voltarget, pitchstart, pitchtarget));
+        fadeCoroutine = StartCoroutine(MusicFadeCoroutine(duration, voltarget, pitchtarget));
     }
 
 
     //Decrease Volume and Pitch of background music
 
-    private IEnumerator MusicFadeCoroutine(float duration, float volstart, float voltarget, float pitchstart, float pitchtarget)
+    private IEnumerator MusicFadeCoroutine(float duration, float voltarget, float pitchtarget)
     {
+        float volstart = BGM.volume;
+        float pitchstart = BGM.pitch;
         float timeElapsed = 0f;
 
         while (timeElapsed < duration)
