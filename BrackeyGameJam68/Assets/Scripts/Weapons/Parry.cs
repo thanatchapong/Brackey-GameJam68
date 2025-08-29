@@ -5,7 +5,7 @@ public class Parry : MonoBehaviour
     [SerializeField] UpgradeSystem upgSystem;
     [SerializeField] GameObject parryHitbox;
     float cd;
-    float parryCD = 2;
+    float parryCD = 1;
     
 
     void Update()
@@ -24,7 +24,7 @@ public class Parry : MonoBehaviour
 
     void DoParry()
     {
-        parryCD = 2;
+        parryCD = 1;
         //Upgrade
         if (upgSystem.upgInUse.Count > 0)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using TMPro;
 
 public class PlayerHP : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerHP : MonoBehaviour
     private AudioClip hurtaudio;
 
     [SerializeField] TMP_Text hpText;
+    [SerializeField] PlayableDirector hurtAnim;
+    [SerializeField] PlayableDirector gameOverAnim;
 
     void Start()
     {
@@ -64,6 +67,8 @@ public class PlayerHP : MonoBehaviour
 
         cd = 0;
 
+        if (hurtAnim) hurtAnim.Play();
+
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
         
@@ -104,6 +109,8 @@ public class PlayerHP : MonoBehaviour
     {
         Debug.Log(gameObject.name + " has died!");
         // Add game over logic, disable GameObject, play death animation, etc.
+        gameOverAnim.Play();
+        Time.timeScale = 0;
         Destroy(gameObject);
     }
 

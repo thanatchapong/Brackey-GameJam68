@@ -8,9 +8,11 @@ public class WeaponController : MonoBehaviour
     [SerializeField] WeaponsObject currentWeapon;
     [SerializeField] UpgradeSystem upgSystem;
     [SerializeField] SmoothShake camShake;
+    [SerializeField] SmoothShake highShake;
     [SerializeField] Transform hands;
     [SerializeField] PlayableDirector shotAnim;
     [SerializeField] Slider reloadBar;
+    [SerializeField] GameObject ultimate;
     float spread;
     int magazine;
     int ammo;
@@ -74,6 +76,7 @@ public class WeaponController : MonoBehaviour
 
             if (reloadCount >= reloadTime)
             {
+                hands.GetComponent<PlayableDirector>().time = 0;
                 hands.GetComponent<PlayableDirector>().Stop();
                 reloadCount = 0;
                 reloading = false;
@@ -97,19 +100,39 @@ public class WeaponController : MonoBehaviour
             }
     }
 
-    void BulletStat(Bullet bullet)
+    public void ShootUltimate()
     {
-        bullet.dmg = currentWeapon.baseDamage;
-        bullet.bounce = currentWeapon.bounce;
+        highShake.StartShake();
+        
+        shotAnim.Play();
 
-        bullet.critChance = currentWeapon.criticalChance;
-        bullet.critMult = currentWeapon.criticalMultiplier;
+        BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);
 
-        bullet.knockbackForce = currentWeapon.knockbackForce;
-        bullet.pierce = currentWeapon.pierce;
+        anim.SetTrigger("Shoot");
 
+        GetComponent<PrositionalAudio>().Play();
+    }
+
+    void BulletStat(Bullet bullet, bool isUlt)
+    {
         float sizeMult = currentWeapon.ammoSizeMult;
         float bulletSpeed = currentWeapon.bulletSpeed;
+
+        if (isUlt == false)
+        {
+            bullet.dmg = currentWeapon.baseDamage;
+            bullet.bounce = currentWeapon.bounce;
+
+            bullet.critChance = currentWeapon.criticalChance;
+            bullet.critMult = currentWeapon.criticalMultiplier;
+
+            bullet.knockbackForce = currentWeapon.knockbackForce;
+            bullet.pierce = currentWeapon.pierce;
+
+            sizeMult = currentWeapon.ammoSizeMult;
+            bulletSpeed = currentWeapon.bulletSpeed;
+        }
+
         //Upgrade
         if (upgSystem.upgInUse.Count > 0)
         {
@@ -138,7 +161,7 @@ public class WeaponController : MonoBehaviour
         float randomAngle = Random.Range(-(1 - spread) * 100, (1 - spread) * 100);
         Quaternion spreadRotation = transform.rotation * Quaternion.Euler(randomAngle, 0, 0);
 
-        BulletStat(Instantiate(currentWeapon.ammoPrefab, transform.position, spreadRotation).GetComponent<Bullet>());
+        BulletStat(Instantiate(currentWeapon.ammoPrefab, transform.position, spreadRotation).GetComponent<Bullet>(), false);
 
         anim.SetTrigger("Shoot");
     }
