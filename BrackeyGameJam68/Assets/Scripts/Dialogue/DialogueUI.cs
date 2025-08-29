@@ -9,6 +9,11 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Image image;
 
+
+    //Sound
+    [SerializeField] private AudioClip dialogueAudio;
+
+
     //Singleton
     public static DialogueUI instance;
     public bool isActive = false;
@@ -53,6 +58,7 @@ public class DialogueUI : MonoBehaviour
         charTimer += Time.unscaledDeltaTime;
         while (charTimer >= secondPerChar && sentenceText.maxVisibleCharacters < sentenceText.text.Length)
         {
+            AudioManager.instance.PlaySound(dialogueAudio,0.5f);
             sentenceText.maxVisibleCharacters++;
             charTimer -= secondPerChar;
         }
