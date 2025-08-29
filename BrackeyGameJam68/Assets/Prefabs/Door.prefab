@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3271805827958428143}
   - component: {fileID: 6010941996246798811}
   - component: {fileID: 5349968239282201052}
+  - component: {fileID: 2910425783498647137}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -154,3 +155,23 @@ MonoBehaviour:
   inactiveColor: {r: 0.3853848, g: 0.44321817, b: 0.37118933, a: 1}
   activeColor: {r: 0.58431375, g: 1, b: 0.4784314, a: 1}
   hardColor: {r: 0.9473122, g: 0.17013845, b: 0.2159617, a: 1}
+--- !u!114 &2910425783498647137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5570005993180269137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67566215a5afe4e4caa6dabdbd4283a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EasyAudio:
+  - {fileID: 8300000, guid: 59053a5e6b87a4ab3a40a99ead3660e7, type: 3}
+  - {fileID: 8300000, guid: 270ce5635b1c1485ca47efddfd3d8355, type: 3}
+  - {fileID: 8300000, guid: fb5347ad4562b4a42a614f57db790afb, type: 3}
+  HardAudio:
+  - {fileID: 8300000, guid: 21655eb1e791c4a3dbdfdfe004d8f4f1, type: 3}
+  - {fileID: 8300000, guid: b82588110c58545a0bfa854ab31a4935, type: 3}
+  - {fileID: 8300000, guid: aca621e7443af4b418956c8871e751d0, type: 3}

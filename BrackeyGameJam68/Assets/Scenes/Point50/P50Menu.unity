@@ -217,8 +217,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPERATIONAL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -368,8 +368,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CRUMBLE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &593788675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,51 +1659,6 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!1 &732842738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 732842740}
-  - component: {fileID: 732842739}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &732842739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732842738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4b5077bcbb24b32b0487a3336b767f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGM: {fileID: 0}
---- !u!4 &732842740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732842738}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 890.7055, y: 562.939, z: 1.2399563}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892449034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +1923,7 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &940421900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2660,8 +2615,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2796,8 +2751,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3249,8 +3204,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Setting
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3702,7 +3657,7 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &2141491874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,4 +3983,3 @@ SceneRoots:
   - {fileID: 317397652}
   - {fileID: 519521061}
   - {fileID: 1061886068}
-  - {fileID: 732842740}
