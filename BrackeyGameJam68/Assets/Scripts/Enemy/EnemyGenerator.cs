@@ -19,7 +19,7 @@ public class EnemyGenerator : MonoBehaviour
   private float chanceForFastType = 0.1f;
   private float chanceForTankedType = 0.1f;
   private float chanceForStrongType = 0.1f;
-  private float totalDeltaTime = 0;
+  private float totalDeltaTime = 0f;
 
   private static int next = 0;
 
@@ -75,11 +75,6 @@ public class EnemyGenerator : MonoBehaviour
 
     GameObject enemy = CreateEnemy(enemyTypes);
 
-    enemy.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
-
-    GameObject player = GameObject.FindGameObjectWithTag("Player");
-    enemy.GetComponent<EnemyAI>().target = player.transform;
-
     // TODO: Store as reference???
     EnemyTracker.Add(enemy);
   }
@@ -90,6 +85,9 @@ public class EnemyGenerator : MonoBehaviour
     enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
     next++;
     enemy.GetComponent<EnemyAI>().id = next;
+    enemy.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+    GameObject player = GameObject.FindGameObjectWithTag("Player");
+    enemy.GetComponent<EnemyAI>().target = player.transform;
     return enemy;
   }
 
@@ -102,27 +100,39 @@ public class EnemyGenerator : MonoBehaviour
 
   GameObject CreateEnemy(SortedSet<EnemyType> enemyTypes)
   {
+
+
     GameObject enemy = CreateEnemy();
+
+    EnemyTypeColorizer enemyTypeColorizer = enemy.GetComponent<EnemyTypeColorizer>();
+
+    string typeString = "";
 
     if (enemyTypes.Contains(EnemyType.Ranged))
     {
-      enemy.GetComponent<TMP_Text>().text += "R";
+      typeString += "R";
+      enemyTypeColorizer.colors.Add(new Color(0.5f, 0f, 1f));
     }
 
     if (enemyTypes.Contains(EnemyType.Fast))
     {
-      enemy.GetComponent<TMP_Text>().text += "F";
+      typeString += "F";
+      enemyTypeColorizer.colors.Add(new Color(0.75f, 1f, 0.75f));
     }
 
     if (enemyTypes.Contains(EnemyType.Tanked))
     {
-      enemy.GetComponent<TMP_Text>().text += "T";
+      typeString += "T";
+      enemyTypeColorizer.colors.Add(new Color(0f, 0.5f, 0f));
     }
 
     if (enemyTypes.Contains(EnemyType.Strong))
     {
-      enemy.GetComponent<TMP_Text>().text += "S";
+      typeString += "S";
+      enemyTypeColorizer.colors.Add(new Color(1f, 0f, 0f));
     }
+
+    // enemy.GetComponent<TMP_Text>().text = typeString;
 
     return enemy;
   }
