@@ -88,7 +88,7 @@ public class EnemyGenerator : MonoBehaviour
   {
     for (int number = 0; number < amount; number++)
     {
-      CreateRandom();
+      CreateRandomEnemy();
     }
   }
 }
