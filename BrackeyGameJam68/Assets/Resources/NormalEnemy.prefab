@@ -245,6 +245,7 @@ MonoBehaviour:
     quality: 2
   - itemPrefab: {fileID: 8759759056760994804, guid: b37f6dc12480fcb47bc062f80a7fec5a, type: 3}
     quality: 3
+  dedPar: {fileID: 855884073742986632, guid: 5d0a9be0c3834c54682bec390a0c2042, type: 3}
 --- !u!61 &307471213449656993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -317,7 +318,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1967773221247753857
 BoxCollider2D:
   m_ObjectHideFlags: 0

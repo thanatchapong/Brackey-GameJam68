@@ -21,6 +21,8 @@ public class EnemySim_ItemDrop : MonoBehaviour
 
     private EnemySoundScript soundScript;
 
+    [SerializeField] GameObject dedPar;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -48,6 +50,8 @@ public class EnemySim_ItemDrop : MonoBehaviour
         Debug.Log($"{gameObject.name} died!");
 
         soundScript.PlayDeathSound();
+
+        if (dedPar) Instantiate(dedPar, transform.position, Quaternion.identity);
 
         LootItem chosen = GetWeightedLoot();
         if (chosen != null && chosen.itemPrefab != null)
