@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c0754045629cde4388963976d88152e
+guid: de99a86785106904aa0278275c0d2d49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7394956959664376060
-    second: biscuit-machine4_0
+      213: 2073034007795393325
+    second: pallet-wood_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: biscuit-machine4_0
+      name: pallet-wood_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 407f6e943d5df5990800000000000000
-      internalID: -7394956959664376060
+      spriteID: d23e2f95275e4cc10800000000000000
+      internalID: 2073034007795393325
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f0cce29751902f2409d4bdca610b97c9
+    spriteID: 052bfd87e3b39944b9b2ce48f70e5ac0
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      biscuit-machine4_0: -7394956959664376060
+      pallet-wood_0: 2073034007795393325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

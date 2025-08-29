@@ -82,8 +82,9 @@ public class WeaponController : MonoBehaviour
 
             if (reloadCount >= reloadTime)
             {
-                hands.GetComponent<PlayableDirector>().Stop();
                 hands.GetComponent<PlayableDirector>().time = 0;
+                hands.GetComponent<PlayableDirector>().Stop();
+                hands.GetComponent<PlayableDirector>().Evaluate();;
                 reloadCount = 0;
                 reloading = false;
 
