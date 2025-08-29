@@ -79,7 +79,7 @@ public class TopDownController : MonoBehaviour
 
         if (movement != Vector2.zero)
         {
-            if (holdingSpace) currentVelocity = Vector2.Lerp(currentVelocity, movement * (currentSpeed * 0.25f), acceleration * Time.fixedDeltaTime);
+            if (holdingSpace) currentVelocity = Vector2.Lerp(currentVelocity, movement * (currentSpeed * 0.5f), acceleration * Time.fixedDeltaTime);
             else currentVelocity = Vector2.Lerp(currentVelocity, movement * currentSpeed, acceleration * Time.fixedDeltaTime);
             rb.linearVelocity = currentVelocity;
         }

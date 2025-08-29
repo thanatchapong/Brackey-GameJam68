@@ -2,6 +2,7 @@ using SmoothShakeFree;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using System.Collections.Generic;
 
 public class WeaponController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class WeaponController : MonoBehaviour
     [SerializeField] PlayableDirector shotAnim;
     [SerializeField] Slider reloadBar;
     [SerializeField] GameObject ultimate;
+    [SerializeField] Transform ammoHolder;
+    List<GameObject> ammoIndicator = new List<GameObject>();
+    [SerializeField] GameObject ammoArt;
     float spread;
     int magazine;
     int ammo;
@@ -39,9 +43,11 @@ public class WeaponController : MonoBehaviour
         reloadTime = currentWeapon.reloadTime;
 
         reloadBar.maxValue = reloadTime;
-        
+
         audio = GetComponent<AudioSource>();
         audio.clip = currentWeapon.fireSound;
+
+        InitAmmoUI();
     }
 
     public void getUpgraded()
@@ -76,34 +82,57 @@ public class WeaponController : MonoBehaviour
 
             if (reloadCount >= reloadTime)
             {
-                hands.GetComponent<PlayableDirector>().time = 0;
                 hands.GetComponent<PlayableDirector>().Stop();
+                hands.GetComponent<PlayableDirector>().time = 0;
                 reloadCount = 0;
                 reloading = false;
-                
+
                 reloadBar.value = 0;
                 ammo = magazine;
+                UpdateAmmoUI();
             }
         }
 
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
-            {
-                cd = 0;
-                Shoot();
-                ammo -= 1;
+        {
+            cd = 0;
+            Shoot();
+            ammo -= 1;
+            UpdateAmmoUI();
 
-                camShake.StartShake();
-            }
-            else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
-            {
-                reloading = true;
-            }
+            camShake.StartShake();
+        }
+        else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
+        {
+            reloading = true;
+        }
+    }
+
+    void InitAmmoUI()
+    {
+        foreach (var obj in ammoIndicator)
+            Destroy(obj);
+        ammoIndicator.Clear();
+
+        for (int i = 0; i < magazine; i++)
+        {
+            GameObject indicator = Instantiate(ammoArt, ammoHolder);
+            ammoIndicator.Add(indicator);
+        }
+    }
+
+    void UpdateAmmoUI()
+    {
+        for (int i = 0; i < ammoIndicator.Count; i++)
+        {
+            ammoIndicator[i].SetActive(i < ammo);
+        }
     }
 
     public void ShootUltimate()
     {
         highShake.StartShake();
-        
+
         shotAnim.Play();
 
         BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);
@@ -151,7 +180,7 @@ public class WeaponController : MonoBehaviour
                 sizeMult += upg.ammoSizeMult;
             }
         }
-        
+
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.forward * bulletSpeed, ForceMode2D.Impulse);
         bullet.transform.localScale = bullet.transform.localScale * sizeMult;
     }

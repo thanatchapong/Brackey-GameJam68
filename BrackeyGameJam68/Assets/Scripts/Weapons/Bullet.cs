@@ -89,9 +89,11 @@ public class Bullet : MonoBehaviour
 
     IEnumerator PauseImpact(EnemySim_ItemDrop enemyHp)
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.5f;
 
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        Time.timeScale = 1;
         
         //Do Dmg
         if ((critChance * 100) >= Random.Range(0, 101))
@@ -103,7 +105,5 @@ public class Bullet : MonoBehaviour
         TMP_Text dmgText = Instantiate(dmgIndicator, transform.position, Quaternion.identity).transform.GetChild(0).GetComponent<TMP_Text>();
         dmgText.text = "-" + dmg.ToString();
         if(crit) dmgText.color = critColor;
-
-        Time.timeScale = 1;
     }
 }
