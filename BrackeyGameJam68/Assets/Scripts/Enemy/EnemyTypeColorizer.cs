@@ -32,8 +32,17 @@ public class EnemyTypeColorizer : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+
     totalDeltaTime += Time.deltaTime;
     Color color;
+
+    // edge case
+    if (colors.Count == 0)
+    {
+      // do nothing as there's no color to shift from/to
+      return;
+    }
+
     int round = (int)Mathf.Floor(totalDeltaTime / colorTotalTime);
     float timeInThisRound = totalDeltaTime - round * colorTotalTime;
     int index = round % colors.Count;
