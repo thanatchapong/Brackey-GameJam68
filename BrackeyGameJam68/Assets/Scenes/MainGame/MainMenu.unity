@@ -799,6 +799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 317397652}
   - component: {fileID: 317397653}
+  - component: {fileID: 317397654}
   m_Layer: 0
   m_Name: CamHolder
   m_TagString: Untagged
@@ -839,6 +840,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   CamSpeed: 10
+--- !u!114 &317397654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317397651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3790a30ccd2eed346854cde8cb3f0125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &352850270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1224,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
+  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
 --- !u!114 &593788675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,6 +1938,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
+  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
 --- !u!114 &940421900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3658,6 +3673,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
+  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
 --- !u!114 &2141491874
 MonoBehaviour:
   m_ObjectHideFlags: 0

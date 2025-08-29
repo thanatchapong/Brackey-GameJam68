@@ -82,6 +82,11 @@ public class WeaponController : MonoBehaviour
                 fireRate += upg.fireRate;
             }
         }
+
+        // 🔹 Rebuild ammo UI whenever magazine changes
+        InitAmmoUI();
+        ammo = Mathf.Min(ammo, magazine); // clamp current ammo to new magazine
+        UpdateAmmoUI();
     }
 
     void Update()
@@ -114,7 +119,7 @@ public class WeaponController : MonoBehaviour
             {
                 hands.GetComponent<PlayableDirector>().time = 0;
                 hands.GetComponent<PlayableDirector>().Stop();
-                hands.GetComponent<PlayableDirector>().Evaluate();;
+                hands.GetComponent<PlayableDirector>().Evaluate();
                 reloadCount = 0;
                 reloading = false;
 
@@ -125,36 +130,30 @@ public class WeaponController : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo > 0 && reloading == false)
-            {
-                cd = 0;
-                if (jammed && audio != null && jammedSound != null) {
-                    audio.PlayOneShot(jammedSound);
-                    return;
-                }
-                if (jamClock >= jamClockDuration && Random.Range(0, 4) >= 3)
-                {
-                    jammed = true;
-                    jamClock = 0f;
-                }
-                Shoot();
-                ammo -= 1;
-
-                camShake.StartShake();
-            }
-            else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
-            {
-                reloading = true;
-            }
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo > 0 && reloading == false)
         {
             cd = 0;
+            if (jammed && audio != null && jammedSound != null)
+            {
+                audio.PlayOneShot(jammedSound);
+                return;
+            }
+            if (jamClock >= jamClockDuration && Random.Range(0, 4) >= 3)
+            {
+                jammed = true;
+                jamClock = 0f;
+            }
             Shoot();
             ammo -= 1;
             UpdateAmmoUI();
 
             camShake.StartShake();
+            
+            if (ammo <= 0 && reloading == false)
+            {
+                reloading = true;
+            }
         }
-        else if ((Input.GetKey(KeyCode.Mouse0) && cd >= 1 / currentWeapon.fireRate && ammo <= 0) || Input.GetKey(KeyCode.R) && reloading == false)
+        else if (Input.GetKey(KeyCode.R) && reloading == false)
         {
             reloading = true;
         }

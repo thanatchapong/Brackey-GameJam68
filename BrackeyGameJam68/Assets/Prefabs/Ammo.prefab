@@ -285,7 +285,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 1472
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -340,7 +340,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.55
+  m_Radius: 0.7
 --- !u!114 &279003930590551734
 MonoBehaviour:
   m_ObjectHideFlags: 0
