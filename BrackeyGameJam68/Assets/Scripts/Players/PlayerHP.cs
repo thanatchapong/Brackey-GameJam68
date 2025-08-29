@@ -111,7 +111,6 @@ public class PlayerHP : MonoBehaviour
         // Add game over logic, disable GameObject, play death animation, etc.
         gameOverAnim.Play();
         Time.timeScale = 0;
-        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)

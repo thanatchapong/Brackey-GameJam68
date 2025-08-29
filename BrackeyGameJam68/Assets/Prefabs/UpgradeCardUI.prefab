@@ -375,6 +375,7 @@ MonoBehaviour:
   nameText: {fileID: 451539802662775832}
   detailsText: {fileID: 93554950827415647}
   image: {fileID: 1895936689936376733}
+  riskColor: {r: 1, g: 0.5452945, b: 0, a: 1}
 --- !u!1 &7982835730291675894
 GameObject:
   m_ObjectHideFlags: 0
