@@ -100,8 +100,8 @@ public class EnemyGenerator : MonoBehaviour
     {
         Vector3 randomOffset = new Vector3(
             Random.Range(-stageAreaSize.x, stageAreaSize.x),
-            0f,
-            Random.Range(-stageAreaSize.y, stageAreaSize.y)
+            Random.Range(-stageAreaSize.y, stageAreaSize.y),
+            0
         );
         return transform.position + randomOffset;
     }

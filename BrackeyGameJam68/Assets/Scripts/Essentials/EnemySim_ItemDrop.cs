@@ -22,6 +22,7 @@ public class EnemySim_ItemDrop : MonoBehaviour
     private EnemySoundScript soundScript;
 
     [SerializeField] GameObject dedPar;
+    public bool desSelf;
 
     void Start()
     {

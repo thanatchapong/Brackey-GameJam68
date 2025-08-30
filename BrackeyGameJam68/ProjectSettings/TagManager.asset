@@ -12,6 +12,8 @@ TagManager:
   - UpgradeManager
   - Heal
   - Metallic
+  - DoorTrans
+  - DoorOut
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Player
   - Obstacle
   - Exp
-  - 
+  - Parry
   - 
   - 
   - 

@@ -41,6 +41,9 @@ public class WeaponController : MonoBehaviour
 
     void Start()
     {
+        if(GameManager.classSelected) currentWeapon = GameManager.classSelected;
+        if(GameManager.ult) ultimate = GameManager.ult;
+
         GameObject weaponInstance = Instantiate(currentWeapon.weaponPrefab, hands);
 
         if (anim == null)
@@ -82,6 +85,8 @@ public class WeaponController : MonoBehaviour
                 fireRate += upg.fireRate;
             }
         }
+
+        spread = Mathf.Min(spread, 1);
 
         // 🔹 Rebuild ammo UI whenever magazine changes
         InitAmmoUI();

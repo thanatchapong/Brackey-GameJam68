@@ -17,11 +17,13 @@ public class GameOverNav : MonoBehaviour
 
             AudioManager.instance.ResetBGM();
             SceneManager.LoadScene(1);
+            Time.timeScale = 1;
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(0);
+            Time.timeScale = 1;
         }
         else
         {

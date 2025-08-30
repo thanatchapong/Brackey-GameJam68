@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9093024011837486904}
   - component: {fileID: -7964036288379400725}
   - component: {fileID: 1744494356748275864}
+  - component: {fileID: -1100846963133101796}
   m_Layer: 9
   m_Name: PalletWood
   m_TagString: Untagged
@@ -298,3 +299,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1100846963133101796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542525633405766195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d180026a351bc8418a6aa9082de1f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftSpeed: 0.5
+  noiseTimeScale: 0.4

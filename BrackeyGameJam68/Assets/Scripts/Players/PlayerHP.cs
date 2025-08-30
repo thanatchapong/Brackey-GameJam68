@@ -76,8 +76,8 @@ public class PlayerHP : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth);
 
-        
         if (attacker != null) KnockbackEnemy(attacker);
+        if (attacker != null && attacker.GetComponent<EnemySim_ItemDrop>().desSelf == true) Destroy(attacker);
 
         if (currentHealth <= 0)
         {
@@ -87,13 +87,13 @@ public class PlayerHP : MonoBehaviour
 
     private void KnockbackEnemy(GameObject enemy)
     {
-        float knockbackDistance = 1f; // ระยะผลัก
+        float knockbackDistance = 15f; // ระยะผลัก
 
-        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+        Rigidbody2D agent = enemy.GetComponent<Rigidbody2D>();
         if (agent != null)
         {
             Vector3 knockDir = (enemy.transform.position - transform.position).normalized;
-            agent.Move(knockDir * knockbackDistance); 
+            agent.AddForce(knockDir * knockbackDistance, ForceMode2D.Impulse); 
         }
         else
         {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7365007196829753906}
   - component: {fileID: 6339160753283993348}
   - component: {fileID: 903445270010472082}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Parry
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 3584
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
