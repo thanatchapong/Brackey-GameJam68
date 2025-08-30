@@ -32,11 +32,6 @@ public class RoomGenerator : MonoBehaviour
     [SerializeField] private UpgradeObject RNG_ROOM;
     public bool rngRoomTrigger = false;
 
-    void Start()
-    {
-        GenerateRoom(false);
-    }
-
     public void GenerateRoom(bool isHard)
     {
         Debug.Log($"[GenerateRoom] start | isHard={isHard} | currentRoomNumber(before++)={roomNumber}");

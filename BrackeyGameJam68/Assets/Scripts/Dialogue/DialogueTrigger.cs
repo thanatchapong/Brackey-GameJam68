@@ -5,17 +5,19 @@ using UnityEngine;
 public class DialogueTrigger : ScriptableObject
 {
     [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] private Dialogue[] endlessDialogues;
     private int currentSentence;
-    private int currentDialogueIndex = -1;
     public static DialogueTrigger activeTrigger;
+    private Dialogue currentDialogue;
     
     public void TriggerDialogue(int dialogueIndex) {
         if(dialogues.Length <= dialogueIndex) {
-            Debug.LogError("Dialogue index out of bounds!");
-            return;
+            currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
+        }
+        else {
+            currentDialogue = dialogues[dialogueIndex];
         }
 
-        currentDialogueIndex = dialogueIndex;
         currentSentence = 0;
         activeTrigger = this;
 
@@ -26,8 +28,7 @@ public class DialogueTrigger : ScriptableObject
 
     public void NextLine() {
         currentSentence++;
-        Debug.Log(currentSentence + " " + currentDialogueIndex);
-        if(currentSentence >= dialogues[currentDialogueIndex].sentences.Length) {
+        if(currentSentence >= currentDialogue.sentences.Length) {
             DialogueUI.instance.EndDialogue();
             currentSentence = 0;
             activeTrigger = null;
@@ -40,13 +41,12 @@ public class DialogueTrigger : ScriptableObject
     }
 
     public void ShowCurrentLine() {
-        Dialogue dialogue = dialogues[currentDialogueIndex];
         string speaker = "";
         Sprite sprite = null;
         
         Time.timeScale = 0;
         
-        foreach (var nameMap in dialogue.nameMaps)
+        foreach (var nameMap in currentDialogue.nameMaps)
         {
             if (nameMap.sentencesMap.Contains(currentSentence))
             {
@@ -56,7 +56,7 @@ public class DialogueTrigger : ScriptableObject
             }
         }
         DialogueUI.instance.SetDialogueLine(
-            dialogue.sentences[currentSentence],
+            currentDialogue.sentences[currentSentence],
             speaker,
             sprite
         );
