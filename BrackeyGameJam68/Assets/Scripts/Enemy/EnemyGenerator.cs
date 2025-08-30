@@ -29,6 +29,7 @@ public class EnemyGenerator : MonoBehaviour
   [SerializeField] PlayableDirector levelCleared;
 
   [SerializeField] GameObject spawnPar;
+  [SerializeField] AudioSource clearSound;
 
   int waveLvl = 0;
 
@@ -56,6 +57,7 @@ public class EnemyGenerator : MonoBehaviour
 
         if (activeEnemies.Count == 0 && !doorSpawnedThisWave && isSpawning == false)
         {
+            clearSound.Play();
             levelCleared.Play();
             roomGen.SetDoorActive(true, true);
             doorSpawnedThisWave = true;
