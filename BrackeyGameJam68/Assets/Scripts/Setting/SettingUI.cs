@@ -45,7 +45,7 @@ public class SettingUI : MonoBehaviour
 
         // Slider → InputField + Mixer + Save
         if (MasterVolume_Slider != null)
-            MasterVolume_Slider.onValueChanged.AddListener((v) => {UpdateInputAndMixer(MasterVolume_input, v, "Master"); ClampBGMAndSFXToMaster();});
+            MasterVolume_Slider.onValueChanged.AddListener((v) => { UpdateInputAndMixer(MasterVolume_input, v, "Master"); ClampBGMAndSFXToMaster(); });
         if (BGM_Slider != null)
             BGM_Slider.onValueChanged.AddListener((v) => UpdateInputAndMixer(BGM_input, v, "BGM"));
         if (SFX_Slider != null)
@@ -83,8 +83,8 @@ public class SettingUI : MonoBehaviour
     // แปลง % → dB (100% = 0 dB, 200% = ~6 dB, 0% ~ mute)
     float PercentToDB(float percent)
     {
-        if (percent <= 0f) return -80f; 
-        float normalized = percent / 100f; 
+        if (percent <= 0f) return -80f;
+        float normalized = percent / 100f;
         float db;
         if (normalized <= 1f)
         {

@@ -22,7 +22,7 @@ MonoBehaviour:
   damage: 1
   criticalChance: 0
   criticalMultiplier: 0
-  accuracy: 0.05
+  accuracy: 1.05
   fireRate: 0
   magazineSize: 0
   ammoSizeMult: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 0
   knockbackForce: 0.1
+  audio: {fileID: 0}
