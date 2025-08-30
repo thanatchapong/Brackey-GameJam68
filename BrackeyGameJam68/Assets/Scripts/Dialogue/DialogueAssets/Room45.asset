@@ -15,9 +15,25 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 00000000020000000300000004000000050000000600000008000000090000000a000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 01000000070000000b0000000c0000000d0000000e000000
+  sentences:
+  - Hey, Friend.
+  - Hey, Partner.
+  - "We\u2019re almost there."
+  - "I\u2019m a bit nervous."
+  - "If there is no exit\u2026"
+  - "We\u2019re practically stuck here."
+  - We will die.
+  - What are you afraid of death?
+  - "No, but\u2026"
+  - "You\u2019re only here because of me."
+  - "I don\u2019t want you to die\u2026 for me."
+  - "Hey, it\u2019s not like I don\u2019t have a choice."
+  - I choose to be here.
+  - I wanted to be here.
+  - "So let\u2019s go, Let\u2019s find that lab, save your father and get out of
+    here."
   isEnded: 0

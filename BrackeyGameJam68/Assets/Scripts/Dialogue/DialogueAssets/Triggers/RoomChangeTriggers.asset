@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - {fileID: 11400000, guid: c7f538d6aeb52c34b8e7034724a1bdce, type: 2}
+  - {fileID: 11400000, guid: 2fa240d6253e142efb18c3be01871ff7, type: 2}
+  - {fileID: 11400000, guid: 1f1358325528744bfa5c451b97a32ae1, type: 2}
+  - {fileID: 11400000, guid: 0b4e2d4e5a6ef4c6db648e7ec280c779, type: 2}
+  - {fileID: 11400000, guid: 07c345a6b8e2145cc872b0de24308758, type: 2}
+  - {fileID: 11400000, guid: 3140b0f57b6ca456482234694fa54a97, type: 2}
+  - {fileID: 11400000, guid: fa20a0e6eb817468ba428e9270971df8, type: 2}
+  - {fileID: 11400000, guid: 19ad6c7c37d8343978e0c8e403199b2a, type: 2}
+  - {fileID: 11400000, guid: 4ce85aac3bb474390a55522dc6258d37, type: 2}
+  - {fileID: 11400000, guid: 5c0078dcba7fd40d791c3780c204c689, type: 2}
+  - {fileID: 11400000, guid: d7c1058634e0048de9a3a9852baa8e85, type: 2}
+  - {fileID: 11400000, guid: 499324de2067a42048871eccc2decc88, type: 2}
   endlessDialogues:
   - {fileID: 0}
   playOnlyOnce:

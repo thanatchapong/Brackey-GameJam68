@@ -15,9 +15,30 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 010000000300000005000000070000000a0000000c0000000f00000010000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 02000000040000000600000008000000090000000b0000000d0000000e00000011000000
+  - name: Door
+    image: {fileID: 0}
+    sentencesMap: 00000000
+  sentences:
+  - Clank!
+  - Woah! The door just shut behind us!
+  - "Yuu. Yuu! There\u2019s still a way out. We should leave now!"
+  - No.
+  - "You\u2019re trespassing on a private property!"
+  - "Don\u2019t care."
+  - You could get arrested for this!
+  - So?
+  - "\u2026"
+  - "My god, you\u2019re so difficult."
+  - Huh? Cats have gods?
+  - "Hey! Don\u2019t change the subject!"
+  - "We\u2019re already inside so why don\u2019t we go explore a bit."
+  - Absolutely not.
+  - Why did you drag me into this?
+  - "Because we\u2019re partners! Remember?"
+  - "And I heard there is a big tuna storage somewhere\u2026"
+  - "Well\u2026 I guess we can keep exploring a bit."
   isEnded: 0

@@ -12,73 +12,81 @@ public class DialogueTrigger : ScriptableObject
     private Dialogue currentDialogue;
     [SerializeField] private List<Dialogue> playOnlyOnce;
     private List<Dialogue> played = new List<Dialogue>();
-    
+
     private void OnEnable()
     {
         // Ensure per-run state is cleared when the asset is loaded (e.g., entering Play Mode)
         played.Clear();
     }
-    
-    public void TriggerDialogue(int dialogueIndex) {
+
+    public void TriggerDialogue(int dialogueIndex)
+    {
         Debug.LogError("TRIGGER DIALOGUE");
 
         if (dialogueIndex == 0 || dialogueIndex == 1)
         {
             currentDialogue = dialogues[dialogueIndex];
         }
+        else if ((dialogueIndex + 1) % 5 == 0)
+        {
+            currentDialogue = dialogues[((dialogueIndex + 1) / 5) + 1];
+        }
         else
         {
-            currentDialogue = dialogues[dialogueIndex % 5 + 3];  
+            return;
         }
-        
+
 
         /*
 
-                if (dialogues.Length <= dialogueIndex)
-                {
-                    currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
-                }
-                else
-                {
-                    currentDialogue = dialogues[dialogueIndex];
-                }
-                if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {
-                    Debug.LogError("ALREADY PLAYED");
-                    Debug.LogError(string.Join(", ", played.Select(d => d != null ? d.name : "null")));
-                    return;
-                }
+                    if (dialogues.Length <= dialogueIndex)
+                    {
+                        currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
+                    }
+                    else
+                    {
+                        currentDialogue = dialogues[dialogueIndex];
+                    }
+                    if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {
+                        Debug.LogError("ALREADY PLAYED");
+                        Debug.LogError(string.Join(", ", played.Select(d => d != null ? d.name : "null")));
+                        return;
+                    }
 
-                */
+                    */
 
         played.Add(currentDialogue);
         currentSentence = 0;
         activeTrigger = this;
 
         Time.timeScale = 0;
-        
+
         ShowCurrentLine();
     }
 
-    public void NextLine() {
+    public void NextLine()
+    {
         currentSentence++;
-        if(currentSentence >= currentDialogue.sentences.Length) {
+        if (currentSentence >= currentDialogue.sentences.Length)
+        {
             DialogueUI.instance.EndDialogue();
             currentSentence = 0;
             activeTrigger = null;
             return;
         }
-        
+
         Time.timeScale = 0;
 
         ShowCurrentLine();
     }
 
-    public void ShowCurrentLine() {
+    public void ShowCurrentLine()
+    {
         string speaker = "";
         Sprite sprite = null;
-        
+
         Time.timeScale = 0;
-        
+
         foreach (var nameMap in currentDialogue.nameMaps)
         {
             if (nameMap.sentencesMap.Contains(currentSentence))
@@ -93,5 +101,11 @@ public class DialogueTrigger : ScriptableObject
             speaker,
             sprite
         );
+    }
+
+    public void SkipDialogue()
+    {
+        currentSentence = 100;
+        NextLine();
     }
 }

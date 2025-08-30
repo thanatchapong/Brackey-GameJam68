@@ -15,9 +15,32 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 000000000200000003000000050000000600000008000000090000000a0000000b0000000c0000001100000014000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 0100000004000000070000000d0000000e0000000f000000100000001200000013000000
+  sentences:
+  - Hey, Cheeso.
+  - Hey, Yuri.
+  - I want to tell you something.
+  - "I feel like you deserve to know it\u2026"
+  - What is it?
+  - "The truth about why I\u2019m here\u2026"
+  - "I\u2019ve never told you about my father, right?"
+  - No?
+  - My father was a DEA agent. He suspected that this place was a front for some
+    kind of drug trafficking operation.
+  - But nobody believed him, so he investigated this place by himself.
+  - And he never returned.
+  - "At least I wanted to prove that he was right. If it\u2019s the last thing I
+    could do for him."
+  - "I\u2019m sorry I haven\u2019t told you earlier."
+  - ...
+  - "So that\u2019s why\u2026"
+  - "Don\u2019t worry Yuu. I understand."
+  - Thank you, for telling me this.
+  - 'Thank you, for understanding. '
+  - I bet your father is waiting for you here.
+  - Waiting for you to come and save him.
+  - I hope so... I wanted to see him again.
   isEnded: 0

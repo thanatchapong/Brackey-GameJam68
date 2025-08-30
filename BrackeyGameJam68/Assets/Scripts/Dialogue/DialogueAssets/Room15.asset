@@ -15,9 +15,32 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 01000000040000000500000007000000090000000b0000000d000000100000001200000014000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 00000000020000000300000006000000080000000a0000000c0000000e0000000f0000001100000013000000
+  sentences:
+  - Hey, Yuri!
+  - Hey, Cheese Cake!
+  - "I don\u2019t believe you choose to break into this place, risking your life
+    just because of a biscuit."
+  - "You\u2019re smarter than that, Yuu. You must have some other motive."
+  - "You\u2019re right."
+  - "I\u2019m not here because of a biscuit."
+  - So why are you here exactly?
+  - Not telling ya.
+  - Yeah, right.
+  - "Mmhm\u2026"
+  - "What\u2019s wrong?"
+  - "I\u2019m hungry"
+  - Really? We just had a meal an hour ago.
+  - Cheeso, can I eat you?
+  - What? No
+  - "Go find some food on the ground or something. We\u2019re literally in a biscuit
+    factory"
+  - Ahh, yeah biscuit.
+  - '*Yuri ate the biscuit she pulled out earlier'
+  - "mmm\u2026 It was delicious!"
+  - I thought you said it was awful.
+  - "Everything tastes delicious when you\u2019re hungry."
   isEnded: 0

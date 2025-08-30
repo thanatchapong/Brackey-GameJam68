@@ -15,9 +15,21 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 0100000004000000060000000800000009000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 00000000020000000300000005000000070000000a000000
+  sentences:
+  - Hey, Human.
+  - Hey, Kitty.
+  - I think the factory is being locked down.
+  - We should leave while we still can.
+  - No.
+  - "Well, if you\u2019re so insistent on staying at least tell me why you\u2019re
+    here."
+  - Why do you want to know?
+  - "Because we\u2019re partners?"
+  - "mmm\u2026"
+  - No.
+  - Great. What did I expected anyway.
   isEnded: 0

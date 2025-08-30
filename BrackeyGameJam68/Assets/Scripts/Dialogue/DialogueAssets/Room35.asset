@@ -15,9 +15,31 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 02000000050000000600000007000000080000000a0000000b0000000e0000001100000012000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 00000000010000000300000004000000090000000c0000000d0000000f00000010000000
+  sentences:
+  - Hey, Yuri. This factory is almost fully locked down. This is our last chance
+    to leave.
+  - "If you keep going we might not be able to come out alive. I think we should
+    leave now\u2026"
+  - "What? You\u2019re afraid of death? I thought you got nine lives"
+  - "I\u2019m not afraid that I\u2019ll die."
+  - "I\u2019m just afraid\u2026 that you wil\u2026"
+  - "\u2026"
+  - "Cheeso don\u2019t worry about me. I\u2019ll be fine."
+  - There had to be an exit on room 50. I just knew it.
+  - "If you want to leave you can go. I promise I\u2019ll return when I\u2019m done."
+  - "You\u2019re not great at keeping promises."
+  - "Come on! Cheeso. Don\u2019t worry about me. I\u2019ll outlive you by like\u2026
+    a hundred years!"
+  - Just go. I can take care of myself.
+  - "No\u2026"
+  - "I\u2019m coming with you."
+  - What? Why? I thought you wanted to leave.
+  - "Because we\u2019re partners, remember?"
+  - "I\u2019m not leaving you by yourself. If we have to die we\u2019ll die together."
+  - "Yeah! That\u2019s the spirit!"
+  - "Let\u2019s go. Toward room 50!"
   isEnded: 0

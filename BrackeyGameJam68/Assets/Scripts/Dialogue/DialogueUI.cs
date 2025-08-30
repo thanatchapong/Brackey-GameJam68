@@ -14,6 +14,11 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private AudioClip dialogueAudio;
 
 
+    //skip Dialogoue
+    float PressedTime;
+    bool isPressed = false;
+
+
     //Singleton
     public static DialogueUI instance;
     public bool isActive = false;
@@ -27,7 +32,8 @@ public class DialogueUI : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void Start() {
+    void Start()
+    {
         dialoguePanel.SetActive(false);
     }
 
@@ -45,7 +51,8 @@ public class DialogueUI : MonoBehaviour
         charTimer = 0f;
     }
 
-    public void EndDialogue() {
+    public void EndDialogue()
+    {
         Time.timeScale = 1;
         isActive = false;
         dialoguePanel.SetActive(false);
@@ -58,7 +65,7 @@ public class DialogueUI : MonoBehaviour
         charTimer += Time.unscaledDeltaTime;
         while (charTimer >= secondPerChar && sentenceText.maxVisibleCharacters < sentenceText.text.Length)
         {
-            AudioManager.instance.PlaySound(dialogueAudio,0.1f);
+            AudioManager.instance.PlaySound(dialogueAudio, 0.1f);
             sentenceText.maxVisibleCharacters++;
             charTimer -= secondPerChar;
         }
@@ -66,6 +73,7 @@ public class DialogueUI : MonoBehaviour
 
         if (Pressed())
         {
+
             if (isTyping)
             {
                 sentenceText.maxVisibleCharacters = sentenceText.text.Length;
@@ -75,6 +83,24 @@ public class DialogueUI : MonoBehaviour
             {
                 DialogueTrigger.activeTrigger.NextLine();
             }
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (!isPressed)
+            {
+                PressedTime = charTimer;
+                isPressed = true;
+            }
+
+            if (charTimer - PressedTime >= 1f)
+            {
+                DialogueTrigger.activeTrigger.SkipDialogue();
+            }
+        }
+        else
+        {
+            isPressed = false;
         }
     }
 

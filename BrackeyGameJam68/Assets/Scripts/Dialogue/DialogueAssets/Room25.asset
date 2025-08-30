@@ -15,9 +15,23 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 000000000200000003000000050000000a000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 0100000004000000060000000700000008000000090000000b000000
+  sentences:
+  - Hey, lil guy.
+  - Hey, fatass.
+  - "Don\u2019t call me that."
+  - "So uhh\u2026 why is your name Cheese Cake anyway?"
+  - Why do you want to know?
+  - "Because we\u2019re partners. And we shouldn\u2019t keep secrets from one another."
+  - "Yeah, like you didn\u2019t keep any secrets from me."
+  - You really wanna know. Because my previous owner found me in a box of Cheese
+    Cake.
+  - Humans always pick a stupid when naming their pets.
+  - "Like you\u2019re not gonna name your child Chocolate Chip Cookie or something
+    would you?"
+  - I would.
+  - "Yeah that\u2019s just you."
   isEnded: 0

@@ -15,9 +15,41 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 020000000300000004000000050000000700000008000000090000000a0000000b0000000c0000000f0000001000000011000000150000001600000017000000180000001e0000001f000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 0000000001000000060000000d0000000e00000012000000130000001400000017000000190000001a0000001b0000001c0000001d000000
+  sentences:
+  - "So\u2026 is this room 50.\n"
+  - "What\u2019s that thing on the table?\n"
+  - Yuri and Cheese Cake go to inspect the object on the table
+  - A biscuit.
+  - It was a biscuit.
+  - "All this\u2026 just for a biscuit."
+  - "Just a biscuit, huh\u2026"
+  - "No drug lab, no exit and my father isn\u2019t even here."
+  - Just the very same -7% sugar biscuit.
+  - "You were right, Cheeso\u2026"
+  - "We should\u2019ve left this place long ago\u2026"
+  - "I should\u2019ve listened\u2026"
+  - "Why am I so stubborn\u2026"
+  - Hey, Yuu.
+  - "We had fun didn\u2019t we."
+  - "You\u2026 did?"
+  - "But. I brought you in here. I\u2019ve gotten both of us killed."
+  - And we got nothing back.
+  - "That\u2019s fine."
+  - "It\u2019s ok to take a risk, even if we got nothing in return."
+  - "After all, if we don\u2019t lose anything, then we  got nothing to gain."
+  - "Cheeso\u2026"
+  - "Th- Thank you\u2026 Thank you, Cheeso."
+  - "Haha! That\u2019s ok"
+  - So what do we do now?
+  - "Since we\u2019re going to die anyway."
+  - "Why don\u2019t we just take out the rest of these bastards just for fun."
+  - "Haha! That\u2019s fine by me!"
+  - It was great being with you.
+  - "I couldn\u2019t have asked for more."
+  - It has been a pleasure.
+  - "Thank you\u2026 For everything."
   isEnded: 0

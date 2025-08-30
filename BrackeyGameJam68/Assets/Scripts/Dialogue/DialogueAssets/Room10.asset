@@ -15,9 +15,23 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 
+    sentencesMap: 000000000200000006000000090000000a0000000b0000000d000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 
-  sentences: []
+    sentencesMap: 01000000030000000400000006000000080000000c000000
+  sentences:
+  - Hey, Cheeso.
+  - Hey, Yuu.
+  - What do you think will be in room 50?
+  - I was gonna ask the same thing.
+  - "Usually there\u2019ll be a vault where they store their money or some super
+    secret recipes."
+  - I hope it was a drug lab.
+  - "A\u2026 What?"
+  - A drug lab.
+  - "Out of everything. Why? Don\u2019t tell me you want to try some."
+  - No, but it would be so cool if we can uncover some kind of illegal operation.
+  - We would be on all the news. All of my friends will be jealous of me.
+  - Yeah, but first we would be arrested for trespassing.
+  - You're no fun at all!
   isEnded: 0
