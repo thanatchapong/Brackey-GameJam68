@@ -163,8 +163,8 @@ public class Door : MonoBehaviour
         Debug.Log($"[DOOR] ENTER | isHard={isHard}");
         if (collision.CompareTag("Player") && isActive)
         {
-            GameObject.FindGameObjectWithTag("DoorTrans").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.FindGameObjectWithTag("DoorTrans").GetComponent<TransitionAnimator>().progress = 0;
+            GameObject.FindGameObjectWithTag("DoorTrans").transform.GetChild(0).gameObject.SetActive(true);
             doorAudio.PlayDoorSound(isHard);
             StartCoroutine(SceneTrans());
             SetInactive();
