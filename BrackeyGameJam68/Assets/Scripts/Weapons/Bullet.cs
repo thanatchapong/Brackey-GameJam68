@@ -64,6 +64,7 @@ public class Bullet : MonoBehaviour
 
             if (pierce < 0)
             {
+                if (pauseImpact) Time.timeScale = 1;
                 Destroy(gameObject);
             }
             
@@ -75,6 +76,7 @@ public class Bullet : MonoBehaviour
             else AudioSource.PlayClipAtPoint(wallHitAudio, transform.position);
 
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
+            if (pauseImpact) Time.timeScale = 1;
             Destroy(gameObject);
         }
         else

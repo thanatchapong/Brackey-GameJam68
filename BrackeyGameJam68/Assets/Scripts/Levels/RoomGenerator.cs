@@ -59,11 +59,13 @@ public class RoomGenerator : MonoBehaviour
 
         int roll = Random.Range(0, 5);
         Debug.Log($"[GenerateRoom] RNG roll={roll}, rngRoomCount={rngRoomCount}");
-        if(roll < rngRoomCount) {
+        if (roll < rngRoomCount)
+        {
             Debug.LogError("RNG Room Triggered");
             rngRoomTrigger = true;
         }
-        else {
+        else
+        {
             Debug.LogError("RNG Room Not Triggered");
             rngRoomTrigger = false;
         }
@@ -103,7 +105,7 @@ public class RoomGenerator : MonoBehaviour
         {
             if (!spawnpoint.gameObject.CompareTag("ObstacleSpawnpoint")) continue;
             int ricochetCount = upgradeSystem.upgInUse.Count(u => u == RICOCHET);
-            for (int i = 0; i < (ricochetCount+1)*3; i++)
+            for (int i = 0; i < (ricochetCount + 1) * 3; i++)
             {
                 if (Random.Range(0, 2) >= 1) continue;
                 int obstacleIdx = Random.Range(0, obstacleList.Count);
@@ -112,7 +114,7 @@ public class RoomGenerator : MonoBehaviour
                 Quaternion randomRotation = Quaternion.Euler(0f, 0f, randomZ);
                 GameObject obstacle = Instantiate(selectedObstacle, spawnpoint.position, randomRotation, currentRoom.transform);
                 obstacle.TryGetComponent(out Destructibles destructibles);
-                if(destructibles) destructibles.playerController = playerController;
+                if (destructibles) destructibles.playerController = playerController;
             }
         }
         GenerateDoor(isHard);
@@ -121,7 +123,14 @@ public class RoomGenerator : MonoBehaviour
         if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
         if (targetDoor2 != null) ClearObstacles(targetDoor2.transform.position);
 
-        dialogueTrigger.TriggerDialogue(roomNumber - 1);
+        if (roomNumber % 5 == 0)
+        {
+            dialogueTrigger.TriggerDialogue(roomNumber / 5);
+        }
+        else if (roomNumber == 1)
+        {
+            dialogueTrigger.TriggerDialogue(0);
+        }
     }
 
     private void ColorRoomWalls()

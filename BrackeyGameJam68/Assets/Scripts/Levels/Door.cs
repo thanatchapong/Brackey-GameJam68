@@ -1,4 +1,6 @@
 using UnityEngine;
+using TransitionsPlus;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
@@ -140,18 +142,33 @@ public class Door : MonoBehaviour
         SetPosAndRotate(side, transform.position);
     }
 
+    IEnumerator SceneTrans()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameObject.FindGameObjectWithTag("DoorTrans").GetComponent<TransitionAnimator>().Play();
+        yield return new WaitForSeconds(0.5f);
+
+        playerTransform.position = playerSpawnpoint;
+        cameraTransform.position = new Vector3(playerSpawnpoint.x, playerSpawnpoint.y, cameraTransform.position.z);
+        Debug.LogError("DOOR GENERATE ROOM");
+        roomGenerator.GenerateRoom(isHard);
+
+        GameObject.FindGameObjectWithTag("DoorTrans").transform.GetChild(0).gameObject.SetActive(false);
+        GameObject.FindGameObjectWithTag("DoorOut").GetComponent<TransitionAnimator>().progress = 0;
+        GameObject.FindGameObjectWithTag("DoorOut").GetComponent<TransitionAnimator>().Play();
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log($"[DOOR] ENTER | isHard={isHard}");
-        if(collision.CompareTag("Player") && isActive)
+        if (collision.CompareTag("Player") && isActive)
         {
+            GameObject.FindGameObjectWithTag("DoorTrans").transform.GetChild(0).gameObject.SetActive(true);
+            GameObject.FindGameObjectWithTag("DoorTrans").GetComponent<TransitionAnimator>().progress = 0;
             doorAudio.PlayDoorSound(isHard);
+            StartCoroutine(SceneTrans());
             SetInactive();
             SetOpposite();
-            playerTransform.position = playerSpawnpoint;
-            cameraTransform.position = new Vector3(playerSpawnpoint.x, playerSpawnpoint.y, cameraTransform.position.z);
-            Debug.LogError("DOOR GENERATE ROOM");
-            roomGenerator.GenerateRoom(isHard);
         }
     }
 }

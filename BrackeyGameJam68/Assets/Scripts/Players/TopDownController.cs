@@ -42,6 +42,8 @@ public class TopDownController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         rb = GetComponent<Rigidbody2D>();
 
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
