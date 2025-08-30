@@ -23,5 +23,9 @@ public class GameOverNav : MonoBehaviour
             Time.timeScale = 1;
             SceneManager.LoadScene(0);
         }
+        else
+        {
+            Time.timeScale = 0;
+        }
     }
 }
