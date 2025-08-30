@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.AI; 
 using TMPro;
 
 public class PlayerHP : MonoBehaviour
@@ -17,9 +18,7 @@ public class PlayerHP : MonoBehaviour
     public HealthBarUpdate healthBar;
 
     [Header("Audio")]
-
-    [SerializeField]
-    private AudioClip hurtaudio;
+    [SerializeField] private AudioClip hurtaudio;
 
     [SerializeField] TMP_Text hpText;
     [SerializeField] PlayableDirector hurtAnim;
@@ -29,7 +28,7 @@ public class PlayerHP : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
+
         hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
     }
 
@@ -38,7 +37,7 @@ public class PlayerHP : MonoBehaviour
         cd += Time.deltaTime;
 
         currentHealth = Mathf.Min(currentHealth, maxHealth);
-        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();    
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
     }
 
     public void GetUpgrade()
@@ -52,14 +51,14 @@ public class PlayerHP : MonoBehaviour
                 maxHealth += upg.hp;
             }
         }
-        
+
         hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, GameObject attacker = null)
     {
         if (damageAmount < 0 || cd < 1) return;
 
@@ -71,16 +70,42 @@ public class PlayerHP : MonoBehaviour
 
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
-        
+
         hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
         healthBar.SetHealth(currentHealth);
         Debug.Log(gameObject.name + " took " + damageAmount + " damage. Current Health: " + currentHealth);
 
+        
+        if (attacker != null) KnockbackEnemy(attacker);
+
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    private void KnockbackEnemy(GameObject enemy)
+    {
+        float knockbackDistance = 1f; // ระยะผลัก
+
+        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+        if (agent != null)
+        {
+            Vector3 knockDir = (enemy.transform.position - transform.position).normalized;
+            agent.Move(knockDir * knockbackDistance); 
+        }
+        else
+        {
+           
+            enemy.transform.position += (enemy.transform.position - transform.position).normalized * knockbackDistance;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 2f); 
     }
 
     public void Heal(int healAmount)
@@ -90,7 +115,7 @@ public class PlayerHP : MonoBehaviour
         currentHealth += healAmount;
         currentHealth = Mathf.Min(currentHealth, maxHealth);
 
-        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();    
+        hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
         Debug.Log(gameObject.name + " healed for " + healAmount + ". Current Health: " + currentHealth);
     }
@@ -108,22 +133,25 @@ public class PlayerHP : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " has died!");
-        // Add game over logic, disable GameObject, play death animation, etc.
         gameOverAnim.Play();
         Time.timeScale = 0;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (cd >= 1.5f) 
         {
-            TakeDamage(25);
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                TakeDamage(25, col.gameObject);
+                cd = 0; 
+            }
         }
-        else if (col.gameObject.tag == "Heal")
+
+        if (col.gameObject.CompareTag("Heal"))
         {
             currentHealth += Random.Range(15, 26);
             currentHealth = Mathf.Min(currentHealth, maxHealth);
-
             healthBar.SetHealth(currentHealth);
         }
     }

@@ -1,24 +1,39 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-// TODO: When doing kill/die method, also call the `RemoveByKey` method in the respective EnemyTracker -mistertfy64 2025-08-27
-
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] public Transform target;
     [SerializeField] public int id;
 
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        agent.avoidancePriority = Random.Range(30, 60);
+        agent.obstacleAvoidanceType = (ObstacleAvoidanceType)2;
+        agent.radius = 0.3f;
+        agent.stoppingDistance = 0.5f;
     }
 
     private void Update()
     {
-        agent.SetDestination(target.position);
+        if (target != null)
+        {
+            agent.SetDestination(target.position);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Vector3 dir = (transform.position - collision.transform.position).normalized;
+            agent.Move(dir * 0.05f);
+        }
     }
 }
