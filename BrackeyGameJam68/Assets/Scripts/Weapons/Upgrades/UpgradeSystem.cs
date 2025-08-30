@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -30,6 +31,8 @@ public class UpgradeSystem : MonoBehaviour
 
     [SerializeField] AudioClip anyUpg;
     [SerializeField] UpgradeObject RISK_IT_FOR_A_BISCUIT;
+    [SerializeField] GameObject ultReady;
+    [SerializeField] AudioSource laserCharge;
 
     public PlayableDirector openTl;
     public PlayableDirector closeTl;
@@ -60,6 +63,7 @@ public class UpgradeSystem : MonoBehaviour
         //Play SFX when max exp is reached
         if (currentExp >= requireExp && !MaxExpSoundPlayed)
         {
+            ultReady.SetActive(true);
             MaxExpSoundPlayed = true;
             upgradeSystemAudio.PlayMaxExpSound();
         }
@@ -83,8 +87,11 @@ public class UpgradeSystem : MonoBehaviour
         {
             timeUseUlt += Time.deltaTime;
 
+            if (laserCharge && laserCharge.isPlaying == false) laserCharge.Play();
+
             if (timeUseUlt >= 1.5f)
             {
+                ultReady.SetActive(false);
                 timeUseUlt = 0;
                 isUpgrading = true;
                 stopTime = true;
@@ -102,6 +109,8 @@ public class UpgradeSystem : MonoBehaviour
         }
         else
         {
+            if (laserCharge && laserCharge.isPlaying == true) laserCharge.Stop();
+            if (laserCharge) laserCharge.time -= Time.deltaTime * 1.25f;
             timeUseUlt -= Time.deltaTime * 1.25f;
             timeUseUlt = Mathf.Max(0, timeUseUlt);
         }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.Playables;
@@ -27,6 +28,12 @@ public class EnemyGenerator : MonoBehaviour
     private bool doorSpawnedThisWave = false; // <-- Flag
   [SerializeField] PlayableDirector levelCleared;
 
+  [SerializeField] GameObject spawnPar;
+
+  int waveLvl = 0;
+
+  bool isSpawning = false;
+
     void Start()
     {
         normalEnemyPrefab = Resources.Load<GameObject>("NormalEnemy");
@@ -47,7 +54,7 @@ public class EnemyGenerator : MonoBehaviour
 
         activeEnemies.RemoveAll(e => e == null);
 
-        if (activeEnemies.Count == 0 && !doorSpawnedThisWave)
+        if (activeEnemies.Count == 0 && !doorSpawnedThisWave && isSpawning == false)
         {
             levelCleared.Play();
             roomGen.SetDoorActive(true, true);
@@ -56,22 +63,37 @@ public class EnemyGenerator : MonoBehaviour
         }
     }
 
-    public void SpawnWave(int waveLevel)
-    {
-        // Reset flag for the new wave
-        doorSpawnedThisWave = false;
-        waveActive = true; // now wave is in progress
-        
-        activeEnemies.Clear();
-        
-        int enemyCount = Mathf.Clamp(Mathf.RoundToInt((waveLevel + 1) * 1.5f), 1, 100);
+  public void SpawnWave(int waveLevel)
+  {
+    isSpawning = true;
+    // Reset flag for the new wave
+    doorSpawnedThisWave = false;
+    waveActive = true; // now wave is in progress
 
-        for (int i = 0; i < enemyCount; i++)
-        {
-            Vector3 spawnPos = GetRandomSpawnPosition();
-            GameObject enemy = CreateRandomEnemy(spawnPos);
-            if (enemy != null) activeEnemies.Add(enemy);
-        }
+    waveLvl = waveLevel;
+
+    activeEnemies.Clear();
+
+    StartCoroutine(SpawnDelay());
+    }
+
+  IEnumerator SpawnDelay()
+  {
+      int enemyCount = Mathf.Clamp(Mathf.RoundToInt((waveLvl + 1) * 1.5f), 1, 100);
+
+    for (int i = 0; i < enemyCount; i++)
+    {
+      Vector3 spawnPos = GetRandomSpawnPosition();
+      Instantiate(spawnPar, spawnPos, Quaternion.identity);
+      
+      yield return new WaitForSeconds(0.4f);
+
+      GameObject enemy = CreateRandomEnemy(spawnPos);
+      if (enemy != null) activeEnemies.Add(enemy);
+
+      yield return new WaitForSeconds(0.75f);
+    }
+    isSpawning = false;
     }
 
     Vector3 GetRandomSpawnPosition()
@@ -109,6 +131,7 @@ public class EnemyGenerator : MonoBehaviour
         enemy.GetComponent<SpriteRenderer>().color = Color.white;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         enemy.GetComponent<EnemyAI>().target = player.transform;
+        enemy.GetComponent<EnemySim_ItemDrop>().SetHP(enemy.GetComponent<EnemySim_ItemDrop>().maxHealth + (int)Mathf.Round((float)waveLvl * 1.2f));
         return enemy;
     }
 
@@ -120,6 +143,7 @@ public class EnemyGenerator : MonoBehaviour
         enemy.GetComponent<SpriteRenderer>().color = Color.white;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         enemy.GetComponent<EnemyAI>().target = player.transform;
+        enemy.GetComponent<EnemySim_ItemDrop>().SetHP(enemy.GetComponent<EnemySim_ItemDrop>().maxHealth + (int)Mathf.Round((float)waveLvl * 1.2f));
         return enemy;
     }
 

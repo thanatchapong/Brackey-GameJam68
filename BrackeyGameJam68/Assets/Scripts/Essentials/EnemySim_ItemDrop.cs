@@ -30,6 +30,12 @@ public class EnemySim_ItemDrop : MonoBehaviour
         soundScript = gameObject.GetComponent<EnemySoundScript>();
     }
 
+    public void SetHP(int maxHp)
+    {
+        maxHealth = maxHp;
+        currentHealth = maxHealth;
+    }
+
     public void TakeDamage(int damageAmount)
     {
         if (damageAmount <= 0) return;
