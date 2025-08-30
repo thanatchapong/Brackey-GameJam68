@@ -18,15 +18,14 @@ public class BulletEnemyNavigation : MonoBehaviour
     agent.radius = 0.3f;
     agent.stoppingDistance = 0.5f;
 
-    if (target != null)
-    {
-      agent.SetDestination(target.position);
-    }
   }
 
   private void Update()
   {
-
+    if (target != null)
+    {
+      agent.SetDestination(target.position);
+    }
   }
 
   private void OnCollisionStay(Collision collision)

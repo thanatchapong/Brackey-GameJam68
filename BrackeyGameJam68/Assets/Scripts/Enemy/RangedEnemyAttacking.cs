@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RangedEnemyAttacking : MonoBehaviour
 {
+  private float totalTime = 0f;
 
   [SerializeField] public Transform target;
   private float distanceToFire = 3.75f;
@@ -23,8 +24,13 @@ public class RangedEnemyAttacking : MonoBehaviour
     if (squaredDistanceFromTarget < distanceToFire * distanceToFire)
     {
       // fire bullets because the enemy is close enough to the player.
-      GameObject bulletEnemy = Instantiate(bulletEnemyPrefab, transform.position, transform.rotation);
-      bulletEnemy.GetComponent<EnemyAI>().target = player.transform;
+      totalTime += Time.deltaTime;
+      if (totalTime >= 0.25f)
+      {
+        GameObject bulletEnemy = Instantiate(bulletEnemyPrefab, transform.position, transform.rotation);
+        bulletEnemy.GetComponent<BulletEnemyNavigation>().target = player.transform;
+        totalTime -= 0.25f;
+      }
     }
   }
 }
