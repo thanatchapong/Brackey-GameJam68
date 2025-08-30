@@ -14,6 +14,7 @@ public class UpgradeSystem : MonoBehaviour
     public List<UpgradeObject> upgInUse = new List<UpgradeObject>();
     [SerializeField] List<Transform> card = new List<Transform>();
     [SerializeField] WeaponController weaponSys;
+    [SerializeField] TopDownController topDownController;
     [SerializeField] PlayerHP plrHp;
 
     [SerializeField] Slider ultBar;
@@ -197,6 +198,7 @@ public class UpgradeSystem : MonoBehaviour
         AudioManager.instance.PlaySound(chosen.audio);
         weaponSys.getUpgraded();
         plrHp.GetUpgrade();
+        topDownController.GetUpgrade();
         upgradeSystemAudio.StopPerkAudio();
 
         // check if chosen is risk or normal

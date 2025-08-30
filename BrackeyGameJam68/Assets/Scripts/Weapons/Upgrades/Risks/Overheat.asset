@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Overheat
   m_EditorClassIdentifier: 
   upgradeName: Overheat
-  upgradeDetails: +5 Fire Rate / +30% Bullet Speed / Every 10 seconds, there is a
-    50% chance that your gun jams, and you can't fire anything for +3 seconds.
+  upgradeDetails: +4 Fire Rate\n+30% Bullet Speed\nYour gun can jam for +3 seconds.
   upgradeIcon: {fileID: 0}
   isRisk: 1
   hp: 0
@@ -24,7 +23,7 @@ MonoBehaviour:
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
-  fireRate: 5
+  fireRate: 4
   magazineSize: 0
   ammoSizeMult: 0
   reloadTime: 0
@@ -32,3 +31,4 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 0.3
   knockbackForce: 0
+  audio: {fileID: 0}
