@@ -142,6 +142,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"[DOOR] ENTER | isHard={isHard}");
         if(collision.CompareTag("Player") && isActive)
         {
             doorAudio.PlayDoorSound(isHard);
