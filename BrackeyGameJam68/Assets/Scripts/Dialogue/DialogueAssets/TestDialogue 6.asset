@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameMaps:
   - name: Yuri Risuku
-    image: {fileID: 21300000, guid: b9d34c0bae1bc35458a97c476bf1266f, type: 3}
-    sentencesMap: 0400000005000000
+    image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
+    sentencesMap: 010000000300000005000000
   - name: Cheeso
-    image: {fileID: 3809016719837592849, guid: 2ebb7d8455a8bed4abb8b6b768cb9ce7, type: 3}
-    sentencesMap: 00000000010000000200000003000000
+    image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
+    sentencesMap: 000000000200000004000000
   sentences:
-  - Biscuit.
-  - It was a biscuit indeed.
-  - "All this\u2026 just for a biscuit."
-  - "Just a biscuit, huh\u2026"
-  - Of course, it's a biscuit.
-  - Biscuit should taste good. That's why I'm doing this.
+  - Yuu, this is unlawful search.
+  - And?
+  - It's also trespassing.
+  - And?
+  - Also first-degree murder and terrorism...
+  - That's what I'm asking. And so what???
   isEnded: 0
