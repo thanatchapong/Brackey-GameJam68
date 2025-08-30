@@ -49,8 +49,8 @@ public class EnemyGenerator : MonoBehaviour
 
         if (activeEnemies.Count == 0 && !doorSpawnedThisWave)
         {
-      levelCleared.Play();
-            roomGen.GenerateDoor(false);
+            levelCleared.Play();
+            roomGen.SetDoorActive(true, true);
             doorSpawnedThisWave = true;
             waveActive = false; // done
         }

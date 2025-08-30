@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Ricochet
   upgradeDetails: +3 Bounce\n+1 Pierce\nThere are 3 times more obstacles.
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: 4710b22ce18c744e4b0e659670352e8a, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
   pierce: 1
   bulletSpeed: 0
   knockbackForce: 0
+  audio: {fileID: 0}

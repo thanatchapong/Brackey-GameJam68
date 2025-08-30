@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Sitting Target
   upgradeDetails: -2 Walk Speed\n+100 HP
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: 0fb3f12fefec89e47a2cc64b4a1767a0, type: 3}
   isRisk: 1
   hp: 100
   walkSpeed: -2

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: Sniper
   upgradeDetails: +100% Knockback\n+50% Bullet Speed\nIf you break an obstacle, your
     walk speed is 0 for +2 seconds.
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: a6301b307d5d746ea8fd922339f0bbc6, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0
@@ -32,3 +32,4 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 0.5
   knockbackForce: 1
+  audio: {fileID: 0}

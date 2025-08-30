@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: RNG Room
   upgradeDetails: +20% Crit Rate\n+40% Crit Damage\n+20% chance each room to have
     0% crit rate
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: df418671b247d624db2b925f542ebe6a, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0

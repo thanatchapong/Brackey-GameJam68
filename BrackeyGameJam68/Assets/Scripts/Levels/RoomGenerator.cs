@@ -30,8 +30,13 @@ public class RoomGenerator : MonoBehaviour
     [Header("Upgrades")]
     [SerializeField] private UpgradeObject RICOCHET;
     [SerializeField] private UpgradeObject RNG_ROOM;
-    [SerializeField] EnemyGenerator enemyGen;
     public bool rngRoomTrigger = false;
+    [SerializeField] EnemyGenerator enemyGen;
+
+    public void SetDoorActive(bool door1Active, bool door2Active) {
+        if (targetDoor1 != null) targetDoor1.SetActive(door1Active);
+        if (targetDoor2 != null) targetDoor2.SetActive(door2Active);
+    }
 
     public void GenerateRoom(bool isHard)
     {
@@ -110,7 +115,7 @@ public class RoomGenerator : MonoBehaviour
                 if(destructibles) destructibles.playerController = playerController;
             }
         }
-        // GenerateDoor(isHard);
+        GenerateDoor(isHard);
 
         if (entranceDoor != null) ClearObstacles(entranceDoor.transform.position);
         if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
@@ -269,12 +274,14 @@ public class RoomGenerator : MonoBehaviour
         } while (entranceDoorScript != null && side == entranceDoorScript.side);
 
         targetDoorScript1.SetPosAndRotate(side, ComputeDoorPosition(side, minDoorX, maxDoorX, minDoorY, maxDoorY, randomX, randomY));
+        targetDoor1.SetActive(false);
 
         if (roomNumber % 5 == 0)
         {
             targetDoor2 = Instantiate(doorPrefab);
             targetDoorScript2 = targetDoor2.GetComponent<Door>();
             targetDoorScript2.roomGenerator = this;
+            targetDoorScript2.cameraTransform = cameraTransform;
             targetDoorScript2.SetHard();
             randomX = Random.Range(minDoorX + doorWidth / 2, maxDoorX - doorWidth / 2);
             randomY = Random.Range(minDoorY + doorWidth / 2, maxDoorY - doorWidth / 2);
@@ -285,6 +292,8 @@ public class RoomGenerator : MonoBehaviour
             } while ((entranceDoorScript != null && side == entranceDoorScript.side) || side == targetDoorScript1.side);
 
             targetDoorScript2.SetPosAndRotate(side, ComputeDoorPosition(side, minDoorX, maxDoorX, minDoorY, maxDoorY, randomX, randomY));
+            
+            targetDoor2.SetActive(false);
         }
     }
 
