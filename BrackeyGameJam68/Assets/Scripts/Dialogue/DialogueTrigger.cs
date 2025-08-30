@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "New Dialogue Trigger", menuName = "Dialogue/Dialogue Trigger")]
 public class DialogueTrigger : ScriptableObject
@@ -9,15 +10,30 @@ public class DialogueTrigger : ScriptableObject
     private int currentSentence;
     public static DialogueTrigger activeTrigger;
     private Dialogue currentDialogue;
+    [SerializeField] private List<Dialogue> playOnlyOnce;
+    private List<Dialogue> played = new List<Dialogue>();
+    
+    private void OnEnable()
+    {
+        // Ensure per-run state is cleared when the asset is loaded (e.g., entering Play Mode)
+        played.Clear();
+    }
     
     public void TriggerDialogue(int dialogueIndex) {
+        Debug.LogError("TRIGGER DIALOGUE");
         if(dialogues.Length <= dialogueIndex) {
             currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
         }
         else {
             currentDialogue = dialogues[dialogueIndex];
         }
+        if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {
+            Debug.LogError("ALREADY PLAYED");
+            Debug.LogError(string.Join(", ", played.Select(d => d != null ? d.name : "null")));
+            return;
+        }
 
+        played.Add(currentDialogue);
         currentSentence = 0;
         activeTrigger = this;
 

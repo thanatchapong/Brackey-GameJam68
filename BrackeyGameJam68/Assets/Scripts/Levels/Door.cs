@@ -133,6 +133,7 @@ public class Door : MonoBehaviour
             SetOpposite();
             playerTransform.position = playerSpawnpoint;
             cameraTransform.position = new Vector3(playerSpawnpoint.x, playerSpawnpoint.y, cameraTransform.position.z);
+            Debug.LogError("DOOR GENERATE ROOM");
             roomGenerator.GenerateRoom(isHard);
         }
     }

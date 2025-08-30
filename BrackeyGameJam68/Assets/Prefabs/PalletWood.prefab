@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5766299879526098253}
   - component: {fileID: 3843887743271635818}
   - component: {fileID: 9093024011837486904}
+  - component: {fileID: -7964036288379400725}
   m_Layer: 9
   m_Name: PalletWood
   m_TagString: Untagged
@@ -178,3 +179,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7964036288379400725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542525633405766195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc8169131bf9444580e30eefbce3f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  shakeAmount: 0.05
+  particleExplosionRef: {fileID: 6558477071542047915, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}
+  playerController: {fileID: 0}
+  targetObject: {fileID: 4878171683449597561, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}

@@ -16,3 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7f538d6aeb52c34b8e7034724a1bdce, type: 2}
   - {fileID: 11400000, guid: dc2ea13d8c77184468df4d0a2a6e8954, type: 2}
   - {fileID: 11400000, guid: af4cb2c5c76cf4345bb6e530576be820, type: 2}
+  endlessDialogues:
+  - {fileID: 11400000, guid: c7f538d6aeb52c34b8e7034724a1bdce, type: 2}
+  playOnlyOnce:
+  - {fileID: 11400000, guid: c7f538d6aeb52c34b8e7034724a1bdce, type: 2}

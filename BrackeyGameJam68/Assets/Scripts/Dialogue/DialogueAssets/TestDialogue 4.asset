@@ -10,22 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0456d1788b599479e88baf6509441b, type: 3}
-  m_Name: TestDialogue
+  m_Name: TestDialogue 4
   m_EditorClassIdentifier: 
   nameMaps:
   - name: Yuri Risuku
     image: {fileID: 21300000, guid: b9d34c0bae1bc35458a97c476bf1266f, type: 3}
-    sentencesMap: 0000000001000000020000000400000007000000
+    sentencesMap: 020000000300000004000000
   - name: Cheeso
     image: {fileID: 3809016719837592849, guid: 2ebb7d8455a8bed4abb8b6b768cb9ce7, type: 3}
-    sentencesMap: 030000000500000006000000
+    sentencesMap: 000000000100000005000000
   sentences:
-  - Oh Hi!
-  - One biscuit please?
+  - "I\u2019m not afraid that I\u2019ll die."
+  - "I\u2019m just afraid\u2026 that you wil\u2026"
   - ...
-  - ...
-  - ...
-  - This is a cookie shop.
-  - ...
-  - Ok, bye.
+  - What are you doing talking to yourself, Cheeso?
+  - Go punch those monsters!!!
+  - I DON'T HAVE A GUN LIKE YOU
   isEnded: 0

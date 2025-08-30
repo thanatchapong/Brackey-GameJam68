@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0456d1788b599479e88baf6509441b, type: 3}
+  m_Name: Room1
+  m_EditorClassIdentifier: 
+  nameMaps:
+  - name: Yuu Risuku
+    image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
+    sentencesMap: 020000000500000006000000080000000d000000
+  - name: Cheeso
+    image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
+    sentencesMap: 0000000001000000030000000400000007000000090000000a0000000b0000000c000000
+  sentences:
+  - Hey Yuu...
+  - "So\u2026 Why this factory specifically?"
+  - "Because\u2026 Biscuit!!!!"
+  - ...
+  - "Eh\u2026 A biscuit? What\u2019s wrong with it?"
+  - This biscuit I bought from a store is of particularly low quality.
+  - They're scamming us, consumers!!! WE NEED TO GET BACK AT THEM!!!
+  - So... you need to come here and destroy this factory to be satisfied?
+  - "Exactly! Yes. There\u2019s no other way."
+  - ...
+  - Yuu...
+  - Yuu are stupid...
+  - "C\u2019mon Yuu, be reasonable. Just because the bisc-"
+  - "Cheeso Let\u2019s go!"
+  isEnded: 0

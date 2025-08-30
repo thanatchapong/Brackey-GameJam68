@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Guardian
   m_EditorClassIdentifier: 
   upgradeName: Guardian
-  upgradeDetails: +5 Hp\n-5 Walk Speed
+  upgradeDetails: -3 Block Cooldown\n-2 Walk Speed
   upgradeIcon: {fileID: 2800000, guid: d74dfe14298864afeae2aa430ec0ded2, type: 3}
   isRisk: 1
   hp: 5
-  walkSpeed: -5
-  blockCooldown: 0
+  walkSpeed: -2
+  blockCooldown: -3
   damage: 0
   criticalChance: 0
   criticalMultiplier: 0
