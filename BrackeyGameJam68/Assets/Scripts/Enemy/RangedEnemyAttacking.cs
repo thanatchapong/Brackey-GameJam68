@@ -20,7 +20,6 @@ public class RangedEnemyAttacking : MonoBehaviour
   {
 
     float squaredDistanceFromTarget = (transform.position.x - player.transform.position.x) * (transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y) * (transform.position.y - player.transform.position.y);
-    Debug.Log("DISTANCE: " + squaredDistanceFromTarget);
     if (squaredDistanceFromTarget < distanceToFire * distanceToFire)
     {
       // fire bullets because the enemy is close enough to the player.
