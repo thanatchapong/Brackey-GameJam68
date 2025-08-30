@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc8169131bf9444580e30eefbce3f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
   shakeAmount: 0.05
   particleExplosionRef: {fileID: 6558477071542047915}
   playerController: {fileID: 0}

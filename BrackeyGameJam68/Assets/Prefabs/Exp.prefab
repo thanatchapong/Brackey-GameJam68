@@ -748,8 +748,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 4576400967246932764}
-  scrollSpeed: 15
+  scrollSpeed: 12
   interval: 2
-  duration: 1.5
+  duration: 2
   scrollDirection: {x: 0.5, y: 0}
   fadeDuration: 0.05

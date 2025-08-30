@@ -58,7 +58,7 @@ public class UpgradeSystem : MonoBehaviour
     void Update()
     {
         ultSlider.value = timeUseUlt;
-        ultBar.value = currentExp;
+        ultBar.value = Mathf.Lerp(ultBar.value, currentExp, Time.deltaTime * 5f);
 
         //Play SFX when max exp is reached
         if (currentExp >= requireExp && !MaxExpSoundPlayed)
