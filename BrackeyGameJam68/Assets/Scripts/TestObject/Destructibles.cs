@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Destructibles : MonoBehaviour
@@ -7,6 +8,8 @@ public class Destructibles : MonoBehaviour
 
     [SerializeField]
     float shakeAmount = 0.1f;
+
+    [SerializeField] List<AudioClip> DestructionAudio = new List<AudioClip>();
 
 
     [SerializeField]
@@ -72,6 +75,8 @@ public class Destructibles : MonoBehaviour
 
         float totalDuration = ps.main.duration + ps.main.startLifetime.constantMax;
         Destroy(ps.gameObject, totalDuration);
+
+        AudioSource.PlayClipAtPoint(DestructionAudio[Random.Range(0, DestructionAudio.Count)],transform.position);
 
         // DisintegrateObject disintegrator = targetObject.GetComponent<DisintegrateObject>();
         // if (disintegrator != null)

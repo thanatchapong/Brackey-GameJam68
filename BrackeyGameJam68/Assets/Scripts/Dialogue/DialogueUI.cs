@@ -58,7 +58,7 @@ public class DialogueUI : MonoBehaviour
         charTimer += Time.unscaledDeltaTime;
         while (charTimer >= secondPerChar && sentenceText.maxVisibleCharacters < sentenceText.text.Length)
         {
-            AudioManager.instance.PlaySound(dialogueAudio,0.25f);
+            AudioManager.instance.PlaySound(dialogueAudio,0.1f);
             sentenceText.maxVisibleCharacters++;
             charTimer -= secondPerChar;
         }

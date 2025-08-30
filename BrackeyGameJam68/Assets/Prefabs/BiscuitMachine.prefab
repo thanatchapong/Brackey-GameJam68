@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1604599384980081261}
   m_Layer: 9
   m_Name: BiscuitMachine
-  m_TagString: Untagged
+  m_TagString: Metallic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

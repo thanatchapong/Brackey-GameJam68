@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - UpgradeManager
   - Heal
+  - Metallic
   layers:
   - Default
   - TransparentFX

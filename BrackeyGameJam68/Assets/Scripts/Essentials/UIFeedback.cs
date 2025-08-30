@@ -37,6 +37,7 @@ public class UIFeedback : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnClicked()
     {
+        AudioManager.instance.PlaySound(Clickclip);
         transform.rotation = rotate * Quaternion.Euler(0, 0, -rotateTilt);
         transform.localScale =  scale * (scaleMult/2);
     }

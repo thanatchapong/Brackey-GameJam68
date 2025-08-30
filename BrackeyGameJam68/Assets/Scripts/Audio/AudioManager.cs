@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        ResetBGM();
+
         if (BGM == null) BGM = GetComponent<AudioSource>();
         if (BGM == null) BGM = gameObject.AddComponent<AudioSource>();
         BGM.playOnAwake = false;
@@ -46,11 +48,20 @@ public class AudioManager : MonoBehaviour
         if (SFXGroup != null) audioSourceLoop.outputAudioMixerGroup = SFXGroup;
     }
 
+    public void ResetBGM()
+    {
+        MusicFade(0, 100, 1);
+    }
+
+    //One Time SFX
+
     public void PlaySound(AudioClip clip, float vol = 1f)
     {
         if (clip == null) return;
         audioSource.PlayOneShot(clip, vol);
     }
+
+    //Loop SFX
 
     public void PlayLoop(AudioClip clip)
     {
@@ -78,6 +89,8 @@ public class AudioManager : MonoBehaviour
         BGM.clip = null;
     }
 
+    // Music Fade
+
     public void MusicFade(float duration, float volPercentTarget, float pitchTarget)
     {
         if (fadeCoroutine != null)
@@ -90,6 +103,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator MusicFadePercentCoroutine(float duration, float volPercentTarget, float pitchTarget)
     {
+        Debug.Log("Changing");
         float startPercent = 100f;
         Audio_Setting setting = Audio_Setting.Instance;
 
@@ -102,6 +116,7 @@ public class AudioManager : MonoBehaviour
 
         while (timeElapsed < duration)
         {
+            Debug.Log(BGM.volume);
             timeElapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(timeElapsed / duration);
 

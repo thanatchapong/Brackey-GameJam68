@@ -21,10 +21,12 @@ public class DialogueTrigger : ScriptableObject
     
     public void TriggerDialogue(int dialogueIndex) {
         Debug.LogError("TRIGGER DIALOGUE");
-        if(dialogues.Length <= dialogueIndex) {
+        if (dialogues.Length <= dialogueIndex)
+        {
             currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
         }
-        else {
+        else
+        {
             currentDialogue = dialogues[dialogueIndex];
         }
         if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {

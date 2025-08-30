@@ -71,7 +71,8 @@ public class Bullet : MonoBehaviour
         }
         else if (bounce <= 0)
         {
-            AudioSource.PlayClipAtPoint(wallHitAudio, transform.position);
+            if (col.gameObject.tag == "Metallic") AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count)], transform.position);
+            else AudioSource.PlayClipAtPoint(wallHitAudio, transform.position);
 
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
             Destroy(gameObject);

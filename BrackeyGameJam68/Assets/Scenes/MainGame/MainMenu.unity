@@ -177,7 +177,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &3352684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &14233848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,8 +619,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPERATIONAL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -770,8 +770,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CRUMBLE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1568,8 +1568,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: RIFLE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2377,8 +2377,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2632,8 +2632,8 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
-  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Clickclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &593788675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &626006297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3220,7 +3220,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &660113824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4036,8 +4036,8 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
-  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Clickclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &940421900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4263,8 +4263,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5072,8 +5072,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PISTOL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5342,8 +5342,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: BACK
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5675,7 +5675,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: b82588110c58545a0bfa854ab31a4935, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &1391691149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6269,7 +6269,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: b82588110c58545a0bfa854ab31a4935, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &1599662035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6820,8 +6820,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6956,8 +6956,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLAY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 3099d61bed7ebb841bd5fe54f32d796b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7092,8 +7092,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7545,8 +7545,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Setting
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7682,7 +7682,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: b82588110c58545a0bfa854ab31a4935, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &2092609554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8245,8 +8245,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shotgun
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
-  m_sharedMaterial: {fileID: -3641083187052005912, guid: 71be3319f63f472468c612d55acbbc2e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8497,7 +8497,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &2137961948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8782,8 +8782,8 @@ MonoBehaviour:
   scaleSped: 4
   rotateTilt: 3
   rotateSped: 4
-  Hoverclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
-  Clickclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
+  Clickclip: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
 --- !u!114 &2141491874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9008,7 +9008,7 @@ MonoBehaviour:
   rotateTilt: 2
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 802aa61d6266a473699e2522982e412b, type: 3}
+  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
 --- !u!114 &2142247569
 MonoBehaviour:
   m_ObjectHideFlags: 0
