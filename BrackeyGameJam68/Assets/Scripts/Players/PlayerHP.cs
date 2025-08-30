@@ -132,6 +132,7 @@ public class PlayerHP : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.instance.MusicFade(1f, 0.03f, 0.5f);
         Debug.Log(gameObject.name + " has died!");
         gameOverAnim.Play();
         Time.timeScale = 0;

@@ -247,6 +247,7 @@ MonoBehaviour:
   - itemPrefab: {fileID: 8759759056760994804, guid: b37f6dc12480fcb47bc062f80a7fec5a, type: 3}
     quality: 3
   dedPar: {fileID: 855884073742986632, guid: 5d0a9be0c3834c54682bec390a0c2042, type: 3}
+  desSelf: 0
 --- !u!114 &125307170280339882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d5637b1f136f84f2abe181133a6c74b9, type: 3}
   - {fileID: 8300000, guid: 3a6eb5ecbb755495cb1a9998fff8498f, type: 3}
   - {fileID: 8300000, guid: d5af8cb5374f6431596e5bfbfbe55cec, type: 3}
+  SpawnAudio: {fileID: 8300000, guid: 879c0c9ce5b9c4c39b02923ce464071c, type: 3}
 --- !u!82 &9182387400177763419
 AudioSource:
   m_ObjectHideFlags: 0

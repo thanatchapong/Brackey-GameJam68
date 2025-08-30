@@ -6,6 +6,10 @@ public class PrositionalAudio : MonoBehaviour
 
     public AudioClip clip;
 
+    [SerializeField] bool PlayOnStart = false;
+    [SerializeField] bool loop = false;
+    [SerializeField] float volume = 1f;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,7 +23,13 @@ public class PrositionalAudio : MonoBehaviour
         audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
         audioSource.minDistance = 1f;
         audioSource.maxDistance = 20f;
-        audioSource.loop = false;
+        audioSource.volume = volume;
+        audioSource.loop = loop;
+
+        if (PlayOnStart)
+        {
+            audioSource.Play();
+        }
     }
 
     public void Play()

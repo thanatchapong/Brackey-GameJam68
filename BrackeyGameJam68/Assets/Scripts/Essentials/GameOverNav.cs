@@ -6,8 +6,6 @@ public class GameOverNav : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
-
-        AudioManager.instance.MusicFade(1f, 0.03f, 0.5f);
     }
     void Update()
     {

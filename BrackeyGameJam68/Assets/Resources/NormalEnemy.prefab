@@ -246,6 +246,7 @@ MonoBehaviour:
   - itemPrefab: {fileID: 8759759056760994804, guid: b37f6dc12480fcb47bc062f80a7fec5a, type: 3}
     quality: 3
   dedPar: {fileID: 855884073742986632, guid: 5d0a9be0c3834c54682bec390a0c2042, type: 3}
+  desSelf: 0
 --- !u!61 &307471213449656993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -381,6 +382,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7446b6e182d104838ad67e39a38fa217, type: 3}
   - {fileID: 8300000, guid: 0e0fd1fc0ebca4968a8a9d4504eb16f9, type: 3}
   - {fileID: 8300000, guid: 79ffc755af6ae42ee94ec57d83737b35, type: 3}
+  SpawnAudio: {fileID: 8300000, guid: 879c0c9ce5b9c4c39b02923ce464071c, type: 3}
 --- !u!82 &9182387400177763419
 AudioSource:
   m_ObjectHideFlags: 0

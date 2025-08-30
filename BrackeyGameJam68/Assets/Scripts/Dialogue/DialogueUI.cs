@@ -85,7 +85,7 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
         {
             if (!isPressed)
             {

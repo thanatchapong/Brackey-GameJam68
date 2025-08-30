@@ -5675,7 +5675,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
+  Clickclip: {fileID: 8300000, guid: ff834492df7924067b470bd792cb94f2, type: 3}
 --- !u!114 &1391691149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6269,7 +6269,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
+  Clickclip: {fileID: 8300000, guid: e5a58981b2eab413c8503a488bd020ee, type: 3}
 --- !u!114 &1599662035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7682,7 +7682,7 @@ MonoBehaviour:
   rotateTilt: 3
   rotateSped: 4
   Hoverclip: {fileID: 8300000, guid: 52554747b94fb4d24b492ad7198b9883, type: 3}
-  Clickclip: {fileID: 8300000, guid: 71bc8b52772ec46b8b1c656a1291a6b2, type: 3}
+  Clickclip: {fileID: 8300000, guid: 64e5228d3f1904dcc9e50f83e0db7d21, type: 3}
 --- !u!114 &2092609554
 MonoBehaviour:
   m_ObjectHideFlags: 0

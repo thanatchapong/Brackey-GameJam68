@@ -123,14 +123,8 @@ public class RoomGenerator : MonoBehaviour
         if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
         if (targetDoor2 != null) ClearObstacles(targetDoor2.transform.position);
 
-        if (roomNumber % 5 == 0)
-        {
-            dialogueTrigger.TriggerDialogue(roomNumber / 5);
-        }
-        else if (roomNumber == 1)
-        {
-            dialogueTrigger.TriggerDialogue(0);
-        }
+        
+        dialogueTrigger.TriggerDialogue(roomNumber - 1);
     }
 
     private void ColorRoomWalls()
