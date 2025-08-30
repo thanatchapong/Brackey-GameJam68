@@ -21,19 +21,34 @@ public class DialogueTrigger : ScriptableObject
     
     public void TriggerDialogue(int dialogueIndex) {
         Debug.LogError("TRIGGER DIALOGUE");
-        if (dialogues.Length <= dialogueIndex)
-        {
-            currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
-        }
-        else
+
+        if (dialogueIndex == 0 || dialogueIndex == 1)
         {
             currentDialogue = dialogues[dialogueIndex];
         }
-        if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {
-            Debug.LogError("ALREADY PLAYED");
-            Debug.LogError(string.Join(", ", played.Select(d => d != null ? d.name : "null")));
-            return;
+        else
+        {
+            currentDialogue = dialogues[dialogueIndex % 5 + 3];  
         }
+        
+
+        /*
+
+                if (dialogues.Length <= dialogueIndex)
+                {
+                    currentDialogue = endlessDialogues[Random.Range(0, endlessDialogues.Length)];
+                }
+                else
+                {
+                    currentDialogue = dialogues[dialogueIndex];
+                }
+                if(playOnlyOnce.Contains(currentDialogue) && played.Contains(currentDialogue)) {
+                    Debug.LogError("ALREADY PLAYED");
+                    Debug.LogError(string.Join(", ", played.Select(d => d != null ? d.name : "null")));
+                    return;
+                }
+
+                */
 
         played.Add(currentDialogue);
         currentSentence = 0;

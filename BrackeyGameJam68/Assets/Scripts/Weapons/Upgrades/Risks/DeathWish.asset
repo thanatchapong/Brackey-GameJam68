@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
   m_Name: DeathWish
   m_EditorClassIdentifier: 
-  upgradeName: 
-  upgradeDetails: 
-  upgradeIcon: {fileID: 0}
-  isRisk: 0
-  hp: 0
+  upgradeName: Death Wish
+  upgradeDetails: You asked for it...
+  upgradeIcon: {fileID: 2800000, guid: 83288b6a1e9df4ad1af9e9e999ad2b24, type: 3}
+  isRisk: 1
+  hp: -300
   walkSpeed: 0
   blockCooldown: 0
   damage: 0
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
-  fireRate: 0
-  magazineSize: 0
+  fireRate: 15
+  magazineSize: 100
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 0

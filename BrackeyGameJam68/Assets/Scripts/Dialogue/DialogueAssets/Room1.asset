@@ -13,25 +13,30 @@ MonoBehaviour:
   m_Name: Room1
   m_EditorClassIdentifier: 
   nameMaps:
-  - name: Yuu Risuku
+  - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 020000000500000006000000080000000d000000
-  - name: Cheeso
+    sentencesMap: 01000000030000000400000006000000080000000a0000000c0000000f000000
+  - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 0000000001000000030000000400000007000000090000000a0000000b0000000c000000
+    sentencesMap: 00000000020000000500000007000000090000000b0000000d0000000e00000010000000
   sentences:
-  - Hey Yuu...
-  - "So\u2026 Why this factory specifically?"
-  - "Because\u2026 Biscuit!!!!"
-  - ...
-  - "Eh\u2026 A biscuit? What\u2019s wrong with it?"
-  - This biscuit I bought from a store is of particularly low quality.
-  - They're scamming us, consumers!!! WE NEED TO GET BACK AT THEM!!!
-  - So... you need to come here and destroy this factory to be satisfied?
-  - "Exactly! Yes. There\u2019s no other way."
-  - ...
-  - Yuu...
-  - Yuu are stupid...
-  - "C\u2019mon Yuu, be reasonable. Just because the bisc-"
-  - "Cheeso Let\u2019s go!"
+  - "Soo\u2026 This is the factory you\u2019re talking about."
+  - Yeah!
+  - Why? What is it with this place?
+  - This!
+  - '*Yuri pulls out something from her pocket.'
+  - "Uhh\u2026 is that a biscuit?"
+  - Yep!
+  - Are you still mad just because they reduce the sugar by 7%?
+  - Mhm!
+  - "Seriously! Just get over it. It\u2019s just a biscuit."
+  - No, they scammed me. They must pay.
+  - "C\u2019mon Yuu be reasonable. Just becau-"
+  - "C\u2019mon Yuu be reasonable. Just becau-"
+  - "Well, how can you expect me to be reasonable, when I\u2019m speaking to a talking
+    cat!!!"
+  - "\u2026"
+  - "Fair enough. But\u2026"
+  - "Let\u2019s go!"
+  - Wait! Stop! Where are you going?
   isEnded: 0
