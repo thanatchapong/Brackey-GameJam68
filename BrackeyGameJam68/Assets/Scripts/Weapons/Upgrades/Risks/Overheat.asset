@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Overheat
   upgradeDetails: +4 Fire Rate\n+30% Bullet Speed\nYour gun can jam for +3 seconds.
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: 708a941e8f145cd4987fc2530d8959a6, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0
