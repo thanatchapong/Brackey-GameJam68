@@ -16389,6 +16389,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1665237284}
     - target: {fileID: 399339430124439532, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 4900e34e3e43b437ebac438089502354, type: 2}
+    - target: {fileID: 399339430124439532, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
       propertyPath: roomGenerator
       value: 
       objectReference: {fileID: 1047840131}
@@ -16405,6 +16409,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d345dd0743e1105408523d6895235e16, type: 2}
     - target: {fileID: 5860775885201895536, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860775885201895536, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
       propertyPath: upgSystem
       value: 
       objectReference: {fileID: 1665237284}
@@ -16420,6 +16428,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1922722775}
+    - target: {fileID: 5920393127393008137, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5920393127393008137, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
       propertyPath: upgSystem
       value: 
