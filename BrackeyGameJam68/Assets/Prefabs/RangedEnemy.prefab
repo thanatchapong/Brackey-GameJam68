@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 9182387400177763419}
   - component: {fileID: 2618518801915566761}
   - component: {fileID: 2864986882172136}
+  - component: {fileID: 3744587588389351397}
   m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -587,6 +588,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5535900663457147996}
   m_CullTransparentMesh: 1
+--- !u!114 &3744587588389351397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535900663457147996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176ed072692835fcaa40c26c8d3200d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &6221544613440689683
 GameObject:
   m_ObjectHideFlags: 0
