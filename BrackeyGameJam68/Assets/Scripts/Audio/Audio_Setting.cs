@@ -29,6 +29,7 @@ public class Audio_Setting : MonoBehaviour
     // สำหรับ Slider / UI เรียก
     public void SetVolumePercent(string key, float percent, bool save = true)
     {
+        Debug.Log("SetSound");
         float db = PercentToDB(percent);
         if (!Mixer.SetFloat(key, db))
         {
