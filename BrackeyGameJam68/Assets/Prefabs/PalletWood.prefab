@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 8542525633405766195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: -3.71, z: -0.05381622}
-  m_LocalScale: {x: 0.1875, y: 0.1875, z: 0}
+  m_LocalPosition: {x: 1.16, y: -3.71, z: 0}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc8169131bf9444580e30eefbce3f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   shakeAmount: 0.05
   particleExplosionRef: {fileID: 6558477071542047915, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}
   playerController: {fileID: 0}

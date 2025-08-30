@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.Playables;
 
 public class EnemyGenerator : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class EnemyGenerator : MonoBehaviour
     // Track active enemies
   private List<GameObject> activeEnemies = new List<GameObject>();
     private bool doorSpawnedThisWave = false; // <-- Flag
+  [SerializeField] PlayableDirector levelCleared;
 
     void Start()
     {
@@ -47,6 +49,7 @@ public class EnemyGenerator : MonoBehaviour
 
         if (activeEnemies.Count == 0 && !doorSpawnedThisWave)
         {
+      levelCleared.Play();
             roomGen.GenerateDoor(false);
             doorSpawnedThisWave = true;
             waveActive = false; // done

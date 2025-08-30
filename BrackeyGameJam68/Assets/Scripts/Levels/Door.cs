@@ -22,19 +22,35 @@ public class Door : MonoBehaviour
     public void SetInactive()
     {
         isActive = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(true);
         GetComponent<SpriteRenderer>().color = inactiveColor;
     }
 
-    public void SetActive() {
+    public void SetActive()
+    {
         isActive = true;
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(false);
         GetComponent<SpriteRenderer>().color = activeColor;
+        
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = activeColor;
+        transform.GetChild(0).GetChild(1).GetComponent<SpriteRenderer>().color = activeColor;
+        transform.GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().color = activeColor;
     }
 
     public void SetHard() {
         Debug.Log("SetHard Door");
         isActive = true;
         isHard = true;
+
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(false);
         GetComponent<SpriteRenderer>().color = hardColor;
+        
+        transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = hardColor;
+        transform.GetChild(0).GetChild(1).GetComponent<SpriteRenderer>().color = hardColor;
+        transform.GetChild(0).GetChild(2).GetComponent<SpriteRenderer>().color = hardColor;
     }
 
     public void SetOpposite() {

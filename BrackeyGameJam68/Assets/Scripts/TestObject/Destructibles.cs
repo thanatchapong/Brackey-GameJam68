@@ -73,11 +73,11 @@ public class Destructibles : MonoBehaviour
         float totalDuration = ps.main.duration + ps.main.startLifetime.constantMax;
         Destroy(ps.gameObject, totalDuration);
 
-        DisintegrateObject disintegrator = targetObject.GetComponent<DisintegrateObject>();
-        if (disintegrator != null)
-        {
-            StartCoroutine(disintegrator.DisintegrateSelf());
-        }
+        // DisintegrateObject disintegrator = targetObject.GetComponent<DisintegrateObject>();
+        // if (disintegrator != null)
+        // {
+        //     StartCoroutine(disintegrator.DisintegrateSelf());
+        // }
 
         Destroy(gameObject);
     }
