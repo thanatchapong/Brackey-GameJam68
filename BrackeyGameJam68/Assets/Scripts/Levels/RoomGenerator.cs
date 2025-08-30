@@ -30,10 +30,13 @@ public class RoomGenerator : MonoBehaviour
     [Header("Upgrades")]
     [SerializeField] private UpgradeObject RICOCHET;
     [SerializeField] private UpgradeObject RNG_ROOM;
+    [SerializeField] EnemyGenerator enemyGen;
     public bool rngRoomTrigger = false;
 
     public void GenerateRoom(bool isHard)
     {
+        enemyGen.SpawnWave(roomNumber);
+
         Debug.Log($"[GenerateRoom] start | isHard={isHard} | currentRoomNumber(before++)={roomNumber}");
         int rngRoomCount = 0;
         if (upgradeSystem == null)
@@ -107,7 +110,7 @@ public class RoomGenerator : MonoBehaviour
                 if(destructibles) destructibles.playerController = playerController;
             }
         }
-        GenerateDoor(isHard);
+        // GenerateDoor(isHard);
 
         if (entranceDoor != null) ClearObstacles(entranceDoor.transform.position);
         if (targetDoor1 != null) ClearObstacles(targetDoor1.transform.position);
@@ -203,7 +206,7 @@ public class RoomGenerator : MonoBehaviour
         }
     }
 
-    private void GenerateDoor(bool isHard)
+    public void GenerateDoor(bool isHard)
     {
         if (level == null)
         {
@@ -298,6 +301,6 @@ public class RoomGenerator : MonoBehaviour
     {
         roomNumber++;
         Debug.Log("Room Number: " + roomNumber);
-        roomNumberText.text = roomNumber.ToString();
+        roomNumberText.text = (roomNumber).ToString();
     }
 }

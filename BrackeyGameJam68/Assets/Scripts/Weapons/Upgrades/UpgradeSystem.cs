@@ -68,17 +68,14 @@ public class UpgradeSystem : MonoBehaviour
 
         if (stopTime && isUpgrading)
         {
-            if (Time.timeScale > 0)
-                Time.timeScale -= Time.unscaledDeltaTime;
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 0, Time.unscaledDeltaTime * 2);
         }
         else if (!stopTime && isUpgrading)
         {
-            if (Time.timeScale < 1)
-                Time.timeScale += Time.unscaledDeltaTime;
-            else if (Time.timeScale >= 1)
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 1, Time.unscaledDeltaTime);
+            if (Time.timeScale == 1)
             {
                 isUpgrading = false;
-                Time.timeScale = 1;
             }
         }
 

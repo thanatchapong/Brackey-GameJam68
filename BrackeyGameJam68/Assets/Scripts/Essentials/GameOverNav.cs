@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOverNav : MonoBehaviour
 {
+    void Start()
+    {
+        Time.timeScale = 0;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))

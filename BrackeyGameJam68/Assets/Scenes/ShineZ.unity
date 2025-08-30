@@ -1578,6 +1578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 0}
+  BGMGroup: {fileID: 0}
+  SFXGroup: {fileID: 0}
 --- !u!82 &209418509
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3715,6 +3717,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2157204560532843463, guid: 51adb291746353041a8484202c50ae30, type: 3}
     - {fileID: 9058038555431582840, guid: 51adb291746353041a8484202c50ae30, type: 3}
+    - {fileID: 2618518801915566761, guid: 51adb291746353041a8484202c50ae30, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5661,6 +5664,7 @@ MonoBehaviour:
   - {fileID: 1130894751}
   - {fileID: 247927895}
   weaponSys: {fileID: 1515480801}
+  topDownController: {fileID: 417957656511178153}
   plrHp: {fileID: 417957656511178146}
   ultBar: {fileID: 1917650598}
   ultSlider: {fileID: 834745693}
@@ -5671,7 +5675,7 @@ MonoBehaviour:
   perkAnim: {fileID: 1287840979}
   riskAnim: {fileID: 498880127}
   anyUpg: {fileID: 8300000, guid: 3af1c2faf2aa4449eb6df2f541a919ee, type: 3}
-  RISK_IT_FOR_A_BISCUIT: {fileID: 0}
+  RISK_IT_FOR_A_BISCUIT: {fileID: 11400000, guid: 79264e890f73b9d4c9ec934dbf0dbc71, type: 2}
   openTl: {fileID: 2097866017}
   closeTl: {fileID: 368520211}
   stopTime: 0
@@ -7100,6 +7104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5535900663457147996, guid: 7cd1f19f75dde0c029592b5abdf0b0c5, type: 3}
+  chanceForTypedEnemy: 0.3
+  stageAreaSize: {x: 9, y: 6}
+  spawnPoints: []
+  roomGen: {fileID: 1998461084}
 --- !u!1 &1087969690
 GameObject:
   m_ObjectHideFlags: 0
@@ -10759,6 +10767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211d9d0c7ad265142a003675ef80c8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomGenerator: {fileID: 1998461084}
+  cameraTransform: {fileID: 317397652}
 --- !u!1 &1521217344
 GameObject:
   m_ObjectHideFlags: 0
@@ -11658,53 +11668,15 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2084824096}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7343390559000820820, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1626409586}
     - targetCorrespondingSourceObject: {fileID: 5064173300627785257, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
---- !u!1 &1626409584 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7343390559000820820, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
-  m_PrefabInstance: {fileID: 1626409583}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1626409585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9044963929992148516, guid: 814a477958a41084ba20de4cd2727e93, type: 3}
   m_PrefabInstance: {fileID: 1626409583}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1626409586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626409584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0087f5ae5da08f4290ddda03eb95f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundColorsByLevel:
-  - {r: 0.2392157, g: 0.31764707, b: 0.30980393, a: 1}
-  - {r: 0.28825313, g: 0.31764707, b: 0.23921569, a: 1}
-  - {r: 0.27551147, g: 0.3020623, b: 0.37486643, a: 1}
-  - {r: 0.3764706, g: 0.27450982, b: 0.35972705, a: 1}
-  - {r: 0.49448192, g: 0.25716245, b: 0.24935341, a: 1}
-  wallColorsByLevel:
-  - {r: 0.54509807, g: 0.6392157, b: 0.627451, a: 1}
-  - {r: 0.58661884, g: 0.6392157, b: 0.54509807, a: 1}
-  - {r: 0.50164527, g: 0.52194655, b: 0.6311854, a: 1}
-  - {r: 0.6313726, g: 0.5019608, b: 0.5755891, a: 1}
-  - {r: 0.59700966, g: 0.46198887, b: 0.3724669, a: 1}
-  textColorsByLevel:
-  - {r: 0.34509805, g: 0.40000004, b: 0.3921569, a: 1}
-  - {r: 0.42643085, g: 0.4603061, b: 0.3894331, a: 1}
-  - {r: 0.35904562, g: 0.37159654, b: 0.4517622, a: 1}
-  - {r: 0.4509804, g: 0.36078432, b: 0.41703275, a: 1}
-  - {r: 0.44321817, g: 0.33408618, b: 0.3219604, a: 1}
 --- !u!4 &1634809645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1946349422758336000, guid: c73fd7f243d4ca84ea5f312ceb5b60f3, type: 3}
@@ -14327,6 +14299,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 317397652}
   RICOCHET: {fileID: 11400000, guid: 0899809644ef15c4586ace0cdadbfe53, type: 2}
   RNG_ROOM: {fileID: 11400000, guid: 6b12795044bd580479bd2e07a5e9ee79, type: 2}
+  enemyGen: {fileID: 1069317159}
   rngRoomTrigger: 0
 --- !u!4 &1998461085
 Transform:
@@ -15252,6 +15225,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5860775885201895536, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
+      propertyPath: SNIPER
+      value: 
+      objectReference: {fileID: 11400000, guid: d345dd0743e1105408523d6895235e16, type: 2}
     - target: {fileID: 5860775885201895536, guid: 7769896987b00074e830f9999a9dd2be, type: 3}
       propertyPath: upgSystem
       value: 
