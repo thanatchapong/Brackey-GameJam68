@@ -95,6 +95,8 @@ public class Bullet : MonoBehaviour
         Time.timeScale = 0.5f;
 
         yield return new WaitForSecondsRealtime(0.1f);
+        
+        GameManager.timeParry += 1;
 
         Time.timeScale = 1;
         

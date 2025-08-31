@@ -64,6 +64,8 @@ public class Destructibles : MonoBehaviour
 
     private void Disintegrate()
     {
+        GameManager.obstacleBreak += 1;
+        
         if (playerController) playerController.onDestroyObstacle();
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         BoxCollider2D bc2 = GetComponent<BoxCollider2D>();

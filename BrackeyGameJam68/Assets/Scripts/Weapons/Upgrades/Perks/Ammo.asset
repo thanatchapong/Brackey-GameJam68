@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ammo
   m_EditorClassIdentifier: 
   upgradeName: 1 More Round
-  upgradeDetails: +1 Max Ammo
+  upgradeDetails: Add a magazine to your gun
   upgradeIcon: {fileID: 2800000, guid: 3801e3ddb0de44119b85c2f4c78c5a1e, type: 3}
   isRisk: 0
   hp: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: 1
+  magazineSize: 2
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 0

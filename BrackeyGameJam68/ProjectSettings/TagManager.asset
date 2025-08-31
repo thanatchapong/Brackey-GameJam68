@@ -14,6 +14,7 @@ TagManager:
   - Metallic
   - DoorTrans
   - DoorOut
+  - AudioManager
   layers:
   - Default
   - TransparentFX

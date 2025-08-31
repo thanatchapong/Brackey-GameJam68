@@ -37,7 +37,7 @@ public class WeaponController : MonoBehaviour
     float jamDuration;
     
     private Animator anim;
-    private AudioSource audio;
+    AudioSource shotAudio;
 
     void Start()
     {
@@ -59,8 +59,8 @@ public class WeaponController : MonoBehaviour
 
         reloadBar.maxValue = reloadTime;
 
-        audio = GetComponent<AudioSource>();
-        audio.clip = currentWeapon.fireSound;
+        shotAudio = GetComponent<AudioSource>();
+        shotAudio.clip = currentWeapon.fireSound;
 
         getUpgraded();
         InitAmmoUI();
@@ -137,9 +137,9 @@ public class WeaponController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo > 0 && reloading == false)
         {
             cd = 0;
-            if (jammed && audio != null && jammedSound != null)
+            if (jammed && shotAudio != null && jammedSound != null)
             {
-                audio.PlayOneShot(jammedSound);
+                shotAudio.PlayOneShot(jammedSound);
                 return;
             }
             if (jamClock >= jamClockDuration && Random.Range(0, 4) >= 3)

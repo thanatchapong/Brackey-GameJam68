@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RandomParticleTrigger : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem par;
     public float minDelay = 1f;
     public float maxDelay = 5f;
 
@@ -19,7 +19,7 @@ public class RandomParticleTrigger : MonoBehaviour
             float waitTime = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(waitTime);
 
-            particleSystem.Play();
+            par.Play();
         }
     }
 }

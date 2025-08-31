@@ -40,6 +40,7 @@ public class RoomGenerator : MonoBehaviour
 
     public void GenerateRoom(bool isHard)
     {
+        GameManager.levelReached += 1;
         enemyGen.SpawnWave(roomNumber);
 
         Debug.Log($"[GenerateRoom] start | isHard={isHard} | currentRoomNumber(before++)={roomNumber}");

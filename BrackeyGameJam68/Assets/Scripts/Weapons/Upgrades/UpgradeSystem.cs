@@ -121,6 +121,8 @@ public class UpgradeSystem : MonoBehaviour
     // ===========================
     public void SetUpCard()
     {
+        GameManager.cardUpgraded += 1;
+
         upgSelecting.Clear();
 
         // if forced, only give 1 random risk

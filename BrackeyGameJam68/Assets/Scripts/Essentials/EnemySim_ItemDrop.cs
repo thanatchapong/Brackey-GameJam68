@@ -54,6 +54,8 @@ public class EnemySim_ItemDrop : MonoBehaviour
 
     void Die()
     {
+        GameManager.enemiesKilled += 1;
+
         Debug.Log($"{gameObject.name} died!");
 
         soundScript.PlayDeathSound();

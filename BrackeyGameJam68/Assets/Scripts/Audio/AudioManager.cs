@@ -75,16 +75,19 @@ public class AudioManager : MonoBehaviour
         audioSourceLoop.Stop();
     }
 
-    public void PlayBGM(AudioClip clip, bool loop = true)
+    public void PlayBGM(AudioClip clip, bool loop = true, float volume = 1f)
     {
         if (clip == null) return;
         BGM.loop = loop;
         BGM.clip = clip;
+        BGM.pitch = 1;
+        BGM.volume = volume;
         BGM.Play();
     }
 
     public void StopBGM()
     {
+        Debug.Log("STOP");
         BGM.Stop();
         BGM.clip = null;
     }

@@ -12,7 +12,7 @@ public class Parry : MonoBehaviour
     {
         cd += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse1) && cd >= parryCD)
+        if (Input.GetKey(KeyCode.Mouse1) && cd >= Mathf.Max(parryCD, 0.5f))
         {
             DoParry();
             Rigidbody2D rb = Instantiate(parryHitbox, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
