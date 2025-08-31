@@ -31,4 +31,4 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 0
   knockbackForce: 0
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: 3603cc2b386f5498b92ed84f9ba37088, type: 3}
