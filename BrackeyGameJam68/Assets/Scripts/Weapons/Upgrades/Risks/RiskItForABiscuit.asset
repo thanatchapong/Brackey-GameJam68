@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Risk It For A Biscuit
   upgradeDetails: Add 3 copies of any random risk card.
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: e0813cd5774cb3341a7b3b2a222c6134, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
   pierce: 0
   bulletSpeed: 0
   knockbackForce: 0
+  audio: {fileID: 0}

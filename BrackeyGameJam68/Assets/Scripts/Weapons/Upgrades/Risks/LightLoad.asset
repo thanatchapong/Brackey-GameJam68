@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Light Load
   upgradeDetails: +6 Walk Speed\n-10 Magazine Size
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: 48cb45b7c20669c4190941d8bfae451c, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 6

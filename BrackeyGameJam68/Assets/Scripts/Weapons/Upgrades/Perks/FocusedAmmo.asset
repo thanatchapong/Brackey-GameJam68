@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Focused Ammo
   upgradeDetails: -10% Ammo Size\n+3 Damage
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: c1aa56f89dfd4614e8b4d12887458786, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0

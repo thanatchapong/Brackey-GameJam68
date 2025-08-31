@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeName: Silver Bullet
   upgradeDetails: +5% accuracy\n+1 damage\n+10% knockback
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 2800000, guid: 9c65082adeda257408153d7efdd4dd38, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0
