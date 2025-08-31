@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainGame/MainMenu.unity
     guid: 3fc2af11aa4c0624389a593bfd97120b
   - enabled: 1
-    path: Assets/Scenes/MainGame/MAIN_Don'tEdit.unity
+    path: Assets/Scenes/MainGame/MAINGAME.unity
     guid: 11960469854c5e841a2d60f0bd918c77
   - enabled: 1
     path: Assets/Scenes/Pun/Pun_Setting.unity
