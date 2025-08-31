@@ -20,7 +20,7 @@ MonoBehaviour:
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
     sentencesMap: 02000000040000000600000008000000090000000b0000000d0000000e00000011000000
   - name: Door
-    image: {fileID: 0}
+    image: {fileID: 4727633781103762509, guid: 68007be3327a21344bf61a7be2d38b5c, type: 3}
     sentencesMap: 00000000
   sentences:
   - Clank!
