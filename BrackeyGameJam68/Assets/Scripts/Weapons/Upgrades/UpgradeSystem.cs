@@ -154,16 +154,25 @@ public class UpgradeSystem : MonoBehaviour
         }
 
         // normal setup with riskCount
-        List<int> usedIndexes = new List<int>();
+        List<UpgradeObject> tempRisk = new List<UpgradeObject>(riskAvailable);
+        List<UpgradeObject> tempPerk = new List<UpgradeObject>(upgAvailable);
 
         for (int i = 0; i < card.Count; i++)
         {
             UpgradeObject chosen;
 
-            if (i < riskCount) // inject risk first
-                chosen = riskAvailable[Random.Range(0, riskAvailable.Count)];
+            if (i < riskCount) 
+            {
+                int idx = Random.Range(0, tempRisk.Count);
+                chosen = tempRisk[idx];
+                tempRisk.RemoveAt(idx); 
+            }
             else
-                chosen = upgAvailable[Random.Range(0, upgAvailable.Count)];
+            {
+                int idx = Random.Range(0, tempPerk.Count);
+                chosen = tempPerk[idx];
+                tempPerk.RemoveAt(idx); 
+            }
 
             upgSelecting.Add(chosen);
             AssignCardUI(card[i], chosen);
