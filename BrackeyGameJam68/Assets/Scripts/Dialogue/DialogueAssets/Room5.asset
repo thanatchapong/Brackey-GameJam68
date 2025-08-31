@@ -20,7 +20,6 @@ MonoBehaviour:
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
     sentencesMap: 01000000030000000400000006000000080000000b0000000e000000
   sentences:
-  - 
   - Look Cheeso! A map!
   - "\u201CHuh. What does this mean?\u201D"
   - "\u201CIt means there is a room there. Dummy!\u201D"
@@ -29,6 +28,7 @@ MonoBehaviour:
   - "\u201CI don\u2019t know, but red sounds dangerous\u2026\u201D"
   - "\u201CSo, we shouldn\u2019t go to the red?\u201D"
   - "\u201CNo, we should go to the red, because there will be more reward!\u201D"
+  - Reward? What reward? I thought we were searching for a tuna storage.
   - Tuna storage?
   - What tuna storage?
   - You lied to me!?!?

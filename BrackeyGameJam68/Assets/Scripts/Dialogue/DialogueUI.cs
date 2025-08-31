@@ -14,11 +14,6 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private AudioClip dialogueAudio;
 
 
-    //skip Dialogoue
-    float PressedTime;
-    bool isPressed = false;
-
-
     //Singleton
     public static DialogueUI instance;
     public bool isActive = false;
@@ -74,6 +69,12 @@ public class DialogueUI : MonoBehaviour
         if (Pressed())
         {
 
+            ContinueDialogue();
+        }
+    }
+
+    public void ContinueDialogue()
+    {
             if (isTyping)
             {
                 sentenceText.maxVisibleCharacters = sentenceText.text.Length;
@@ -83,25 +84,6 @@ public class DialogueUI : MonoBehaviour
             {
                 DialogueTrigger.activeTrigger.NextLine();
             }
-        }
-
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
-        {
-            if (!isPressed)
-            {
-                PressedTime = charTimer;
-                isPressed = true;
-            }
-
-            if (charTimer - PressedTime >= 1f)
-            {
-                DialogueTrigger.activeTrigger.SkipDialogue();
-            }
-        }
-        else
-        {
-            isPressed = false;
-        }
     }
 
     private bool Pressed() =>

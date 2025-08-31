@@ -102,10 +102,4 @@ public class DialogueTrigger : ScriptableObject
             sprite
         );
     }
-
-    public void SkipDialogue()
-    {
-        currentSentence = 100;
-        NextLine();
-    }
 }
