@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d180026a351bc8418a6aa9082de1f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driftSpeed: 0.5
-  noiseTimeScale: 0.4
+  driftSpeed: 1.4
+  noiseTimeScale: 0.6
 --- !u!114 &-5479298293005851754
 MonoBehaviour:
   m_ObjectHideFlags: 0

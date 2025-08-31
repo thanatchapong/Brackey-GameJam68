@@ -186,37 +186,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4320274744514682980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2340605457988723673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2044016126647287682}
-  m_Layer: 0
-  m_Name: ObstacleSpawnpoint (25)
-  m_TagString: ObstacleSpawnpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2044016126647287682
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2340605457988723673}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.55, y: 3.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4320274744514682980}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2771572858671819138
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,37 +279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4320274744514682980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4403726436962377614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1078218525691537916}
-  m_Layer: 0
-  m_Name: ObstacleSpawnpoint (32)
-  m_TagString: ObstacleSpawnpoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1078218525691537916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4403726436962377614}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.45, y: 3.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4320274744514682980}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6056927479388829342
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,14 +317,12 @@ Transform:
   - {fileID: 8975454281771376985}
   - {fileID: 446214165760826333}
   - {fileID: 4287046285627663459}
-  - {fileID: 2044016126647287682}
   - {fileID: 3035605698153647781}
   - {fileID: 75169522687886442}
   - {fileID: 6412297185429458225}
   - {fileID: 2951995416040911642}
   - {fileID: 5313175463844770081}
   - {fileID: 9130895340012028641}
-  - {fileID: 1078218525691537916}
   - {fileID: 8008952046832963173}
   - {fileID: 6629105789136098155}
   - {fileID: 5716621913253298609}

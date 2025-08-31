@@ -410,6 +410,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5535900663457147996, guid: 7cd1f19f75dde0c029592b5abdf0b0c5, type: 3}
+  chanceForTypedEnemy: 0.3
+  stageAreaSize: {x: 20, y: 20}
+  spawnPoints: []
+  roomGen: {fileID: 0}
+  levelCleared: {fileID: 0}
+  spawnPar: {fileID: 0}
+  clearSound: {fileID: 0}
 --- !u!4 &60255465
 Transform:
   m_ObjectHideFlags: 0
@@ -483,6 +490,7 @@ MonoBehaviour:
   RICOCHET: {fileID: 11400000, guid: 0899809644ef15c4586ace0cdadbfe53, type: 2}
   RNG_ROOM: {fileID: 11400000, guid: 6b12795044bd580479bd2e07a5e9ee79, type: 2}
   rngRoomTrigger: 0
+  enemyGen: {fileID: 0}
 --- !u!4 &62402882
 Transform:
   m_ObjectHideFlags: 0
@@ -4888,6 +4896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 0}
+  BGMGroup: {fileID: 0}
+  SFXGroup: {fileID: 0}
 --- !u!4 &978208393
 Transform:
   m_ObjectHideFlags: 0
@@ -9603,6 +9613,7 @@ MonoBehaviour:
   - {fileID: 230168611}
   - {fileID: 478521221}
   weaponSys: {fileID: 1472766211}
+  topDownController: {fileID: 0}
   plrHp: {fileID: 1210159205}
   ultBar: {fileID: 958926251}
   ultSlider: {fileID: 553803034}
@@ -9614,6 +9625,8 @@ MonoBehaviour:
   riskAnim: {fileID: 365331901}
   anyUpg: {fileID: 8300000, guid: 3af1c2faf2aa4449eb6df2f541a919ee, type: 3}
   RISK_IT_FOR_A_BISCUIT: {fileID: 11400000, guid: 79264e890f73b9d4c9ec934dbf0dbc71, type: 2}
+  ultReady: {fileID: 0}
+  laserCharge: {fileID: 0}
   openTl: {fileID: 1257965908}
   closeTl: {fileID: 551160892}
   stopTime: 0
