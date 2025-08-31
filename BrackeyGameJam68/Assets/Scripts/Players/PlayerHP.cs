@@ -57,6 +57,8 @@ public class PlayerHP : MonoBehaviour
         hpText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
         healthBar.SetMaxHealth(maxHealth);
+
+        currentHealth = Mathf.Max(1, maxHealth);
         healthBar.SetHealth(currentHealth);
     }
 
