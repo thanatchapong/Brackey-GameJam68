@@ -24,7 +24,7 @@ MonoBehaviour:
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: 2
+  magazineSize: 1
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 0

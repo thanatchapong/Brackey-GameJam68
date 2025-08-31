@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
-  m_Name: QuickStep
+  m_Name: LoveIsTheAnswer
   m_EditorClassIdentifier: 
-  upgradeName: Quick Step
-  upgradeDetails: +15% Walk Speed\n-15% Block Cooldown
-  upgradeIcon: {fileID: 2800000, guid: d12167c03e5182046bc8832c27fb3af8, type: 3}
+  upgradeName: Love Is The Answer
+  upgradeDetails: + Everything
+  upgradeIcon: {fileID: 2800000, guid: 7d92e8137669b4fc09ede561d995469a, type: 3}
   isRisk: 0
-  hp: 0
-  walkSpeed: 1
-  blockCooldown: -0.15
-  damage: 0
-  criticalChance: 0
-  criticalMultiplier: 0
-  accuracy: 0
-  fireRate: 0
-  magazineSize: 0
-  ammoSizeMult: 0
+  hp: 15
+  walkSpeed: 0.25
+  blockCooldown: -0.1
+  damage: 1
+  criticalChance: 0.01
+  criticalMultiplier: 0.25
+  accuracy: 0.05
+  fireRate: 0.05
+  magazineSize: 1
+  ammoSizeMult: 0.1
   reloadTime: 0
-  bounce: 0
-  pierce: 0
-  bulletSpeed: 0
-  knockbackForce: 0
+  bounce: 1
+  pierce: 1
+  bulletSpeed: 1
+  knockbackForce: 5
   audio: {fileID: 0}

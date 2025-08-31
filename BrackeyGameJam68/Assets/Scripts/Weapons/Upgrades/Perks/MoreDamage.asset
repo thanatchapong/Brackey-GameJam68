@@ -25,7 +25,7 @@ MonoBehaviour:
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0
+  ammoSizeMult: 0.1
   reloadTime: 0
   bounce: 0
   pierce: 0

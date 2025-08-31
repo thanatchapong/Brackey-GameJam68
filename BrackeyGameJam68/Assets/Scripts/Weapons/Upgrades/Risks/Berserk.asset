@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Berserk
   m_EditorClassIdentifier: 
   upgradeName: Berserk
-  upgradeDetails: +3 Damage\n+2 Walk Speed\n-5 Hp
+  upgradeDetails: +3 Damage\n+1 Walk Speed\nBut -5 Hp
   upgradeIcon: {fileID: 2800000, guid: 00b6963d09ee642b8af8a596ecaf1bfa, type: 3}
   isRisk: 1
   hp: -5
-  walkSpeed: 2
+  walkSpeed: 1
   blockCooldown: 0
   damage: 3
   criticalChance: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0
+  ammoSizeMult: 0.1
   reloadTime: 0
   bounce: 0
   pierce: 0

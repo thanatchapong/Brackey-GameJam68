@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EfficientFirearm
   m_EditorClassIdentifier: 
   upgradeName: Efficient Firearm
-  upgradeDetails: +1 Fire Rate\n+10% Reload Speed
+  upgradeDetails: +25% Fire Rate\n+10% Reload Speed
   upgradeIcon: {fileID: 2800000, guid: e1ceca9834a1e4f2f9159d474dfca42b, type: 3}
   isRisk: 0
   hp: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
-  fireRate: 1
+  fireRate: 0.25
   magazineSize: 0
   ammoSizeMult: 0
   reloadTime: 0.1

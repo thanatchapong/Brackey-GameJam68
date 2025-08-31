@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: CritPls
   m_EditorClassIdentifier: 
   upgradeName: Crit pls
-  upgradeDetails: +5% CritChance
+  upgradeDetails: +15% CritChance
   upgradeIcon: {fileID: 2800000, guid: 712d8fcb5bbfcdd47ab39b38a574dd9a, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
   damage: 0
-  criticalChance: 0.05
+  criticalChance: 0.15
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0
+  ammoSizeMult: 0.1
   reloadTime: 0
   bounce: 0
   pierce: 0

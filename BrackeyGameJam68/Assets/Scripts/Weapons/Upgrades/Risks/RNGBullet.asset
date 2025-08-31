@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RNGBullet
   m_EditorClassIdentifier: 
   upgradeName: RNG Bullet
-  upgradeDetails: -2 Damage\n+500% CritDamage\n-40% Accuracy
+  upgradeDetails: -2 Damage\n+500% CritDamage\n-30% Accuracy
   upgradeIcon: {fileID: 2800000, guid: bba91a9356d1a0a46917ed6ecad6775a, type: 3}
   isRisk: 1
   hp: 0
@@ -21,14 +21,14 @@ MonoBehaviour:
   blockCooldown: 0
   damage: -2
   criticalChance: 0
-  criticalMultiplier: 0
-  accuracy: -0.4
+  criticalMultiplier: 5
+  accuracy: -0.3
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0
+  ammoSizeMult: 0.2
   reloadTime: 0
   bounce: 0
   pierce: 0
   bulletSpeed: 0
   knockbackForce: 0
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: 0e0fd1fc0ebca4968a8a9d4504eb16f9, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Overload
   m_EditorClassIdentifier: 
   upgradeName: Overload
-  upgradeDetails: +4 Magazine\n-20% Reload Speed
+  upgradeDetails: +2 Magazine\n-10% Reload Speed
   upgradeIcon: {fileID: 2800000, guid: 17bc74ccc52aa5a4ebf269c850432e0d, type: 3}
   isRisk: 0
   hp: 0
@@ -24,9 +24,9 @@ MonoBehaviour:
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: 4
+  magazineSize: 2
   ammoSizeMult: 0
-  reloadTime: -0.2
+  reloadTime: -0.1
   bounce: 0
   pierce: 0
   bulletSpeed: 0

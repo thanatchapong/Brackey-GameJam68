@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
-  m_Name: RNGRoom
+  m_Name: Nuke
   m_EditorClassIdentifier: 
-  upgradeName: RNG Room
-  upgradeDetails: +20% Crit Rate\n+40% Crit Damage\n+20% chance each room to have
-    0% crit rate
-  upgradeIcon: {fileID: 2800000, guid: df418671b247d624db2b925f542ebe6a, type: 3}
+  upgradeName: Nuke
+  upgradeDetails: +50 DMG\nBut -200% Firerate
+  upgradeIcon: {fileID: 2800000, guid: 8cf70edb07f398648aa3bc4292123238, type: 3}
   isRisk: 1
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
-  damage: 0
-  criticalChance: 0.2
-  criticalMultiplier: 0.4
+  damage: 50
+  criticalChance: 0
+  criticalMultiplier: 0
   accuracy: 0
-  fireRate: 0
+  fireRate: -2
   magazineSize: 0
-  ammoSizeMult: 0.1
+  ammoSizeMult: 1
   reloadTime: 0
   bounce: 0
-  pierce: 0
+  pierce: 2
   bulletSpeed: 0
   knockbackForce: 0
-  audio: {fileID: 8300000, guid: 0e0fd1fc0ebca4968a8a9d4504eb16f9, type: 3}
+  audio: {fileID: 8300000, guid: 3af1c2faf2aa4449eb6df2f541a919ee, type: 3}

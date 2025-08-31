@@ -11,8 +11,8 @@ public class UpgradeObject : ScriptableObject
     //------------Upgrade Stats----------------
     [Header("Players")]
     public int hp;
-    public int walkSpeed;
-    public int blockCooldown;
+    public float walkSpeed;
+    public float blockCooldown;
 
     [Header("Weapon")]
     public int damage;

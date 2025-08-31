@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: Ricochet
   upgradeDetails: +3 Bounce\n+1 Pierce\nThere are 3 times more obstacles.
   upgradeIcon: {fileID: 2800000, guid: 4710b22ce18c744e4b0e659670352e8a, type: 3}
-  isRisk: 1
+  isRisk: 0
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
-  fireRate: 5
+  fireRate: 0
   magazineSize: 0
   ammoSizeMult: 0
   reloadTime: 0

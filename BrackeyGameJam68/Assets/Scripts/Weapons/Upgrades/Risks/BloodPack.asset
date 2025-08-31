@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: BloodPack
   m_EditorClassIdentifier: 
   upgradeName: Blood Pack
-  upgradeDetails: +10 Damage\n+2 Block Cooldown\n-40% HP
+  upgradeDetails: +10 Damage\n-5% Block Cooldown\n-40 HP
   upgradeIcon: {fileID: 2800000, guid: b225e1b28bfea2041859b856954d10b8, type: 3}
   isRisk: 1
   hp: -40
   walkSpeed: 0
-  blockCooldown: 2
+  blockCooldown: 0.05
   damage: 10
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0
+  ammoSizeMult: 0.2
   reloadTime: 0
   bounce: 0
   pierce: 0
