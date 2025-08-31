@@ -20,6 +20,7 @@ public class GameOverNav : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             Time.timeScale = 1;
+            AudioManager.instance.StopBGM();
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
         }

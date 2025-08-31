@@ -7,7 +7,7 @@ public class SetBGM : MonoBehaviour
     void Start()
     {
         GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().StopBGM();
-        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlayBGM(bgm, true, 0.1f);
+        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().PlayBGM(bgm, true, 0.15f);
         // AudioManager.StopBGM();
         // AudioManager.PlaySound(bgm);
     }
