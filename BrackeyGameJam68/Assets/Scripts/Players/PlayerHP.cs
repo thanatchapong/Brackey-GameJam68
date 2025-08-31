@@ -24,6 +24,7 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] PlayableDirector hurtAnim;
     [SerializeField] PlayableDirector gameOverAnim;
     [SerializeField] AudioSource healed;
+    [SerializeField] AudioClip diedSound;
 
     void Start()
     {
@@ -133,6 +134,7 @@ public class PlayerHP : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.instance.PlaySound(diedSound);
         AudioManager.instance.MusicFade(1f, 0.03f, 0.5f);
         Debug.Log(gameObject.name + " has died!");
         gameOverAnim.Play();
