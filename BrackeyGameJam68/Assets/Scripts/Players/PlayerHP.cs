@@ -23,6 +23,8 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] TMP_Text hpText;
     [SerializeField] PlayableDirector hurtAnim;
     [SerializeField] PlayableDirector gameOverAnim;
+    [SerializeField] AudioSource healed;
+    [SerializeField] AudioClip diedSound;
 
     void Start()
     {
@@ -132,6 +134,7 @@ public class PlayerHP : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.instance.PlaySound(diedSound);
         AudioManager.instance.MusicFade(1f, 0.03f, 0.5f);
         Debug.Log(gameObject.name + " has died!");
         gameOverAnim.Play();
@@ -151,9 +154,13 @@ public class PlayerHP : MonoBehaviour
 
         if (col.gameObject.CompareTag("Heal"))
         {
+            healed.Play();
+
             currentHealth += Random.Range(15, 26);
             currentHealth = Mathf.Min(currentHealth, maxHealth);
             healthBar.SetHealth(currentHealth);
+
+            Destroy(col.gameObject);
         }
     }
 }
