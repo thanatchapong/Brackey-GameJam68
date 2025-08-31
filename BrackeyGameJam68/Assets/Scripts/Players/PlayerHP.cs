@@ -23,6 +23,7 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] TMP_Text hpText;
     [SerializeField] PlayableDirector hurtAnim;
     [SerializeField] PlayableDirector gameOverAnim;
+    [SerializeField] AudioSource healed;
 
     void Start()
     {
@@ -151,9 +152,13 @@ public class PlayerHP : MonoBehaviour
 
         if (col.gameObject.CompareTag("Heal"))
         {
+            healed.Play();
+
             currentHealth += Random.Range(15, 26);
             currentHealth = Mathf.Min(currentHealth, maxHealth);
             healthBar.SetHealth(currentHealth);
+
+            Destroy(col.gameObject);
         }
     }
 }

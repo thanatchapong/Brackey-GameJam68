@@ -593,7 +593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1946349422758336000}
   - component: {fileID: 1321531768841649736}
-  - component: {fileID: -8199856120551600338}
   - component: {fileID: 2193740138974937961}
   - component: {fileID: 4652890404012725775}
   - component: {fileID: 2054400110770408322}
@@ -640,21 +639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 25
---- !u!114 &-8199856120551600338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8759759056760994804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0817f9e4237b98142b6a01d2abf0f2b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 5
-  expAudio:
-  - {fileID: 8300000, guid: 20358e9b0388245daba76c2f7f5e7dd7, type: 3}
 --- !u!212 &2193740138974937961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -781,7 +765,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.55
 --- !u!50 &1136062619512227124
 Rigidbody2D:
   serializedVersion: 5

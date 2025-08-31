@@ -118,6 +118,7 @@ public class WeaponController : MonoBehaviour
             hands.GetComponent<PlayableDirector>().Play();
             reloadCount += Time.deltaTime;
 
+            reloadBar.maxValue = reloadTime;
             reloadBar.value = reloadCount;
 
             if (reloadCount >= reloadTime)
@@ -191,7 +192,25 @@ public class WeaponController : MonoBehaviour
 
         shotAnim.Play();
 
-        BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);
+        if (currentWeapon.weaponType == WeaponsObject.WeaponType.Pistol)
+        {
+            BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);
+        }
+        if (currentWeapon.weaponType == WeaponsObject.WeaponType.Shotgun)
+        {
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(0, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(90, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(180, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(270, 90, 0)).GetComponent<Bullet>(), true);
+        }
+        if (currentWeapon.weaponType == WeaponsObject.WeaponType.Rifle)
+        {
+            BulletStat(Instantiate(ultimate, transform.position, transform.rotation).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(45, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(135, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(225, 90, 0)).GetComponent<Bullet>(), true);
+            BulletStat(Instantiate(ultimate, transform.position, Quaternion.Euler(315, 90, 0)).GetComponent<Bullet>(), true);
+        }
 
         anim.SetTrigger("Shoot");
 

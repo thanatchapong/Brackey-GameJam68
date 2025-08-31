@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Shotgun", 1);
             PlayerPrefs.Save();
         }
-        if (levelReached >= 15 && PlayerPrefs.GetInt("Rifle", 0) == 0)
+        if (levelReached >= 10 && PlayerPrefs.GetInt("Rifle", 0) == 0)
         {
             PlayerPrefs.SetInt("Rifle", 1);
             PlayerPrefs.Save();
