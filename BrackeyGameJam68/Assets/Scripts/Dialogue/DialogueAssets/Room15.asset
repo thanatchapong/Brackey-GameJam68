@@ -24,7 +24,7 @@ MonoBehaviour:
   - Hey, Cheese Cake!
   - "I don\u2019t believe you choose to break into this place, risking your life
     just because of a biscuit."
-  - "You\u2019re smarter than that, Yuu. You must have some other motive."
+  - "You\u2019re smarter than that, Yuri. You must have some other motive."
   - "You\u2019re right."
   - "I\u2019m not here because of a biscuit."
   - So why are you here exactly?
@@ -41,6 +41,6 @@ MonoBehaviour:
   - Ahh, yeah biscuit.
   - '*Yuri ate the biscuit she pulled out earlier'
   - "mmm\u2026 It was delicious!"
-  - I thought you said it was awful.
+  - I thought you said it was awful after the sugar reduction.
   - "Everything tastes delicious when you\u2019re hungry."
   isEnded: 0

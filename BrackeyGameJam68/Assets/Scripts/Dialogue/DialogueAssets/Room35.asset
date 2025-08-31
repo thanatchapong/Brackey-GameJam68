@@ -20,8 +20,8 @@ MonoBehaviour:
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
     sentencesMap: 00000000010000000300000004000000090000000c0000000d0000000f00000010000000
   sentences:
-  - Hey, Yuri. This factory is almost fully locked down. This is our last chance
-    to leave.
+  - Hey, Yuu. This factory is almost fully locked down. This is our last chance to
+    leave.
   - "If you keep going we might not be able to come out alive. I think we should
     leave now\u2026"
   - "What? You\u2019re afraid of death? I thought you got nine lives"

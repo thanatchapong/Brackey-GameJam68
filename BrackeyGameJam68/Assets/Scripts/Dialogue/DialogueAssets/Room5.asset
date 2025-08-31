@@ -15,24 +15,20 @@ MonoBehaviour:
   nameMaps:
   - name: Yuri
     image: {fileID: 1302723820812287101, guid: e950a87fc321a5e4db873d090b276a82, type: 3}
-    sentencesMap: 00000000020000000500000007000000090000000a0000000c0000000d0000000f000000
+    sentencesMap: 0000000003000000050000000600000008000000090000000b000000
   - name: Cheese Cake
     image: {fileID: 8323748228035815210, guid: 31160f7db6d3d3f4aa18e4a0d9866e11, type: 3}
-    sentencesMap: 01000000030000000400000006000000080000000b0000000e000000
+    sentencesMap: 010000000200000004000000070000000a000000
   sentences:
-  - Look Cheeso! A map!
-  - "\u201CHuh. What does this mean?\u201D"
-  - "\u201CIt means there is a room there. Dummy!\u201D"
-  - "\u201CNo, that not what I meant\u201D"
-  - "\u201CI meant some rooms are marked in red. What does that mean?\u201D"
-  - "\u201CI don\u2019t know, but red sounds dangerous\u2026\u201D"
-  - "\u201CSo, we shouldn\u2019t go to the red?\u201D"
-  - "\u201CNo, we should go to the red, because there will be more reward!\u201D"
+  - Look Cheeso! I'm blasting through this factory!
+  - Okay... But it looks like it'll get more dangerous if we keep going...
+  - So, should we turn back now?
+  - No, we should continue, because there will be more reward!
   - Reward? What reward? I thought we were searching for a tuna storage.
   - Tuna storage?
   - What tuna storage?
   - You lied to me!?!?
-  - Hey look, there's something marked on room 50!
+  - My third eye is telling me to go to level 50.
   - "That must\u2019ve been it!"
   - Been what?
   - "Uhh\u2026 Nothing. Let\u2019s keep going."
