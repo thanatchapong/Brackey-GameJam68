@@ -238,7 +238,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fd564a6afe8ec45d9859e195b76e99cc, type: 3}
   - {fileID: 8300000, guid: 30a05ea638fa54186b388dafffdea6ac, type: 3}
   - {fileID: 8300000, guid: 828fe9e40be6945f2b405d754ee8441a, type: 3}
-  wallHitAudio: {fileID: 8300000, guid: 2686a2445687246a4ba3aee83308e353, type: 3}
+  wallHitAudio: {fileID: -3538627834559269026}
   pauseImpact: 0
   dmgIndicator: {fileID: 5412047982885251771, guid: fec52b08a73b72645a8ce56430e8bbe0, type: 3}
   critColor: {r: 1, g: 0, b: 0, a: 1}
@@ -365,9 +365,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7285675001370503296, guid: 7afd853b4867a3b44a9f15e09bbcbc3f, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Resource: {fileID: 8300000, guid: 30a05ea638fa54186b388dafffdea6ac, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

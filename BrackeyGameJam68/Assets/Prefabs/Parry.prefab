@@ -55,7 +55,7 @@ MonoBehaviour:
   critMult: 1
   knockbackForce: 20
   pierce: 100
-  hitEff: {fileID: 2794674248249685264, guid: 72e6cb05d8fb5a048a77d2676edff5bf, type: 3}
+  hitEff: {fileID: 2794674248249685264, guid: 2fc4a7648578ecd47b6855b8f00d65df, type: 3}
   enemyHitAudio:
   - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
   - {fileID: 8300000, guid: efa429cdf3ac2a042917da7ac9b5eece, type: 3}
@@ -106,7 +106,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3584
+    m_Bits: 3585
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

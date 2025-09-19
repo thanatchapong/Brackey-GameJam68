@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] ParticleSystem hitEff;
 
     [SerializeField] List<AudioClip> enemyHitAudio = new List<AudioClip>();
-    [SerializeField] AudioClip wallHitAudio;
+    [SerializeField] AudioSource wallHitAudio;
     [SerializeField] bool pauseImpact;
     [SerializeField] GameObject dmgIndicator;
     [SerializeField] Color critColor;
@@ -73,7 +73,7 @@ public class Bullet : MonoBehaviour
         else if (bounce <= 0)
         {
             if (col.gameObject.tag == "Metallic") AudioSource.PlayClipAtPoint(enemyHitAudio[Random.Range(0, enemyHitAudio.Count)], transform.position);
-            else AudioSource.PlayClipAtPoint(wallHitAudio, transform.position);
+            // else if(wallHitAudio) wallHitAudio.Play();
 
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
             if (pauseImpact) Time.timeScale = 1;

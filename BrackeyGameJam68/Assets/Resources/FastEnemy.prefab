@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6629219839626278725}
   - component: {fileID: 1834240903242075732}
+  - component: {fileID: 4143742188961602133}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -87,6 +88,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4143742188961602133
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207518031791725202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5535900663457147996
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +131,7 @@ GameObject:
   - component: {fileID: 9182387400177763419}
   - component: {fileID: 2618518801915566761}
   - component: {fileID: 2864986882172136}
+  - component: {fileID: 2235521867444940642}
   m_Layer: 7
   m_Name: FastEnemy
   m_TagString: Enemy
@@ -517,3 +541,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5535900663457147996}
   m_CullTransparentMesh: 1
+--- !u!320 &2235521867444940642
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535900663457147996}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 14231dc45417b2a439617ab0ea438089, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 1
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2623287407069081653, guid: 14231dc45417b2a439617ab0ea438089, type: 2}
+    value: {fileID: 4143742188961602133}
+  m_ExposedReferences:
+    m_References: []

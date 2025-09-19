@@ -134,13 +134,13 @@ public class CheeseCakeScript : MonoBehaviour
             transform.localScale = new Vector2(1f, 1f);
         }
 
-        if (rb.linearVelocity.magnitude > 0.1f)
-        {
-            anim.SetBool("isWalking", false);
-        }
-        else
-        {
-            anim.SetBool("isWalking", true);
-        }
+        // if (rb.linearVelocity.magnitude > 0.1f)
+        // {
+        //     anim.SetBool("isWalking", false);
+        // }
+        // else
+        // {
+        //     anim.SetBool("isWalking", true);
+        // }
     }
 }

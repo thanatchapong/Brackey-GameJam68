@@ -13,7 +13,7 @@ public class TeleportPlayer : MonoBehaviour
             if (hasTeleported) return;
             col.gameObject.transform.position = new Vector3(0, 0, 0);
             cameraTransform.position = new Vector3(0, 0, cameraTransform.position.z);
-            Debug.LogError("TELEPORT GENERATE ROOM");
+            // Debug.LogError("TELEPORT GENERATE ROOM");
             roomGenerator.GenerateRoom(false);
             hasTeleported = true;
         }

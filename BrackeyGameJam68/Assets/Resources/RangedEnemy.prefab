@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2148235117193677959}
   - component: {fileID: 3517489620946552500}
+  - component: {fileID: 3991326631734228742}
   m_Layer: 7
   m_Name: Square (3)
   m_TagString: Untagged
@@ -87,6 +88,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3991326631734228742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382793451943871241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3879053732884133652
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331689076064747533}
   - component: {fileID: 1056273506338253694}
+  - component: {fileID: 6423479552473539289}
   m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
@@ -174,6 +198,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6423479552473539289
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879053732884133652}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5535900663457147996
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +240,7 @@ GameObject:
   - component: {fileID: 9182387400177763419}
   - component: {fileID: 2618518801915566761}
   - component: {fileID: 2864986882172136}
+  - component: {fileID: 6618481959634740025}
   m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -589,6 +636,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5535900663457147996}
   m_CullTransparentMesh: 1
+--- !u!320 &6618481959634740025
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535900663457147996}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b6e01c58081d49b4594a02f8f089ae6e, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 1
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 7524074367320582666, guid: b6e01c58081d49b4594a02f8f089ae6e, type: 2}
+    value: {fileID: 6423479552473539289}
+  - key: {fileID: 6127867054218365254, guid: b6e01c58081d49b4594a02f8f089ae6e, type: 2}
+    value: {fileID: 3991326631734228742}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &6221544613440689683
 GameObject:
   m_ObjectHideFlags: 0

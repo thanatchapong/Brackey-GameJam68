@@ -102,7 +102,7 @@ public class UpgradeSystem : MonoBehaviour
                 SetUpCard();
 
                 openTl.Play();
-                currentExp = 0;
+                currentExp -= (int)requireExp;
                 requireExp = Mathf.Round(requireExp * 1.25f);
                 ultBar.maxValue = requireExp;
             }

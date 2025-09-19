@@ -21,6 +21,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] Transform ammoHolder;
     List<GameObject> ammoIndicator = new List<GameObject>();
     [SerializeField] GameObject ammoArt;
+    [SerializeField] AudioSource shotSound;
     float spread;
     int magazine;
     int ammo;
@@ -258,9 +259,7 @@ public class WeaponController : MonoBehaviour
 
         if(roomGenerator.rngRoomTrigger) {
             bullet.critChance = 0;
-            Debug.LogError("Crit Chance Set To 0");
         }
-        Debug.LogError("Bullet Crit Chance: " + bullet.critChance);
         
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.forward * bulletSpeed, ForceMode2D.Impulse);
         bullet.transform.localScale = bullet.transform.localScale * sizeMult;
@@ -283,6 +282,9 @@ public class WeaponController : MonoBehaviour
             shotAnim.Play();
             SpawnBullet();
 
+            shotSound.clip = currentWeapon.fireSound;
+            shotSound.Play();
+
             GetComponent<PrositionalAudio>().Play();
         }
 
@@ -294,12 +296,18 @@ public class WeaponController : MonoBehaviour
             SpawnBullet();
             SpawnBullet();
 
+            shotSound.clip = currentWeapon.fireSound;
+            shotSound.Play();
+
             GetComponent<PrositionalAudio>().Play();
         }
 
         if (currentWeapon.weaponType == WeaponsObject.WeaponType.Rifle)
         {
             SpawnBullet();
+
+            shotSound.clip = currentWeapon.fireSound;
+            shotSound.Play();
 
             GetComponent<PrositionalAudio>().Play();
         }

@@ -62,12 +62,12 @@ public class RoomGenerator : MonoBehaviour
         Debug.Log($"[GenerateRoom] RNG roll={roll}, rngRoomCount={rngRoomCount}");
         if (roll < rngRoomCount)
         {
-            Debug.LogError("RNG Room Triggered");
+            // Debug.LogError("RNG Room Triggered");
             rngRoomTrigger = true;
         }
         else
         {
-            Debug.LogError("RNG Room Not Triggered");
+            // Debug.LogError("RNG Room Not Triggered");
             rngRoomTrigger = false;
         }
         UpdateRoomNumberUI();
@@ -78,7 +78,7 @@ public class RoomGenerator : MonoBehaviour
 
         if (templateList == null || templateList.Count == 0)
         {
-            Debug.LogError("Template list is empty or not assigned in RoomGenerator!");
+            // Debug.LogError("Template list is empty or not assigned in RoomGenerator!");
             return;
         }
 
