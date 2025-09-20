@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 7303625047859621768}
   m_Layer: 10
   m_Name: Exp
-  m_TagString: Untagged
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 25
+  range: 3
 --- !u!114 &-8199856120551600338
 MonoBehaviour:
   m_ObjectHideFlags: 0

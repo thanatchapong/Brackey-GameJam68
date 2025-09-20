@@ -4,6 +4,7 @@ using System.Collections;
 public class ForceToward : MonoBehaviour
 {
     [SerializeField] float forceStrength = 5f; // How strong the force is
+    public float range = 3;
 
     Rigidbody2D rb;
     Transform player;
@@ -25,7 +26,7 @@ public class ForceToward : MonoBehaviour
     {
         if (startFollow)
         {
-            if (player != null && Vector3.Distance(player.position, transform.position) <= 3)
+            if (player != null && Vector3.Distance(player.position, transform.position) <= range)
             {
                 Vector2 direction = (player.position - transform.position).normalized;
                 rb.linearVelocity = direction * forceStrength;

@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceStrength: 25
+  range: 3
 --- !u!212 &2193740138974937961
 SpriteRenderer:
   m_ObjectHideFlags: 0

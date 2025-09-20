@@ -62,6 +62,11 @@ public class EnemyGenerator : MonoBehaviour
             roomGen.SetDoorActive(true, true);
             doorSpawnedThisWave = true;
             waveActive = false; // done
+
+            foreach (GameObject exp in GameObject.FindGameObjectsWithTag("Exp"))
+            {
+                exp.GetComponent<ForceToward>().range = 100;
+            }
         }
     }
 
@@ -81,7 +86,7 @@ public class EnemyGenerator : MonoBehaviour
 
   IEnumerator SpawnDelay()
   {
-      int enemyCount = Mathf.Clamp(Mathf.RoundToInt((waveLvl + 1) * 1.5f), 1, 100);
+      int enemyCount = Mathf.Clamp(Mathf.RoundToInt((waveLvl + 1) * 1.5f), 1, 20);
 
     for (int i = 0; i < enemyCount; i++)
     {

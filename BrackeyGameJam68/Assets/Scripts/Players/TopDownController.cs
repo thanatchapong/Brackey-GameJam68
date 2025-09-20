@@ -84,7 +84,7 @@ public class TopDownController : MonoBehaviour
             anim.SetBool("walking", true);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))
         {
             holdingSpace = true;
         }
