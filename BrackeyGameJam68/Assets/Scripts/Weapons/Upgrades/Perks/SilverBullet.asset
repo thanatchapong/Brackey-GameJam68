@@ -30,5 +30,5 @@ MonoBehaviour:
   bounce: 0
   pierce: 0
   bulletSpeed: 0
-  knockbackForce: 5
+  knockbackForce: 7.5
   audio: {fileID: 0}

@@ -23,7 +23,7 @@ MonoBehaviour:
   criticalMultiplier: 2
   accuracy: 0.95
   fireRate: 8
-  magazineSize: 10
+  magazineSize: 6
   ammoSizeMult: 1
   reloadTime: 3
   ammoType: 2

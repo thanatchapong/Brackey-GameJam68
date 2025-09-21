@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: LightLoad
   m_EditorClassIdentifier: 
   upgradeName: Light Load
-  upgradeDetails: +3 Walk Speed\n-3 Magazine Size\n-25% block Cooldown
+  upgradeDetails: +20% Walk Speed\n-15% block Cooldown\nbut -1 Magazine Size
   upgradeIcon: {fileID: 2800000, guid: 48cb45b7c20669c4190941d8bfae451c, type: 3}
   isRisk: 1
   hp: 0
-  walkSpeed: 3
-  blockCooldown: 0.25
+  walkSpeed: 0.2
+  blockCooldown: -0.15
   damage: 0
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: -3
+  magazineSize: -1
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 0

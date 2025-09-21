@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5139153154099676231}
   - component: {fileID: 3681269918832726757}
   - component: {fileID: 6217655092011417848}
-  - component: {fileID: 6269850804314276905}
-  - component: {fileID: 1591022543710109611}
+  - component: {fileID: -3352059251644683783}
+  - component: {fileID: 5947258142493462936}
   m_Layer: 9
   m_Name: EmittingPipe
   m_TagString: Metallic
@@ -193,34 +193,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.5879207, y: 2.2659833}
   m_EdgeRadius: 0
---- !u!50 &6269850804314276905
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5708916207637952614}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 100000
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &1591022543710109611
+--- !u!114 &-3352059251644683783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,8 +202,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 5708916207637952614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d180026a351bc8418a6aa9082de1f55, type: 3}
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driftSpeed: 1.4
-  noiseTimeScale: 0.6
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!208 &5947258142493462936
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708916207637952614}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.89, y: 2.065, z: 0.89}
+  m_MoveThreshold: 0.03
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

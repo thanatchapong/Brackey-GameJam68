@@ -68,20 +68,17 @@ public class UpgradeSystem : MonoBehaviour
             upgradeSystemAudio.PlayMaxExpSound();
         }
 
-        expText.text = currentExp + "/" + requireExp;
-
-        if (stopTime && isUpgrading)
-        {
-            Time.timeScale = Mathf.Lerp(Time.timeScale, 0, Time.unscaledDeltaTime * 2);
-        }
-        else if (!stopTime && isUpgrading)
+        if (!stopTime && isUpgrading)
         {
             Time.timeScale = Mathf.Lerp(Time.timeScale, 1, Time.unscaledDeltaTime);
             if (Time.timeScale == 1)
             {
+                plrHp.enabled = true;
                 isUpgrading = false;
             }
         }
+
+        expText.text = currentExp + "/" + requireExp;
 
         if (Input.GetKey(KeyCode.Space) && (currentExp >= requireExp) && !isUpgrading)
         {
@@ -91,6 +88,8 @@ public class UpgradeSystem : MonoBehaviour
 
             if (timeUseUlt >= 1.5f)
             {
+                plrHp.enabled = false;
+
                 ultReady.SetActive(false);
                 timeUseUlt = 0;
                 isUpgrading = true;
@@ -161,17 +160,17 @@ public class UpgradeSystem : MonoBehaviour
         {
             UpgradeObject chosen;
 
-            if (i < riskCount) 
+            if (i < riskCount)
             {
                 int idx = Random.Range(0, tempRisk.Count);
                 chosen = tempRisk[idx];
-                tempRisk.RemoveAt(idx); 
+                tempRisk.RemoveAt(idx);
             }
             else
             {
                 int idx = Random.Range(0, tempPerk.Count);
                 chosen = tempPerk[idx];
-                tempPerk.RemoveAt(idx); 
+                tempPerk.RemoveAt(idx);
             }
 
             upgSelecting.Add(chosen);
@@ -244,5 +243,13 @@ public class UpgradeSystem : MonoBehaviour
     public void GetExp(int amount)
     {
         currentExp += Random.Range(amount, amount + 6);
+    }
+
+    void FixedUpdate()
+    {
+        if (stopTime && isUpgrading)
+        {
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 0, Time.unscaledDeltaTime * 2);
+        }
     }
 }

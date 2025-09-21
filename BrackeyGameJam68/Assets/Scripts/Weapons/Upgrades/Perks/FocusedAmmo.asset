@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ec38745526e043a67581a75f42957, type: 3}
   m_Name: FocusedAmmo
   m_EditorClassIdentifier: 
-  upgradeName: Focused Ammo
-  upgradeDetails: +3 Damage but smaller ammoSize
+  upgradeName: Super Ammo
+  upgradeDetails: +2 Damage\nLarger Bullet
   upgradeIcon: {fileID: 2800000, guid: c1aa56f89dfd4614e8b4d12887458786, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
-  damage: 3
+  damage: 2
   criticalChance: 0
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: -0.2
+  ammoSizeMult: 0.1
   reloadTime: 0
   bounce: 0
   pierce: 0

@@ -86,7 +86,7 @@ public class EnemyGenerator : MonoBehaviour
 
   IEnumerator SpawnDelay()
   {
-      int enemyCount = Mathf.Clamp(Mathf.RoundToInt((waveLvl + 1) * 1.5f), 1, 20);
+    int enemyCount = Mathf.Min(Mathf.RoundToInt((waveLvl + 1) * 1.5f), 15);
 
     for (int i = 0; i < enemyCount; i++)
     {

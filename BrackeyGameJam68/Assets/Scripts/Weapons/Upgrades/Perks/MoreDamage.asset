@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: MoreDamage
   m_EditorClassIdentifier: 
   upgradeName: More Damage
-  upgradeDetails: +2 Damage
+  upgradeDetails: +1 Damage\n+5% Crit Damage
   upgradeIcon: {fileID: 2800000, guid: 1210ea0456f4fe645ac68b998d74cd85, type: 3}
   isRisk: 0
   hp: 0
   walkSpeed: 0
   blockCooldown: 0
-  damage: 2
+  damage: 1
   criticalChance: 0
-  criticalMultiplier: 0
+  criticalMultiplier: 0.05
   accuracy: 0
   fireRate: 0
   magazineSize: 0
-  ammoSizeMult: 0.1
+  ammoSizeMult: 0.02
   reloadTime: 0
   bounce: 0
   pierce: 0

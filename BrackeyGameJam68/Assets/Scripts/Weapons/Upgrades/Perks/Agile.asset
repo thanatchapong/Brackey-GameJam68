@@ -17,7 +17,7 @@ MonoBehaviour:
   upgradeIcon: {fileID: 2800000, guid: 294b37cfd509a42e9aec437d87ad6197, type: 3}
   isRisk: 0
   hp: 0
-  walkSpeed: 1
+  walkSpeed: 0.25
   blockCooldown: 0
   damage: 0
   criticalChance: 0

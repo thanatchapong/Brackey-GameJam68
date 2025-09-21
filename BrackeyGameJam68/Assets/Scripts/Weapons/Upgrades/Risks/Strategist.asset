@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Strategist
   m_EditorClassIdentifier: 
   upgradeName: Strategist
-  upgradeDetails: +2 Piercing\n +1 Bounce\n -2 Max Ammo
+  upgradeDetails: +2 Piercing\n +1 Bounce\n -1 Max Ammo
   upgradeIcon: {fileID: 2800000, guid: 6503b29e88b3f4eefbab194322ad5e6c, type: 3}
   isRisk: 1
   hp: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   criticalMultiplier: 0
   accuracy: 0
   fireRate: 0
-  magazineSize: -2
+  magazineSize: -1
   ammoSizeMult: 0
   reloadTime: 0
   bounce: 1

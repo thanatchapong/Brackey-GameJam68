@@ -131,12 +131,12 @@ public class WeaponController : MonoBehaviour
                 reloading = false;
 
                 reloadBar.value = 0;
-                ammo = magazine;
+                ammo = Mathf.Max(1, magazine);
                 UpdateAmmoUI();
             }
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= 1 / fireRate && ammo > 0 && reloading == false)
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= Mathf.Min(1 / fireRate, 3) && ammo > 0 && reloading == false && Time.timeScale >= 0.25)
         {
             cd = 0;
             if (jammed && shotAudio != null && jammedSound != null)
