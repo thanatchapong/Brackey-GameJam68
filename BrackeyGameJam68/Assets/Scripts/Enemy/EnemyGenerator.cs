@@ -67,6 +67,10 @@ public class EnemyGenerator : MonoBehaviour
             {
                 exp.GetComponent<ForceToward>().range = 100;
             }
+            foreach (GameObject heal in GameObject.FindGameObjectsWithTag("Heal"))
+            {
+                heal.GetComponent<ForceToward>().range = 100;
+            }
         }
     }
 

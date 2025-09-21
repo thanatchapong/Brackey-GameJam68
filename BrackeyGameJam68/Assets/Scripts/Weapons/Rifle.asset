@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponIcon: {fileID: 3457497635880601909, guid: af76eee11c7ce41eeaf916b3f7fb9acb, type: 3}
   weaponPrefab: {fileID: 1210982010674772047, guid: 38a1517e2a0a942bd8374d393d06d5cb, type: 3}
   ammoPrefab: {fileID: 1721734548074101474, guid: 99773884384714a40a0fd0e2e325269b, type: 3}
-  baseDamage: 4
+  baseDamage: 2
   damageType: 0
   criticalChance: 0.1
   criticalMultiplier: 2

@@ -64,7 +64,7 @@ public class Bullet : MonoBehaviour
 
             if (pierce < 0)
             {
-                if (pauseImpact) Time.timeScale = 1;
+                // if (pauseImpact) Time.timeScale = 1;
                 Destroy(gameObject);
             }
             
@@ -76,7 +76,7 @@ public class Bullet : MonoBehaviour
             // else if(wallHitAudio) wallHitAudio.Play();
 
             if (hitEff) Instantiate(hitEff, transform.position, transform.rotation);
-            if (pauseImpact) Time.timeScale = 1;
+            // if (pauseImpact) Time.timeScale = 1;
             Destroy(gameObject);
         }
         else
@@ -92,13 +92,13 @@ public class Bullet : MonoBehaviour
 
     IEnumerator PauseImpact(EnemySim_ItemDrop enemyHp)
     {
-        Time.timeScale = 0.5f;
+        // Time.timeScale = 0.5f;
 
         yield return new WaitForSecondsRealtime(0.1f);
         
         GameManager.timeParry += 1;
 
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
         
         //Do Dmg
         if ((critChance * 100) >= Random.Range(0, 101))
