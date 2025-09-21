@@ -19,7 +19,7 @@ public class RandomParticleTrigger : MonoBehaviour
             float waitTime = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(waitTime);
 
-            par.Play();
+            if(par) par.Play();
         }
     }
 }

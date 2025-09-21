@@ -119,7 +119,7 @@ public class AudioManager : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-            Debug.Log(BGM.volume);
+            // Debug.Log(BGM.volume);
             timeElapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(timeElapsed / duration);
 

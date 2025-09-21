@@ -23,14 +23,14 @@ MonoBehaviour:
   criticalMultiplier: 2
   accuracy: 0.975
   fireRate: 2
-  magazineSize: 3
+  magazineSize: 5
   ammoSizeMult: 1
   reloadTime: 1.5
   ammoType: 0
   bounce: 0
   pierce: 0
   bulletSpeed: 7.5
-  knockbackForce: 5
+  knockbackForce: 10
   fireSound: {fileID: 8300000, guid: 2ff32713448b84f1a93c1eb6a41e6cee, type: 3}
   reloadSound: {fileID: 8300000, guid: b564431d962c5472380bf9e8f46c9087, type: 3}
   muzzleFlash: {fileID: 0}

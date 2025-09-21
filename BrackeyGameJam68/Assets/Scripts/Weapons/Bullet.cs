@@ -58,7 +58,7 @@ public class Bullet : MonoBehaviour
 
                     TMP_Text dmgText = Instantiate(dmgIndicator, transform.position, Quaternion.identity).transform.GetChild(0).GetComponent<TMP_Text>();
                     dmgText.text = "-" + dmg.ToString();
-                    if(crit) dmgText.color = critColor;
+                    if (crit) dmgText.color = critColor;
                 }
             }
 
@@ -67,7 +67,7 @@ public class Bullet : MonoBehaviour
                 // if (pauseImpact) Time.timeScale = 1;
                 Destroy(gameObject);
             }
-            
+
             lastHitEnemy = col.gameObject;
         }
         else if (bounce <= 0)

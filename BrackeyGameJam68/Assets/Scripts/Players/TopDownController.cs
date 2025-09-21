@@ -36,7 +36,7 @@ public class TopDownController : MonoBehaviour
             if(!sniperStunt) tempSpeed = currentSpeed;
             sniperStunt = true;
             sniperTimer = 0;
-            sniperDuration = sniperCount * 2;
+            sniperDuration = sniperCount * 0.5f;
         }
     }
 

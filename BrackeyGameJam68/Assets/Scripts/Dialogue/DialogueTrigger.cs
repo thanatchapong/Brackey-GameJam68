@@ -21,7 +21,7 @@ public class DialogueTrigger : ScriptableObject
 
     public void TriggerDialogue(int dialogueIndex)
     {
-        Debug.LogError("TRIGGER DIALOGUE");
+        // Debug.LogError("TRIGGER DIALOGUE");
 
         if (dialogueIndex == 0 || dialogueIndex == 1)
         {

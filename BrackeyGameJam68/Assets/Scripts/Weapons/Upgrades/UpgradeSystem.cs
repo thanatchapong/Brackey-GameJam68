@@ -80,7 +80,7 @@ public class UpgradeSystem : MonoBehaviour
 
         expText.text = currentExp + "/" + requireExp;
 
-        if (Input.GetKey(KeyCode.Space) && (currentExp >= requireExp) && !isUpgrading)
+        if (Input.GetKey(KeyCode.Space) && (currentExp >= requireExp) && !isUpgrading && Time.timeScale >= 0.5f)
         {
             timeUseUlt += Time.deltaTime;
 

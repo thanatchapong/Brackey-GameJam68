@@ -19,6 +19,8 @@ public class Destructibles : MonoBehaviour
 
     public GameObject targetObject;
 
+    [SerializeField] EnemySim_ItemDrop itemDrop;
+
     bool isShaking = false;
     Vector2 startPos;
     
@@ -65,6 +67,8 @@ public class Destructibles : MonoBehaviour
     private void Disintegrate()
     {
         GameManager.obstacleBreak += 1;
+
+        if (itemDrop) itemDrop.TakeDamage(1000);
         
         if (playerController) playerController.onDestroyObstacle();
         SpriteRenderer sr = GetComponent<SpriteRenderer>();

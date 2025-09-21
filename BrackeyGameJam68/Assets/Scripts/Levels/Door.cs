@@ -150,7 +150,7 @@ public class Door : MonoBehaviour
 
         playerTransform.position = playerSpawnpoint;
         cameraTransform.position = new Vector3(playerSpawnpoint.x, playerSpawnpoint.y, cameraTransform.position.z);
-        Debug.LogError("DOOR GENERATE ROOM");
+        // Debug.LogError("DOOR GENERATE ROOM");
         roomGenerator.GenerateRoom(isHard);
 
         GameObject.FindGameObjectWithTag("DoorTrans").transform.GetChild(0).gameObject.SetActive(false);

@@ -58,14 +58,21 @@ public class EnemySim_ItemDrop : MonoBehaviour
 
         Debug.Log($"{gameObject.name} died!");
 
-        soundScript.PlayDeathSound();
+        if(soundScript) soundScript.PlayDeathSound();
 
         if (dedPar) Instantiate(dedPar, transform.position, Quaternion.identity);
 
         LootItem chosen = GetWeightedLoot();
         if (chosen != null && chosen.itemPrefab != null)
         {
-            if (chosen.quality == LootQuality.Normal)
+            if (chosen.quality == LootQuality.None)
+            {
+                for (int i = 0; i < Random.Range(1, 3); i++)
+                {
+                    InstantiateLoot(chosen.itemPrefab);
+                }
+            }
+            else if (chosen.quality == LootQuality.Normal)
             {
                 for (int i = 0; i < Random.Range(1, 6); i++)
                 {

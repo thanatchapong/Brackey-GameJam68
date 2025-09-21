@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -7964036288379400725}
   - component: {fileID: 1744494356748275864}
   - component: {fileID: -1100846963133101796}
+  - component: {fileID: 7628315425974489706}
   m_Layer: 9
   m_Name: PalletWood
   m_TagString: Untagged
@@ -106,7 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetTag: 
   rotateSpeed: 5
+  hideWhenNoTarget: {fileID: 0}
+  hideSound: {fileID: 0}
   lookUp: 1
 --- !u!61 &3843887743271635818
 BoxCollider2D:
@@ -202,6 +206,7 @@ MonoBehaviour:
   particleExplosionRef: {fileID: 6558477071542047915, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}
   playerController: {fileID: 0}
   targetObject: {fileID: 4878171683449597561, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}
+  itemDrop: {fileID: 7628315425974489706}
 --- !u!82 &1744494356748275864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -313,3 +318,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   driftSpeed: 1.4
   noiseTimeScale: 0.6
+--- !u!114 &7628315425974489706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542525633405766195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26254ea66118c5144b0cf8506e96baf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  lootTable:
+  - itemPrefab: {fileID: 8759759056760994804, guid: c73fd7f243d4ca84ea5f312ceb5b60f3, type: 3}
+    quality: 2
+  - itemPrefab: {fileID: 8759759056760994804, guid: bbe9c2f9759a1b842aef7a5c46c51a1e, type: 3}
+    quality: 2
+  dedPar: {fileID: 4878171683449597561, guid: c42d95f8dcde55a44924ad4f87872678, type: 3}
+  desSelf: 0
